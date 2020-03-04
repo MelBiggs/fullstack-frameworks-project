@@ -3,3 +3,4 @@ __pycache__
 .gitpod.dockerfile
 .gitpod.yml
 *.sqlite3
+env.py
