@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<h1>User Login</h1>
+	<h1>User Login</h1>
 	<nav>
 		<ul>
 			<li><a href="{% url 'login' %}">Login</a></li>
@@ -20,6 +20,10 @@
 		{% for message in messages %} {{ message }} {% endfor %}
 	</div>
 	{% endif %}
+
+	<form method="POST">
+		{{ login_form }}
+	</form>
 </body>
 
 </html>
