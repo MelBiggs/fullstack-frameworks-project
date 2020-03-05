@@ -19,12 +19,12 @@ class EmailAuth:
             return None
         except User.DoesNotExist:
             return None
-    
+
     def get_user(self, user_id):
         """
         Used by the Django authentiation system to retrieve a user instance
         """
-        
+
         try:
             user = User.objects.get(pk=user_id)
 
