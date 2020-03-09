@@ -7,7 +7,7 @@
 {% block page_heading %}User Login{% endblock %}
 
 {% block content %}
-<form method="POST" id="">
+<form method="POST" id="account-form">
 	{% csrf_token %} {{ login_form | as_bootstrap }}
     <button type="submit" class="btn btn-light">Log In</button>
 </form>
