@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+
 try:
     import env
-except ModuleNotFound:
+except ModuleNotFoundError:
     pass
 
 
