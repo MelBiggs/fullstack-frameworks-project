@@ -60,7 +60,7 @@ caption p {
     margin-right: 0px;
 }
 
-.card {
+.product-card {
     border-color: transparent;
     padding: 0 10px;
 }
@@ -76,4 +76,30 @@ caption p {
 
 .form-inline {
     margin-bottom: 0px;
+}
+
+/* BLOG  */
+
+.story-img {
+    margin-top: 25%;
+    display: block;
+}
+
+a, a:hover {
+    color: #223344;
+    text-decoration: none;
+}
+
+.img-circle{
+    width:100px;
+    height: 100px; 
+}
+
+.img-blogpost{
+    height: 300px;
+    width: auto;
+}
+
+.boldtext{
+    font-weight: bold;
 }
