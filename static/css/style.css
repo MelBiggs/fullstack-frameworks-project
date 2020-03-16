@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
 
-/* BODY */
+/* BASE */
 
 body {    
     font-family: 'Roboto', sans-serif !important;
@@ -10,6 +10,11 @@ body {
 .alert {
     width: 50%;
     margin: auto;
+}
+
+.page-headings {
+    font-size: 1.8em;
+    text-align: center;
 }
 
 /* NAVBAR */
@@ -51,11 +56,10 @@ ul {
     margin: .5em;
 }
 
-.account-form {
+#account-form {
     width: 50%;
+    margin: auto;
 }
-
-
 
 footer {
     margin-top: 40px;
