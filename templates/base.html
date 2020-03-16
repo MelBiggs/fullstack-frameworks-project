@@ -5,85 +5,102 @@
 <head>
 	<title>{% block page_title %}{% endblock %}</title>
 
-    <!-- JQuery -->
+	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 	</script>
-    <!-- Font Awesome -->
+	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- Popper JS -->
+	<!-- Popper JS -->
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 	</script>
-    <!-- Bootstrap CSS -->
+	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- CSS  -->
+	<!-- CSS  -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    <!-- Bootstrap JS -->
+	<!-- Bootstrap JS -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
 
-    {% block head_js %}
-    {% endblock head_js %}
+	{% block head_js %}
+	{% endblock head_js %}
 </head>
 
 <body>
-<header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="{% url 'index' %}"><b>FaceValue</b></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+	<header>
+    <!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-stretch">
+			<div class="d-flex">
+				<a class="navbar-brand mx-sm-auto mr-auto"
+					href="{% url 'index' %}"><span class="highlighted-txt">F</span>ace<span class="highlighted-txt">V</span>alue<span class="highlighted-txt">.</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+					</button>
+			</div>
+            <!-- Dropdown Menu -->
+			<div class="collapse navbar-collapse w-100 sticky-top" id="navbarMenu">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							SkinCare
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Face</a>
+							<a class="dropdown-item" href="#">Body</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
+						</div>
+					</li>
+				</ul>
+                <!-- Search Bar -->
+				<form class="form-inline" action="{% url 'search' %}" method="get">
+					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+				</form>
+                <!-- Account Dropdown and Cart -->
+				<ul>
+					<div class="dropdown">
+						<button class="btn dropdown-toggle nav-dropdown" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="far fa-user-circle"></i>
   </button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							{% if user.is_authenticated %}
+							<li class="nav-item active">
+								<a class="nav-link" href="{% url 'profile' %}">Profile</a>
+							</li>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				{% if user.is_authenticated %}
-				<li class="nav-item active">
-					<a class="nav-link" href="{% url 'profile' %}">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{% url 'logout' %}">Logout</a>
-				</li>
-				{% else %}
-				<li class="nav-item">
-					<a class="nav-link" href="{% url 'login' %}">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{% url 'registration' %}">Register</a>
-				</li>
-				{% endif %}
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						SkinCare
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Face</a>
-						<a class="dropdown-item" href="#">Body</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+							</li>
+							{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'login' %}">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'registration' %}">Register</a>
+							</li>
+							{% endif %}
+						</div>
 					</div>
-				</li>
-			</ul>
-			<form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
-				<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-			</form>
-			<ul>
-            <a href="{% url 'view_cart' %}">
-				<button type="button" class="btn btn-secondary"><i class="fas fa-shopping-cart"></i>Cart 
+				</ul>
+
+				<ul>
+					<a href="{% url 'view_cart' %}">
+						<button type="button" class="btn cart-btn"><i class="fas fa-shopping-cart"></i>
 				  {% if product_count > 0 %}
-				  <span class="badge badge-light">{{ product_count }}</span>
+				  <span class="badge badge-dark item-number">{{ product_count }}</span>
 				  {% endif %}
 				</button>
-            </a>
-			</ul>
-		</div>
-	</nav>
-</header>
+					</a>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
 	<h1>
 		{% block page_heading %}{% endblock %}
