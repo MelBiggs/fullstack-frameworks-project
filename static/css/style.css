@@ -42,6 +42,10 @@ body {
     width: 55px;
 }
 
+.skincare-drop {
+    color: black!important;
+}
+
 .dropdown-toggle::after{
     margin-left: 0px;
 }
