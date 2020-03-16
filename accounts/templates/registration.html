@@ -2,16 +2,17 @@
 
 {% load bootstrap_tags %}
 
-{% block page_title %}Registration Page{% endblock %} 
+{% block page_title %}Registration|FaceValue{% endblock %} 
 
-{% block page_heading %}User Registration{% endblock %} 
+{% block page_heading %}Registration{% endblock %} 
 
 {% block content %}
-<p>If you already have an account, you can <a href="{% url 'login' %}">sign in here.</a></p>
-
+<br>
+<div class = "log-in-here">If you already have an account, you can <b><a href="{% url 'login' %}">sign in here.</a></b></div>
+<br>
 <form method="POST" id="account-form">
     {% csrf_token %} {{ registration_form | as_bootstrap }}
-    <button type="submit" class="btn btn-light">Submit</button>
+    <button type="submit" class="btn accounts-btn">Submit</button>
 </form>
 
 {% endblock %}

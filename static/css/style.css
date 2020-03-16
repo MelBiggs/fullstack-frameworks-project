@@ -5,6 +5,9 @@
 body {    
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .alert {
@@ -56,18 +59,31 @@ ul {
     margin: .5em;
 }
 
+/* LOGIN, REGISTER */
+
 #account-form {
     width: 50%;
     margin: auto;
+    padding-bottom: 3em;
 }
 
-footer {
+.accounts-btn {
+    background-color: #fff7ff!important;
+    border: 2px solid #6c757d;
+    
+}
+
+.log-in-here {
+    text-align: center;
+}
+
+/* footer {
     margin-top: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
     color: #A9A9A9;
-}
+} */
 
 .icon-bar {
     background-color: #fff;
@@ -89,6 +105,8 @@ footer {
 .badge-warning[href] {
     background-color: #c67605;
 }
+
+/* PRODUCT PAGE */
 
 .product {
     background-size: contain;
@@ -156,4 +174,50 @@ a, a:hover {
 
 .boldtext{
     font-weight: bold;
+}
+
+/* FOOTER */
+
+.page-footer {
+    background-color: #fff7ff;
+    padding-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    margin-top:auto; 
+}
+.social-links {
+    list-style: none;
+    text-align: center;
+    padding-left: 0em;
+}
+
+.social-links li {
+    padding-left: 2em;
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    padding-right: 9px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #6c757d;
+}
+
+.social-links li a:hover {
+    color: black;
+}
+
+.social-links li a i {
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+.social-media-row {
+    margin-bottom: 0px!important;
 }
