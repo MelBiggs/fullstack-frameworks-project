@@ -62,7 +62,7 @@
 					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 				</form>
-                <!-- Account Dropdown and Cart -->
+                <!-- Account Dropdown -->
 				<ul>
 					<div class="dropdown">
 						<button class="btn dropdown-toggle nav-dropdown" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,7 +88,7 @@
 						</div>
 					</div>
 				</ul>
-
+                <!-- Cart -->
 				<ul>
 					<a href="{% url 'view_cart' %}">
 						<button type="button" class="btn cart-btn"><i class="fas fa-shopping-cart"></i>
@@ -101,16 +101,17 @@
 			</div>
 		</nav>
 	</header>
+<br>
+	{% if messages %}
+	<div class="alert alert-secondary" role="alert">
+		{% for message in messages %} {{ message }} {% endfor %}
+	</div>
+	{% endif %}
 
 	<h1>
 		{% block page_heading %}{% endblock %}
 	</h1>
 
-	{% if messages %}
-	<div>
-		{% for message in messages %} {{ message }} {% endfor %}
-	</div>
-	{% endif %}
 	{% block content %}{% endblock %}
 
 </body>

@@ -7,6 +7,11 @@ body {
     font-weight: 300;
 }
 
+.alert {
+    width: 50%;
+    margin: auto;
+}
+
 /* NAVBAR */
 
 .navbar {
