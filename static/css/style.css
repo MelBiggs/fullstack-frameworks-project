@@ -139,6 +139,7 @@ caption p {
 .product-card {
     border-color: transparent;
     padding: 0 10px;
+    padding-bottom: 2em;
 }
 
 .card-body {
