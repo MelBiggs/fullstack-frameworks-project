@@ -29,14 +29,14 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
+
 class Product(models.Model):
 
     name = models.CharField(max_length=254, default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    discount_price = models.FloatField(blank=True, null=True)
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
-    label = models.CharField(choices=LABEL_CHOICES, max_length=1)
-    slug = models.SlugField()
+    # category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
+    # label = models.CharField(choices=LABEL_CHOICES, max_length=1)
+    # slug = models.SlugField()
     description = models.TextField()
     image = models.ImageField(upload_to='images')
 
