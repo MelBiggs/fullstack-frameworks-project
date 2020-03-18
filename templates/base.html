@@ -32,7 +32,7 @@
 
 <body>
 	<header>
-    <!-- Navigation -->
+		<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-stretch">
 			<div class="d-flex">
 				<a class="navbar-brand mx-sm-auto mr-auto"
@@ -41,7 +41,7 @@
             <span class="navbar-toggler-icon"></span>
 					</button>
 			</div>
-            <!-- Dropdown Menu -->
+			<!-- Dropdown Menu -->
 			<div class="collapse navbar-collapse w-100 sticky-top" id="navbarMenu">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown">
@@ -56,13 +56,25 @@
 							<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
 						</div>
 					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle skincare-drop" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							What can we help you with? 
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="{% url 'products' %}">Face</a>
+							<a class="dropdown-item" href="#">Body</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
+						</div>
+					</li>
 				</ul>
-                <!-- Search Bar -->
+				<!-- Search Bar -->
 				<form class="form-inline" action="{% url 'search' %}" method="get">
 					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 				</form>
-                <!-- Account Dropdown -->
+				<!-- Account Dropdown -->
 				<ul>
 					<div class="dropdown">
 						<button class="btn dropdown-toggle nav-dropdown" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,7 +100,7 @@
 						</div>
 					</div>
 				</ul>
-                <!-- Cart -->
+				<!-- Cart -->
 				<ul>
 					<a href="{% url 'view_cart' %}">
 						<button type="button" class="btn cart-btn"><i class="fas fa-shopping-cart"></i>
@@ -101,50 +113,49 @@
 			</div>
 		</nav>
 	</header>
-<br>
+	<br>
 	{% if messages %}
 	<div class="alert alert-secondary" role="alert">
 		{% for message in messages %} {{ message }} {% endfor %}
 	</div>
 	{% endif %}
 
-	<div class = "page-headings">
+	<div class="page-headings">
 		{% block page_heading %}{% endblock %}
 	</div>
-    <br>
-    
-<main>
+	<br>
+
+	<main>
 		<section>
 			{% block content %} {% endblock %}
 		</section>
-</main>
+	</main>
 </body>
 
 <!-- Footer -->
-	<footer class="page-footer">
+<footer class="page-footer">
+	<div class="container">
+		<div class="row social-media-row">
+			<div class="col s12">
+				<ul class="social-links">
+					<li><a target="_blank"
+							href="https://www.facebook.com/"><i class="fab fa-facebook-square" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
+					</li>
+					<li><a target="_blank"
+							href="https://github.com/MelBiggs"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
+					</li>
+					<li><a target="_blank"
+							href="https://www.linkedin.com/in/melissa-biggs-81424bb6/"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
 		<div class="container">
-			<div class="row social-media-row">
-				<div class="col s12">
-					<ul class="social-links">
-						<li><a target="_blank"
-								href="https://www.facebook.com/"><i class="fab fa-facebook-square" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
-						</li>
-						<li><a target="_blank"
-								href="https://github.com/MelBiggs"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
-						</li>
-						<li><a target="_blank"
-								href="https://www.linkedin.com/in/melissa-biggs-81424bb6/"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
-						</li>
-					</ul>
-				</div>
-			</div>
+			© 2020 FaceValue
 		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2020 FaceValue
-			</div>
-		</div>
-	</footer>
+	</div>
+</footer>
 
 </html>
-
