@@ -2,26 +2,76 @@
 {% load static from staticfiles %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="row row-flex ">
-            <!-- <div class="col-sm-8 text-center">
-                <a class="story-img" href="#"></a>
-            </div> -->
-            <div class="col-8 card">
-                <h3>{{ post.title }}</h3>
-                <div class="row">
-                    <div class="col-xs-9">
-                        <p>{{ post.content|truncatewords:30 }}</p>
-                        <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-primary">Read more</a></p>
-                        <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                        <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h2>Recent Posts</h2>
+          </div>
         </div>
+        <div class="row">
+        {% for post in posts %}
+          <div class="col-lg-4 mb-4">
+            <div class="entry">
+              <a href=""><img src="http://placehold.it/900x350" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <span class="post-category text-white bg-secondary mb-3">Natural Remedies</span>
+
+              <h2><a href="">{{ post.title }}</a></h2>
+              <div class="post-meta align-items-center text-left clearfix">
+                <span>&nbsp;-&nbsp; {{ post.published_date }}</span>
+                <p><span class="boldtext">Views:</span> {{post.views}}</p>
+              </div>
+              <br>
+                <p> {{ post.content|truncatewords:30 }} </p>
+                <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-secondary">Read more</a></p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>  
+        {% endblock %}         
+
+<!--
+<div class="container">
+  {% for post in posts %}
+<div class="row mb-5">
+<div class="col-12">
+<h2>Recent Posts</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4 mb-4">
+<div class="entry2">
+<a href=""><img src="/media/{{ post.image }}" alt="Image" class="img-fluid rounded"></a>
+<div class="excerpt">
+<span class="post-category text-white bg-secondary mb-3">{{ post.tag }}</span>
+<h2><a href="single.html">{{ post.title }}</a></h2>
+<div class="post-meta align-items-center text-left clearfix">
+<figure class="author-figure mb-0 mr-3 float-left"><img src="/media/{{ post.image }}" alt="Image" class="img-fluid"></figure>
+<span class="d-inline-block mt-1">By <a href="#">Mel</a></span>
+<span>&nbsp;-&nbsp; {{ post.published_date }}</span>
+</div>
+<p>{{ post.content|truncatewords:30 }}</p>
+<p><span class="boldtext">Views:</span> {{post.views}}</p>
+<p><a href="{% url 'post_detail' post.id %}"  class="btn btn-secondary">Read more</a></p>
+</div>
+</div>
+</div>
     {% endfor %}
-{% endblock %}
 
-
+<div class="row text-center pt-5 border-top">
+<div class="col-md-12">
+<div class="custom-pagination">
+<span>1</span>
+<a href="#">2</a>
+<a href="#">3</a>
+<a href="#">4</a>
+<span>...</span>
+<a href="#">15</a>
+</div>
+</div>
+</div>
+</div> -->
