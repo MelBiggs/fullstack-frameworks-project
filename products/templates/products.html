@@ -1,27 +1,128 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class = "products-page">
+
+<div class="cd-main-content">
+	<div class="cd-tab-filter-wrapper">
+		<div class="cd-tab-filter">
+			<ul class="cd-filters">
+				<li class="placeholder">
+					<a data-type="all" href="#">All</a> <!-- selected option on mobile -->
+				</li>
+				<li class="filter"><a class="selected" href="#" data-type="all">All</a></li>
+				<li class="filter" data-filter=".color-1"><a href="#" data-type="color-1">Face</a></li>
+				<li class="filter" data-filter=".color-2"><a href="#" data-type="color-2">Body</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="cd-filter">
+		<form>
+			<div class="cd-filter-block">
+				<h4>Categories</h4>
+				<ul class="cd-filter-content cd-filters list">
+					<li>
+						<input class="input-group-text" data-filter=".check1" type="checkbox" id="checkbox1">
+						<label class="checkbox-label" for="checkbox1">Acne</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+						<label class="checkbox-label" for="checkbox2">Aging</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Alopecia</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Cellulite</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Dry Skin</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Eczema</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Oily</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Pregnancy</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Psoriasis</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Rosacea</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Scarring</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Sensitive Skin</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Sun</label>
+					</li>
+					<li>
+						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+						<label class="checkbox-label" for="checkbox3">Tired Skin</label>
+					</li>
+				</ul>
+			</div>
+
+			<div class="cd-filter-block">
+				<h4>Currency</h4>
+				<div class="cd-filter-content">
+					<div class="cd-select cd-filters">
+						<select class="filter" name="selectThis" id="selectThis">
+								<option value=".option1">EUR</option>
+								<option value=".option3">GBP</option>
+								<option value=".option4">USD</option>
+							</select>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<a href="#" class="cd-close"><i class="fas fa-window-close"></i></a>
+	</div>
+	<a href="#" class="cd-filter-trigger">Filters</a>
+</div>
+
 <div class="row row-flex products-row">
-    {% for product in products %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
-            <div class="card-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+	{% for product in products %}
+	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
+		<div class="card-body">
+			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-                <h3>{{ product.name }}</h3>
-                <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
+			<h4>{{ product.name }}</h4>
+			<p class="product-description">{{ product.description }}</p>
+			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ product.price }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+			<form method="post" action="{% url 'add_to_cart' product.id %}">
+				{% csrf_token %}
+				<div class="input-group">
+					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+					<span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Add</button>
                         </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    {% endfor %}
+				</div>
+			</form>
+		</div>
+	</div>
+	{% endfor %}
+</div>
 </div>
 {% endblock %}
