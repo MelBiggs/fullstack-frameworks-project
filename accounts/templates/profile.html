@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 
-{% block page_heading %}{{ user|capfirst }}'s Profile{% endblock %} {% block content %}
+{% block content %}
 
-<hr>
-<br>
-<div class="row">
-	<div class="col s12 text-center">
-		<p>Username: <span style="text-transform:capitalize;">{{user|upper}}</span></p>
-		<p>Email: <span class="icon-color">{{ profile.email }}</span></p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div class="card profile-card">
+				<div class="row profile-row">
+					<div class="col-sm-6 col-md-8">
+						<h4>{{user|capfirst}}</h4>
+						<small> Address <i class="fas fa-map-pin"></i></small>
+						<p>
+							<i class="far fa-envelope"></i> {{ profile.email }}
+							<br>
+							<i class="fas fa-gift"></i> DD/MM/YYYY</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<hr>
 
 
 {% endblock %}

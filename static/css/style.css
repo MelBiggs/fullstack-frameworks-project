@@ -23,6 +23,7 @@ a {
     color: #6c757d;
 }
 
+
 /* NAVBAR */
 
 .navbar {
@@ -271,6 +272,29 @@ caption p {
 
 .social-media-row {
     margin-bottom: 0px!important;
+}
+
+/* PROFILE PAGE */
+
+.fa-map-pin,
+.fa-envelope,
+.fa-gift {  
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+small {
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
+}
+.profile-card {
+    background-color: #fff7ff!important;
+    border: 2px solid #6c757d;
+}
+
+.profile-row {
+    margin: 1em;
 }
 
 /* PRODUCT PAGE */
