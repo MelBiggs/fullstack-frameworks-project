@@ -5,7 +5,7 @@
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-    //<![CDATA[
+	//<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
@@ -58,41 +58,56 @@
 			</div>
 		</div>
 
-        <div class="col-lg-6">
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
-          <div class="p-4">
-            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
-            <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total }}</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>10.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold"><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total }}</h5>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+					<div class="p-4">
+						<p class="font-italic mb-4">Shipping and additional costs are calculated based on values you
+							have entered.</p>
+						<ul class="list-unstyled mb-4">
+							<li class="d-flex justify-content-between py-3 border-bottom">
+								<strong class="text-muted">Order Subtotal </strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total }}</strong>
+							</li>
+							<li class="d-flex justify-content-between py-3 border-bottom">
+								<strong class="text-muted">Shipping and handling</strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>10.00</strong>
+							</li>
+							<li class="d-flex justify-content-between py-3 border-bottom">
+								<strong class="text-muted">Total</strong>
+								<h5 class="font-weight-bold">
+									<i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total }}</h5>
+							</li>
+						</ul>
+					</div>
+				</div>
 
+				<div class="col-lg-6">
+					<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+						<legend>Payment Details</legend>
+						<div>
+							<hr>
 
-<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-    <legend>Payment Details</legend>
+							<div class="row payment-forms">
+								<div id="credit-card-errors" style="display: none;">
+									<div id="alert-message block-message error" id="stripe-error-message"></div>
+								</div>
 
-    <div id="credit-card-errors" style="display: none;">
-        <div id="alert-message block-message error" id="stripe-error-message"></div>
+								<div class="form-group col-6">
+									{{ order_form | as_bootstrap }}
+								</div>
+
+								<div class="form-group col-md-6">
+									{{ payment_form | as_bootstrap }}
+								</div>
+							</div>
+
+							{% csrf_token %}
+							<div class="form-group col-md-12">
+								<input class=" btn btn-secondary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-    <div class="form-group col-md-6">
-        {{ order_form | as_bootstrap }}
-    </div>
-
-    <div class="form-group col-md-6">
-        {{ payment_form | as_bootstrap }}
-    </div>
-
-    {% csrf_token %}
-    <div class="form-group col-md-12">
-        <input class=" btn btn-secondary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-    </div>
-</form>
-{% endblock %}
+		{% endblock %}
