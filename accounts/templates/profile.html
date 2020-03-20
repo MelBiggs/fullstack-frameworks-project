@@ -1,8 +1,17 @@
-{% extends 'base.html' %} 
-{% block page_title %}{{ user }}'s Profile{% endblock %} 
-  
-{% block page_heading %}{{ user }}'s Profile{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% block page_title %}{{ user }}'s Profile{% endblock %}
 
-<p>{{ profile.email }}</p>
+{% block page_heading %}{{ user|capfirst }}'s Profile{% endblock %} {% block content %}
+
+<hr>
+<br>
+<div class="row">
+	<div class="col s12 text-center">
+		<p>Username: <span style="text-transform:capitalize;">{{user|upper}}</span></p>
+		<p>Email: <span class="icon-color">{{ profile.email }}</span></p>
+	</div>
+</div>
+<hr>
+
 
 {% endblock %}
