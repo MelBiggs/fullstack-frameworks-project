@@ -83,10 +83,8 @@
 
 				<div class="col-lg-6">
 					<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-						<legend>Payment Details</legend>
-						<div>
-							<hr>
-
+						<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Details </div>
+<br>
 							<div class="row payment-forms">
 								<div id="credit-card-errors" style="display: none;">
 									<div id="alert-message block-message error" id="stripe-error-message"></div>
