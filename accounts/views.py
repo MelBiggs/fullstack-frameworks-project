@@ -17,6 +17,8 @@ def login(request):
     """Return a login page"""
     if request.user.is_authenticated:
         return redirect(reverse('index'))
+
+        
     if request.method == 'POST':
         login_form = UserLoginForm(request.POST)
 

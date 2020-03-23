@@ -97,6 +97,11 @@ ul {
     color: #A9A9A9;
 } */
 
+.reset-password{
+    text-align: center;
+    padding: 2em;
+}
+
 .icon-bar {
     background-color: #fff;
 }

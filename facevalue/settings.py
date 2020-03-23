@@ -155,5 +155,5 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.CaseInsensitiveAuth'
+    'accounts.backends.EmailAuth'
 ]
