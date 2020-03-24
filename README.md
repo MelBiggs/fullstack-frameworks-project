@@ -1,5 +1,9 @@
+[Link to Deployed Website]( link )
+
 # Code Institute Milestone Project 
 ## Full Stack Frameworks with Django 
+
+> Be good to your skin. You'll wear it every day for the rest of your life. 
 
 [![Build Status](https://travis-ci.com/MelBiggs/fullstack-frameworks-project.svg?branch=master)](https://travis-ci.com/MelBiggs/fullstack-frameworks-project)
 
@@ -68,55 +72,132 @@ _"As a user I would like to"_**
 
 I wanted to style the website with a clean, semi-clinical look. 
 
-My colour scheme is:
+#### Colour Scheme
 
-| Colour Code   | Colour        | 
+| Colour Code   | Description   | 
 | ------------- |:-------------:| 
-| #6c757d       |  ![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcolorate.azurewebsites.net%2FSwatchColor%2FFFF7FF&imgrefurl=https%3A%2F%2Fcolorate.azurewebsites.net%2FColor%2FFFF7FF&tbnid=oXlUKNPZl_iwcM&vet=12ahUKEwjRm8vmy7PoAhUKRxUIHXYRDEkQMygBegUIARDQAQ..i&docid=E2j8IBfOsk9LyM&w=800&h=400&itg=1&q=%23fff7ff%20picture&safe=active&ved=2ahUKEwjRm8vmy7PoAhUKRxUIHXYRDEkQMygBegUIARDQAQ "#6c757d") 
-| #fff7ff       |               | 
+| #6c757d       | deep blueish grey|
+| #fff7ff       | pale pink     | 
 
 
+#### Typography
+
+I used [Poppins](https://fonts.google.com/specimen/Poppins) as my navigation bar font and [Roboto](https://fonts.google.com/specimen/Roboto) as the font for the project body.  
+
+#### Frameworks
+
+* [Bootstrap](https://getbootstrap.com/) - 
+Having used Materialize for my last project, I was happy to make a return to Bootstrap as I find it to be a great framework and easy to use.
+
+* [JQuery](https://jquery.com/) - 
+The project uses JQuery to simplify DOM manipulation.
+
+* [Django](https://www.djangoproject.com/) - 
+Django is a free and open-source web framework that I've used to render the back-end Python with the front-end Bootstrap.
+
+#### Icons
+
+I used [Font Awesome](https://fontawesome.com/icons?d=gallery) for the icons in my project
 
 ### Wireframes
 
+For my wireframes I used paper and pencil initially. 
+[Here is a link to my wireframe]( )
+
+## Features
+
+### Features left to implement
+
+## Technologies Used
+
+* [Gitpod](https://www.gitpod.io/) -  Gitpod is the code editor I used
+* [Github](https://github.com/) - Github was used as remote storage
+* [FontAwesome](https://fontawesome.com/) - Font Awesome is a great library of icons. I used this library for any icons.
+* [Google Fonts](https://fonts.google.com/) - There is a great selection of fonts in the Google Fonts library, some of which I used in my project.
+
+### Frontend Technologies
+
+* [HTML](https://en.wikipedia.org/wiki/HTML) - HTML was used to control the layout and the structure of the project.
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
+* [JQuery](https://jquery.com/) - jQuery is the primary JavaScript functionality.
+* [Bootstrap](https://getbootstrap.com/) - This is the front-end framework for layout and design.
+* [Stripe](https://stripe.com/ie) - Stripe allows the user to make secure payments.
+* [Amazon AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0#) - I stored my staticfiles and media in AWS 
+
+### Backend Technologies
+
+* [Python]( https://www.python.org/) - This is the back-end programming language.
+* [Heroku]( https://heroku.com/) - The app is hosted on Heroku.
+* [Django](https://www.djangoproject.com/) - Django is a Python web framework I used.
+* [Django](https://www.postgresql.org/) - Through Heroku, this is a relational SQL database plugin.
+
+
+### Backend Technologies
+[Gifox](https://gifox.io/) - I used Gifox to record the website demo for my README file. I recorded it off the website [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fmelbiggs.github.io%2Fifd-milestoneproject%2F#)
+
+
+## Testing
+
+### Validators
+
+#### HTML
+
+[W3C Markup Validation Service]( https://validator.w3.org/)
+
+#### CSS
+
+[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+
+#### JavaScript
+
+[JSHint]( https://jshint.com/)
+
+#### Python
+
+[PEP8]( http://pep8online.com/)
+
+#### Jasmine
+
+
+### Compatibility
+
+
+### Issues/Bugs
+
+
+### Automated Testing
+
+Django's built-in unittest library module and TestCase subclass 
+
+
+## Deployment
+
+This project can be viewed on [Heroku]( link )
+
+### Local Deployment
+
+
+### Remote Deployment
 
 
 
+## Credits 
 
-A website selling skin products from all over the world
+### Media
 
-External user’s goal:
-Find, learn about and buy skin products or makeup for their particular skin issues
-
-Site owner's goal:
-Earn money on selling the products (the site owner is the seller)
-
-Potential features to include:
-Create an online store focused on selling various reliable skin products
-
-Allow users to search for items based on various fields, e.g. skin type, skin problem, product type (moisturiser, toner, nightcream, daycream)
-
-Allow users to see the price, image and other basic details about the product on the search page
-
-When in the specific item, users would be able to learn about the product, the company, it's ingredients and the sites opinions on it.
-
-For example, including what skin problems this tackled well or is there a famous person who has mentioned it.
-
-Users have to be registered for this to purchase this. 
-
-Allow registered users to write reviews about the products, only if they purchased them. - NOT COVERED IN THE COURSE, will need to research
-
-Include pagination and/or other dynamic display actions using javascript.
-
-Advanced potential feature (nice-to-have)
-
-Expand the search functionality to allow users to sort results based on price, popularity and other parameters in both ascending and descending order.
-
-Include pagination and/or other dynamic display actions using javascript.
-
-Create a small graph detailing the most common skin problems or most popular creams etc 
-
+### Code
 
 Websites I've received tips on so far: 
 https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt
 https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
+
+
+### Acknowledgements
+
+I received inspiration for the theme of this project from
+
+I received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
+
+I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute Slack users for their helpful comments and suggestions on my project. 
+
+[Link to Deployed Website]
