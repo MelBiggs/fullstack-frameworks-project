@@ -171,6 +171,16 @@ caption p {
 
 /* BLOG  */
 
+.blogpostform {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 3em;
+}
+
+.edit-post-form {
+    text-align: center;
+}
+
 /* The blog layout was inspired by this template: https://colorlib.com/preview/theme/miniblog/ */
 
 .container {
