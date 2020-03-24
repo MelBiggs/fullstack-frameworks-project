@@ -4,10 +4,11 @@
 
 {% block content %}
 
-<div class = "cart-btn">
+<div class = "cart-return-btn">
 <button class="accounts-btn"><a href="{% url 'products' %}"><i class="fas fa-caret-left"></i>Continue Shopping</a></button>
 </div>
- {% if cart|length > 0 %}
+{% if cart_items %}
+{% for item in cart_items %}
 <div class="pb-5">
 	<div class="container">
 		<div class="row">
@@ -58,7 +59,7 @@
 								</td>
 							</tr>
 						</tbody>
-						{% endfor %}
+{% endfor %}
 					</table>
 				</div>
 
@@ -80,10 +81,8 @@
         </div>
       </div>
 </div>
-
+{% endfor %}
 {% else %}
-
 <div class="bg-light rounded-pill py-3 text-uppercase font-weight-bold text-center cart-empty">Your cart is empty</div>
-                
-            {% endif %}
+{% endif %}
 		{% endblock %}
