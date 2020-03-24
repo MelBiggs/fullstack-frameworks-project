@@ -342,8 +342,23 @@ caption p {
 }
 /* CHECKOUT PAGE */
 
-.payment-forms {
 
+
+/* CART */
+
+.fa-caret-left{
+    padding: .5em;
+    padding-left: 0em;
+}
+
+.cart-btn {
+    margin-left: 1em;
+    padding-bottom: 2em;
+}
+
+.cart-empty {
+    width: 50%;
+    margin: auto;
 }
 
 
