@@ -1,34 +1,42 @@
 {% extends "base.html" %}
 {% load static from staticfiles %}
-{% block page_heading %}Recent Posts{% endblock %} 
+{% block page_heading %}Recent Posts{% endblock %}
 {% block content %}
 <hr>
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-        {% for post in posts %}
-          <div class="col-lg-4 mb-4">
-            <div class="entry">
-              <a href=""><img src="http://placehold.it/900x350" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
-              <div class="excerpt">
-              <span class="post-category text-white bg-secondary mb-3">Natural Remedies</span>
 
-              <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
-              <div class="post-meta align-items-center text-left clearfix">
-                <span>{{ post.published_date }}</span>
-                <p><span class="boldtext">Views:</span> {{post.views}}</p>
-              </div>
-              <br>
-                <p> {{ post.content|truncatewords:30 }} </p>
-                <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-secondary">Read more</a></p>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        </div>
-      </div>
-    </div>  
-        {% endblock %}         
+<!-- Search Bar -->
+<form class="form-inline" action="{% url 'blogsearch' %}" method="get">
+	<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+	<button class="btn btn-outline-secondary my-2 my-sm-0 accounts-btn" type="submit">Search</button>
+</form>
+
+
+<div class="site-section">
+	<div class="container">
+		<div class="row">
+			{% for post in posts %}
+			<div class="col-lg-4 mb-4">
+				<div class="entry">
+					<a href=""><img src="http://placehold.it/900x350" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
+						<div class="excerpt">
+							<span class="post-category text-white bg-secondary mb-3">Natural Remedies</span>
+
+							<h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+							<div class="post-meta align-items-center text-left clearfix">
+								<span>{{ post.published_date }}</span>
+								<p><span class="boldtext">Views:</span> {{post.views}}</p>
+							</div>
+							<br>
+							<p> {{ post.content|truncatewords:30 }} </p>
+							<p><a href="{% url 'post_detail' post.id %}" class="btn btn-secondary">Read more</a></p>
+						</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
 
 <!--
 <div class="container">
