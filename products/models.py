@@ -35,11 +35,14 @@ class Product(models.Model):
     name = models.CharField(max_length=254, default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2, default='F')
-    # label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     # slug = models.SlugField()
     description = models.TextField()
     image = models.ImageField(upload_to='images')
 
-
     def __str__(self):
         return self.name
+
+
+class Tag(models.Model):
+    product = models.ForeignKey(Product, related_name="tags", related_query_name="tag")
+    value = models.CharField(choices=LABEL_CHOICES, max_length=2)

@@ -15,3 +15,6 @@ def face_products(request):
 def body_products(request):
     products = Product.objects.all().filter(category='B')
     return render(request, "products.html", {"products": products})
+
+
+# def filter_tags(request):
