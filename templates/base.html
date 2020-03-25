@@ -50,8 +50,9 @@
 							SkinCare
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="{% url 'products' %}">Face</a>
-							<a class="dropdown-item" href="#">Body</a>
+                        	<a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+							<a class="dropdown-item" href="{% url 'face_products' %}">Face</a>
+							<a class="dropdown-item" href="{% url 'body_products' %}">Body</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
 						</div>
