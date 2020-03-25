@@ -50,7 +50,7 @@
 							SkinCare
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        	<a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+							<a class="dropdown-item" href="{% url 'products' %}">All Products</a>
 							<a class="dropdown-item" href="{% url 'face_products' %}">Face</a>
 							<a class="dropdown-item" href="{% url 'body_products' %}">Body</a>
 							<div class="dropdown-divider"></div>
@@ -72,15 +72,15 @@
 				</ul>
 				<!-- Search Bar -->
 				<form class="form-inline" action="{% url 'search' %}" method="get">
-					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search SkinCare" aria-label="Search">
 					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 				</form>
 				<!-- Account Dropdown -->
 				<ul>
 					<div class="dropdown">
 						<button class="btn dropdown-toggle nav-dropdown" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<i class="far fa-user-circle"></i>
-  </button>
+                            <i class="far fa-user-circle"></i>
+                        </button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 							{% if user.is_authenticated %}
 							<li class="nav-item active">
@@ -167,8 +167,8 @@
 
 </html>
 
-<!-- Scripts -->	
+<!-- Scripts -->
 
 <script src="{% static 'js/index.js' %}"></script>
 
-	{% block js %} {% endblock %}
+{% block js %} {% endblock %}

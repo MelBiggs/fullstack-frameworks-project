@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from products.models import Product
 
 
 def view_cart(request):
@@ -37,10 +38,13 @@ def adjust_cart(request, id):
     return redirect(reverse('view_cart'))
 
 
-# def remove_from_cart(request, id):
-#     """Removes only one item from the cart if quanity is more than 1"""
-#     if request.method == 'POST':
-#         cart = request.session.get('cart', {}).remove(id)
-
-#     request.session['cart'] = cart
-#     return redirect(reverse('view_cart'))
+def remove_from_cart(request, id):
+    """Removes only one item from the cart if quanity is more than 1"""
+    get_object_or_404(Product, pk=id)
+    cart = request.session.get('cart', {})
+    if id in cart:
+        cart[id] -= 1
+        if cart[id] == 0:
+            del cart[id]
+    request.session['cart'] = cart
+    return redirect('view_cart')

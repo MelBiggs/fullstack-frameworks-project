@@ -60,13 +60,17 @@
 										<button type="submit" class="btn btn-secondary"><i class="far fa-edit" aria-hidden="true"></i>Amend</button>
 									</form>
 								</td>
-
+                                <td class="border-0 align-middle">
+									<form class="form-inline" method="post" action="{% url 'remove_from_cart' item.id %}">
+										{% csrf_token %}
+										<button type="submit" class="btn btn-secondary"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+									</form>
+								</td>
 							</tr>
 						</tbody>
 {% endfor %}
 					</table>
 				</div>
-
 			</div>
 		</div>
 
