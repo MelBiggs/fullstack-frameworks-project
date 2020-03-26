@@ -1,105 +1,63 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div class = "products-page">
+<!-- Tab for Face, Body and all  -->
+<div class="tab-wrapper">
+	<div class="category_tabs">
+		<ul>
+			<li class="placeholder">
+				<a data-type="all" href="#">All</a> 
+			</li>
+			<li class="filter"><a class="selected" href="{% url 'products' %}" data-type="all">All</a></li>
+			<li class="filter" data-filter=".color-1"><a href="{% url 'face_products' %}" data-type="color-1">Face</a>
+			</li>
+			<li class="filter" data-filter=".color-2"><a href="{% url 'body_products' %}" data-type="color-2">Body</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
-<div class="cd-main-content">
-	<div class="cd-tab-filter-wrapper">
-		<div class="cd-tab-filter">
-			<ul class="cd-filters">
-				<li class="placeholder">
-					<a data-type="all" href="#">All</a> <!-- selected option on mobile -->
-				</li>
-				<li class="filter"><a class="selected" href="{% url 'products' %}" data-type="all">All</a></li>
-				<li class="filter" data-filter=".color-1"><a href="{% url 'face_products' %}" data-type="color-1">Face</a></li>
-				<li class="filter" data-filter=".color-2"><a href="{% url 'body_products' %}" data-type="color-2">Body</a></li>
-			</ul>
+<!-- Filter Dropdown  -->
+	<div class="row">
+		<div class="col-12 filter-col">
+			<div class="button-group">
+				<button type="button" class="btn btn-default btn-sm dropdown-toggle tag-dropdown" data-toggle="dropdown"><i class="fas fa-filter"></i></button>
+				<ul class="dropdown-menu filter-tag-menu">
+					<li><a class="medium" data-value="Acne"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Acne</a></li>
+					<li><a class="medium" data-value="Aging"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Aging</a></li>
+					<li><a class="medium" data-value="Alopecia"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Alopecia</a></li>
+					<li><a class="medium" data-value="Cellulite"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Cellulite</a></li>
+					<li><a class="medium" data-value="Dry Skin"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Dry Skin</a></li>
+					<li><a class="medium" data-value="Eczema"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Eczema</a></li>
+					<li><a class="medium" data-value="Oily"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Oily</a></li>
+					<li><a class="medium" data-value="Pregnancy"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Pregnancy</a></li>
+					<li><a class="medium" data-value="Psoriasis"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Psoriasis</a></li>
+					<li><a class="medium" data-value="Rosacea"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Rosacea</a></li>
+					<li><a class="medium" data-value="Scarring"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Scarring</a></li>
+					<li><a class="medium" data-value="Sensitive Skin"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Sensitive Skin</a></li>
+					<li><a class="medium" data-value="Sun"
+                            tabIndex="-1"><input type="checkbox"/>&nbsp; Sun</a>
+					</li>
+					<li><a class="medium" data-value="Tired Skin"
+							tabIndex="-1"><input type="checkbox"/>&nbsp; Tired Skin</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-	<div class="cd-filter">
-		<form>
-			<div class="cd-filter-block">
-				<h4>Categories</h4>
-				<ul class="cd-filter-content cd-filters list">
-					<li>
-						<input class="input-group-text" data-filter=".check1" type="checkbox" id="checkbox1">
-						<label class="checkbox-label" for="checkbox1">Acne</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-						<label class="checkbox-label" for="checkbox2">Aging</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-						<label class="checkbox-label" for="checkbox3">Alopecia</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox4">
-						<label class="checkbox-label" for="checkbox3">Cellulite</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox5">
-						<label class="checkbox-label" for="checkbox3">Dry Skin</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox6">
-						<label class="checkbox-label" for="checkbox3">Eczema</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox7">
-						<label class="checkbox-label" for="checkbox3">Oily</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox8">
-						<label class="checkbox-label" for="checkbox3">Pregnancy</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox9">
-						<label class="checkbox-label" for="checkbox3">Psoriasis</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox10">
-						<label class="checkbox-label" for="checkbox3">Rosacea</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox11">
-						<label class="checkbox-label" for="checkbox3">Scarring</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox12">
-						<label class="checkbox-label" for="checkbox3">Sensitive Skin</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox13">
-						<label class="checkbox-label" for="checkbox3">Sun</label>
-					</li>
-					<li>
-						<input class="filter" data-filter=".check3" type="checkbox" id="checkbox14">
-						<label class="checkbox-label" for="checkbox3">Tired Skin</label>
-					</li>
-				</ul>
-			</div>
-
-			<div class="cd-filter-block">
-				<h4>Currency</h4>
-				<div class="cd-filter-content">
-					<div class="cd-select cd-filters">
-						<select class="filter" name="selectThis" id="selectThis">
-								<option value=".option1">EUR</option>
-								<option value=".option3">GBP</option>
-								<option value=".option4">USD</option>
-							</select>
-					</div>
-				</div>
-			</div>
-		</form>
-
-		<a href="#" class="cd-close"><i class="fas fa-window-close"></i></a>
-	</div>
-	<a href="#" class="cd-filter-trigger">Filters</a>
-</div>
+<!-- Products  -->
 
 <div class="row row-flex products-row">
 	{% for product in products %}
@@ -124,5 +82,5 @@
 	</div>
 	{% endfor %}
 </div>
-</div>
+
 {% endblock %}
