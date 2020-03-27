@@ -29,7 +29,7 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-
+    
 class Product(models.Model):
 
     name = models.CharField(max_length=254, default='')
