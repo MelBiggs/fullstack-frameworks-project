@@ -1,9 +1,23 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Product
 
+ITEMS_PER_PAGE = 3
 
 def all_products(request):
     products = Product.objects.all()
+
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+
     return render(request, "products.html", {"products": products})
 
 

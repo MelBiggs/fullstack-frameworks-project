@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
 <!-- Tab for Face, Body and all  -->
 <div class="tab-wrapper">
 	<div class="category_tabs">
@@ -56,6 +57,26 @@
 			</div>
 		</div>
 	</div>
+
+{% if products.has_previous %}
+    <a href="?page=1"><i class="fas fa-angle-left"></i></a>
+    <a href="?page={{ products.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
+{% endif %}
+
+<div class = "pagination">
+{% for num in products.paginator.page_range %}
+    {% if products.number == num %}
+    <h4>{{num}}</h4>
+  {% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
+    {{num}}
+  {% endif %}
+{% endfor %}
+</div>
+
+{% if products.has_next %}
+    <a href="?page={{ products.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+    <a href="?page={{ products.paginator.num_pages }}"><i class="fas fa-chevron-right"></i></a>
+{% endif %}
 
 <!-- Products  -->
     <div class="row row-flex products-row">
