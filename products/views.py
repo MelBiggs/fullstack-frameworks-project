@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Product
+from .forms import ReviewForm
 
 ITEMS_PER_PAGE = 3
 
@@ -40,7 +41,20 @@ def product_detail(request, pk):
     not found
     """
     product = get_object_or_404(Product, pk=pk)
-    return render(request, "productdetail.html", {'product': product})
+    if request.method == "POST":
+        #todo verify logged in
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.owner = request.user
+            review.product = product
+            review.save()
+
+            return redirect(product_detail, product.pk)
+
+    else:
+        form = ReviewForm()
+        return render(request, "productdetail.html", {'product': product, 'form': form})
 
 
 # @login_required

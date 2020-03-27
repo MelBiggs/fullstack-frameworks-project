@@ -1,5 +1,27 @@
 {% extends "base.html" %}
+
+{% load bootstrap_tags %}
+
 {% block content %}
+
+<h1>{{product.name}}</h1>
+
+<!-- do product details here-->
+
+<h3>Reviews</h3><hr>
+
+<form method="POST" id="account-form">
+	{% csrf_token %} 
+    {{ form | as_bootstrap }}
+    <button type="submit" class="btn accounts-btn">Submit Comment</button>
+</form>
+
+
+{% for review in product.reviews.all %}
+    {{review.title}}
+    {{review.user.username}}
+
+{% endfor %}
 
 
 {% endblock %}

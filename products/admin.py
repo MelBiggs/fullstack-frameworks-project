@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Tag
+from .models import Product, Tag, Review
 
 
 class TagAdminInline(admin.TabularInline):
@@ -12,3 +12,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Review)

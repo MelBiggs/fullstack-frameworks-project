@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 CATEGORY_CHOICES = (
@@ -45,3 +46,12 @@ class Product(models.Model):
 class Tag(models.Model):
     product = models.ForeignKey(Product, related_name="tags", related_query_name="tag")
     value = models.CharField(choices=LABEL_CHOICES, max_length=2)
+
+
+class Review(models.Model):
+    title = models.CharField(max_length=254, default='')
+    body = models.TextField()
+    score = models.IntegerField()
+    approved = models.BooleanField(default=False)
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE, related_query_name="review", null=True)
+    user = models.ForeignKey(User, related_name="reviews", on_delete=models.CASCADE, related_query_name="review", null=True)
