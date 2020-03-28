@@ -10,6 +10,18 @@
 
 <h3>Reviews</h3><hr>
 
+{% if user.is_authenicated %}
+<form method="POST" id="account-form">
+	{% csrf_token %} 
+    {{ form | as_bootstrap }}
+    <button type="submit" class="btn accounts-btn">Submit Comment</button>
+</form>
+{%else%}
+<br>
+<div class = "log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post your own review</div>
+<br>
+{%endif%}
+
 {% for review in product.reviews.all %}
         <div class="review" style="padding: 10px;">
           <div class="font-weight-bold">
@@ -22,15 +34,5 @@
         </div>
         <hr>
         {% endfor %}
-
-
-<form method="POST" id="account-form">
-	{% csrf_token %} 
-    {{ form | as_bootstrap }}
-    <button type="submit" class="btn accounts-btn">Submit Comment</button>
-</form>
-
-
-
 
 {% endblock %}

@@ -11,6 +11,9 @@
 	{% csrf_token %} 
     {{ login_form | as_bootstrap }}
     <button type="submit" class="btn accounts-btn">Log In</button>
-    <div class="reset-password"><a href="{% url 'password_reset' %}">Forget your Password?</a></div>
+    <div class="reset-password">
+    <p><a href="{% url 'registration' %}">No account? Register here!</a></p>
+    <p><a href="{% url 'password_reset' %}">Forget your Password?</a></p>
+    </div>
 </form>
 {% endblock %}
