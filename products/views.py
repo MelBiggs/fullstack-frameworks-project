@@ -5,6 +5,7 @@ from .forms import ReviewForm
 
 ITEMS_PER_PAGE = 3
 
+
 def all_products(request):
     products = Product.objects.all()
 
@@ -42,7 +43,7 @@ def product_detail(request, pk):
     """
     product = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
-        #todo verify logged in
+       
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
@@ -55,11 +56,3 @@ def product_detail(request, pk):
     else:
         form = ReviewForm()
         return render(request, "productdetail.html", {'product': product, 'form': form})
-
-
-# @login_required
-# def like_product(request):
-
-
-
-# def filter_tags(request):

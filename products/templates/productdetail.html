@@ -10,6 +10,20 @@
 
 <h3>Reviews</h3><hr>
 
+{% for review in product.reviews.all %}
+        <div class="review" style="padding: 10px;">
+          <div class="font-weight-bold">
+            {{review.title}}
+            <p class=" text-muted font-weight-normal">
+              {{review.user.username|capfirst}} - {{ review.published_date }}
+            </p>
+          </div>
+          {{ review.body | linebreaks }}
+        </div>
+        <hr>
+        {% endfor %}
+
+
 <form method="POST" id="account-form">
 	{% csrf_token %} 
     {{ form | as_bootstrap }}
@@ -17,11 +31,6 @@
 </form>
 
 
-{% for review in product.reviews.all %}
-    {{review.title}}
-    {{review.user.username}}
-
-{% endfor %}
 
 
 {% endblock %}

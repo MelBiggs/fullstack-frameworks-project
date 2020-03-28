@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 CATEGORY_CHOICES = (
@@ -30,7 +31,7 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-    
+
 class Product(models.Model):
 
     name = models.CharField(max_length=254, default='')
@@ -53,5 +54,6 @@ class Review(models.Model):
     body = models.TextField()
     score = models.IntegerField()
     approved = models.BooleanField(default=False)
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE, related_query_name="review", null=True)
     user = models.ForeignKey(User, related_name="reviews", on_delete=models.CASCADE, related_query_name="review", null=True)
