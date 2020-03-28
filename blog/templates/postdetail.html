@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
 {% block content %}
 
 <div class="site-cover overlay" style="background-image: /media/{{ post.image }}">
@@ -84,4 +85,33 @@
             </div>
         </div>
     </div> -->
+<hr>
+<div class="heading_comments_reviews">Comments</div>
+<hr>
+
+{% if user.is_authenicated %}
+<form method="POST" id="account-form">
+	{% csrf_token %} 
+    {{ form | as_bootstrap }}
+    <button type="submit" class="btn accounts-btn">Submit Comment</button>
+</form>
+{%else%}
+<br>
+<div class = "log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post a comment!</div>
+<br>
+{%endif%}
+
+{% for comment in post.comment.all %}
+        <div class="review" style="padding: 10px;">
+          <div class="font-weight-bold">
+            {{comment.title}}
+            <p class=" text-muted font-weight-normal">
+              {{comment.user.username|capfirst}} - {{ comment.published_date }}
+            </p>
+          </div>
+          {{ comment.body | linebreaks }}
+        </div>
+        <hr>
+        {% endfor %}
+
 			{% endblock %}

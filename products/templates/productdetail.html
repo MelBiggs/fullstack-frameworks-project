@@ -7,14 +7,14 @@
 <h1>{{product.name}}</h1>
 
 <!-- do product details here-->
-
-<h3>Reviews</h3><hr>
-
+<hr>
+<div class="heading_comments_reviews">Reviews</div>
+<hr>
 {% if user.is_authenicated %}
 <form method="POST" id="account-form">
 	{% csrf_token %} 
     {{ form | as_bootstrap }}
-    <button type="submit" class="btn accounts-btn">Submit Comment</button>
+    <button type="submit" class="btn accounts-btn">Submit Review</button>
 </form>
 {%else%}
 <br>

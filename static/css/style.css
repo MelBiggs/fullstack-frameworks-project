@@ -23,7 +23,6 @@ a {
     color: #6c757d;
 }
 
-
 /* NAVBAR */
 
 .navbar {
@@ -69,7 +68,6 @@ a {
 ul {
     padding-left: 10px;
 }
-
 
 .item-number{
     margin: .5em;
@@ -158,6 +156,12 @@ ul {
 .label-warning[href],
 .badge-warning[href] {
     background-color: #c67605;
+}
+
+/* BLOG COMMENTS,  */
+
+.heading_comments_reviews{
+    text-align: center;
 }
 
 /* PRODUCT PAGE */
