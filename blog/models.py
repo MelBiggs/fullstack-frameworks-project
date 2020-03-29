@@ -28,4 +28,4 @@ class Comment(models.Model):
     user = models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE, related_query_name="comment", null=True)
 
     class Meta:
-        ordering = ['published_date']
+        ordering = ['-published_date']

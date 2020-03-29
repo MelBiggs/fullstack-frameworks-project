@@ -89,29 +89,28 @@
 <div class="heading_comments_reviews">Comments</div>
 <hr>
 
-{% if user.is_authenicated %}
+{% if user.is_authenticated %}
 <form method="POST" id="account-form">
-	{% csrf_token %} 
-    {{ form | as_bootstrap }}
-    <button type="submit" class="btn accounts-btn">Submit Comment</button>
+	{% csrf_token %}
+	{{ form | as_bootstrap }}
+	<button type="submit" class="btn accounts-btn">Submit Comment</button>
 </form>
-{%else%}
+{% else %}
 <br>
-<div class = "log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post a comment!</div>
+<div class="log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post your own review</div>
 <br>
-{%endif%}
+{% endif %}
 
-{% for comment in post.comment.all %}
-        <div class="review" style="padding: 10px;">
-          <div class="font-weight-bold">
-            {{comment.title}}
-            <p class=" text-muted font-weight-normal">
-              {{comment.user.username|capfirst}} - {{ comment.published_date }}
-            </p>
-          </div>
-          {{ comment.body | linebreaks }}
-        </div>
-        <hr>
-        {% endfor %}
+{% for comment in post.comments.all %}
+<div class="review" style="padding: 10px;">
+	<div class="font-weight-bold">
+		<p class=" text-muted font-weight-normal">
+			{{comment.user.username|capfirst}} - {{ comment.published_date }}
+		</p>
+	</div>
+	{{ comment.body | linebreaks }}
+</div>
+<hr>
+{% endfor %}
 
 			{% endblock %}
