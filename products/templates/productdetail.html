@@ -3,36 +3,75 @@
 {% load bootstrap_tags %}
 
 {% block content %}
+<div class="container">
+	<div class="card product-detail-card">
+		<div class="container-fliud">
+			<div class="wrapper row">
+				<div class="preview col-md-6">
+					<div class="product-detail-img" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')">
+					</div>
+				</div>
+				<div class="details col-md-6">
+					<h3 class="product-title">{{product.name}}</h3>
+					<div class="rating">
+						<div class="stars">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<span class="review-no">41 reviews</span>
+					</div>
+					<p class="product-description">{{ product.description }}</p>
+                    <br>
+					<h4 class="price">Price:
+						<span><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ product.price }}</span></h4>
+                        <br>
+					<form method="post" action="{% url 'add_to_cart' product.id %}">
+						{% csrf_token %}
+						<div class="input-group">
+							<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+							<span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Add</button>
+                        </span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<h1>{{product.name}}</h1>
+<br>
+<br>
 
-<!-- do product details here-->
 <hr>
-<div class="heading_comments_reviews">Reviews</div>
+<div class="heading_comments_reviews">Reviews on {{product.name}}</div>
 <hr>
-{% if user.is_authenicated %}
+{% if user.is_authenticated %}
 <form method="POST" id="account-form">
-	{% csrf_token %} 
-    {{ form | as_bootstrap }}
-    <button type="submit" class="btn accounts-btn">Submit Review</button>
+	{% csrf_token %}
+	{{ form | as_bootstrap }}
+	<button type="submit" class="btn accounts-btn">Submit Review</button>
 </form>
-{%else%}
+{% else %}
 <br>
-<div class = "log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post your own review</div>
+<div class="log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post your own review</div>
 <br>
-{%endif%}
+{% endif %}
 
 {% for review in product.reviews.all %}
-        <div class="review" style="padding: 10px;">
-          <div class="font-weight-bold">
-            {{review.title}}
-            <p class=" text-muted font-weight-normal">
-              {{review.user.username|capfirst}} - {{ review.published_date }}
-            </p>
-          </div>
-          {{ review.body | linebreaks }}
-        </div>
-        <hr>
-        {% endfor %}
+<div class="review" style="padding: 10px;">
+	<div class="font-weight-bold">
+		{{review.title}}
+		<p class=" text-muted font-weight-normal">
+			{{review.user.username|capfirst}} - {{ review.published_date }}
+		</p>
+	</div>
+	{{ review.body | linebreaks }}
+</div>
+<hr>
+{% endfor %}
 
 {% endblock %}
