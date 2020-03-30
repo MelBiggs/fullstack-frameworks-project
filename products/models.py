@@ -33,7 +33,6 @@ ADDRESS_CHOICES = (
 
 
 class Product(models.Model):
-
     name = models.CharField(max_length=254, default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2, default='F')

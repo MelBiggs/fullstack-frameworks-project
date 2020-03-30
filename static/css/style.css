@@ -216,9 +216,16 @@ caption p {
     min-height: 40px;
 }
 
-/* .form-inline {
-    margin-bottom: 0px;
-} */
+.tag-filter-btn{
+    background-color: #fff7ff!important;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    margin-left: 2em;
+}
+
+.tag-filter-btn:hover{
+    color: black;
+}
 
 /* PRODUCT DETAIL PAGE */
 
@@ -492,7 +499,7 @@ small {
   color: #6c757d;
 }
 
-@media only screen and (min-width: 768px) {
+
   .category_tabs {
     /* tabbed navigation style on medium devices */
     width: auto;

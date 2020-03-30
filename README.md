@@ -191,9 +191,16 @@ This project can be viewed on [Heroku]( link )
 
 ### Code
 
+When I was working out how to get tag filtering working (i.e. filtering by skin issue), these sources really helped me:
+https://stackoverflow.com/questions/4915920/how-to-delete-an-item-in-a-list-if-it-exists - This helped me remove 'page' from filter_keys
+https://stackoverflow.com/questions/24763045/capture-all-url-parameters-in-django-views-py - This helped me in getting all the GET parameters
+https://stackoverflow.com/questions/16819222/how-to-return-dictionary-keys-as-a-list-in-python - This taught me how to get keys using `[*]`
+
+
+
 Websites I've received tips on so far: 
-https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt
-https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
+https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt 
+https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html 
 
 
 ### Acknowledgements

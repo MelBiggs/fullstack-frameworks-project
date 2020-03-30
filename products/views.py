@@ -2,12 +2,24 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Product
 from .forms import ReviewForm
+import operator
+from django.db.models import Q
+from functools import reduce
+
 
 ITEMS_PER_PAGE = 3
 
 
 def all_products(request):
-    products = Product.objects.all()
+    filter_keys = [*request.GET]
+    if 'page' in filter_keys:
+        filter_keys.remove('page')
+
+    if len(filter_keys) > 0:
+        products = Product.objects.filter(reduce(operator.and_, (Q(tag__value=x)for x in filter_keys)))
+
+    else:
+        products = Product.objects.all()
 
     paginator = Paginator(products, ITEMS_PER_PAGE)
 
