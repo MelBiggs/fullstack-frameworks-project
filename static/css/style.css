@@ -294,10 +294,13 @@ caption p {
     padding-bottom: 2em;
 }
 
+
 #blog-img {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; 
+    height: 300px;
+    width: 400px;
 }
 
 .post-category {
@@ -586,7 +589,7 @@ small {
         }
 }
 
-@media (max-width: 767.98px) {
+/* @media (max-width: 767.98px) {
     #blog-img {
         height: 400px !important;
         position: relative;
@@ -598,7 +601,7 @@ small {
     #blog-img {
         height: 200px; 
         } 
-    }
+    } */
 
 
   

@@ -41,7 +41,7 @@ I looked at the other project ideas given by the Code Institute and worked them 
 
 * Allow registered users to write reviews about the products, only if they purchased them.
 
-* Include pagination and/or other dynamic display actions using javascript.
+* Include pagination and/or other dynamic display actions.
 
 
 ### User Stories
@@ -52,7 +52,7 @@ _"As a user I would like to"_**
 
 * view all products and blog posts without logging in 
 * view the site from any device (mobile, tablet, desktop)
-* leave a review for products I have purchased
+* leave a review for products I liked
 * be able to register and log in/out
 * be able to change my password 
 * filter products based on a particular skin issue
@@ -107,6 +107,10 @@ For my wireframes I used paper and pencil initially.
 ## Features
 
 ### Features left to implement
+
+I would like to add the following features in time: 
+* Calculating the shipping and handling fees into the total value
+* Expand the currency used to include GBP and USD 
 
 ## Technologies Used
 

@@ -3,7 +3,7 @@
 {% load bootstrap_tags %}
 {% block content %}
 
-<div class="site-cover overlay" style="background-image: /media/{{ post.image }}">
+<div class="site-cover overlay" style="background-image: url(/media/{{ post.image }})">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-10">
@@ -28,68 +28,22 @@
 
 <section class="site-section">
 	<div class="container">
-
 		<div class="row blog-entries">
-
 			<div class="col-md-12 col-lg-8">
 				<div>{{ post.content }}</div>
-
-				<!-- Images for blogs -->
-				<!-- <div class="row mb-5 mt-5">
-              <div class="col-md-12 mb-4">
-                <img src="images/img_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <div class="col-md-6 mb-4">
-                <img src="images/img_2.jpg" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <div class="col-md-6 mb-4">
-                <img src="images/img_3.jpg" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-            </div> -->
 			</div>
-
-
 			<div class="pt-5">
 				<!-- <p>Categories: <a href="#">Food</a>, <a href="#">Travel</a></p>   -->
 				<p>Tags: <a href="#">{{ post.tag }}</a></p>
 			</div>
-
 			<a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
-
         {% if user.is_superuser %}
 			<a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit Post</a>
         {% endif %}
 
 
+<!-- Comments  -->
 
-
-
-			<!-- 
-    <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="story-img" href="#">
-                <img src="/media/img/profile.jpg" class="img-circle">
-            </a>
-            <p><span class="boldtext">Author:</span> Mel</p>
-        </div>
-        <div class="col-sm-10 col-md-9">
-            {% if post.image %}
-                <img class="img-blogpost" src="/media/{{ post.image }}">
-            {% endif %}
-            <h3>{{ post.title }}</h3>
-            <div class="row">
-                <div class="col-xs-9">
-                    <p>{{ post.content }}</p>
-                    <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                    <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-                    <a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
-                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div> -->
 <hr>
 <div class="heading_comments_reviews">Comments</div>
 <hr>
@@ -117,5 +71,31 @@
 </div>
 <hr>
 {% endfor %}
+{% endblock %}
 
-			{% endblock %}
+			<!-- 
+    <div class="row">
+        <div class="col-md-2 col-sm-3 text-center">
+            <a class="story-img" href="#">
+                <img src="/media/img/profile.jpg" class="img-circle">
+            </a>
+            <p><span class="boldtext">Author:</span> Mel</p>
+        </div>
+        <div class="col-sm-10 col-md-9">
+            {% if post.image %}
+                <img class="img-blogpost" src="/media/{{ post.image }}">
+            {% endif %}
+            <h3>{{ post.title }}</h3>
+            <div class="row">
+                <div class="col-xs-9">
+                    <p>{{ post.content }}</p>
+                    <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                    <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                    <a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
+                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div> -->
