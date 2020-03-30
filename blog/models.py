@@ -11,8 +11,8 @@ class Post(models.Model):
     writer = models.CharField(max_length=200, default="Melissa Biggs")
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
-    published_date = models.DateTimeField(blank=True, null=True,
-                                          default=timezone.now)
+    published_date = models.DateField(blank=True, null=True,
+                                      default=timezone.now)
     views = models.IntegerField(default=0)
     tag = models.CharField(max_length=30, blank=True, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
@@ -25,9 +25,14 @@ class Comment(models.Model):
     title = models.CharField(max_length=254, default='')
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE, related_query_name="comment", null=True)
-    user = models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE, related_query_name="comment", null=True)
+    published_date = models.DateTimeField(blank=True, null=True,
+                                          default=timezone.now)
+    post = models.ForeignKey(Post,
+                             related_name="comments", on_delete=models.CASCADE,
+                             related_query_name="comment", null=True)
+    user = models.ForeignKey(User, related_name="comments",
+                             on_delete=models.CASCADE,
+                             related_query_name="comment", null=True)
 
     class Meta:
         ordering = ['-published_date']

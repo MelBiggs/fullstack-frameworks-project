@@ -22,7 +22,7 @@
 				<div class="entry">    
 					<a href="{% url 'post_detail' post.id %}"><img src="/media/{{ post.image }}" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
 						<div class="excerpt">
-							<span class="post-category text-white bg-secondary mb-3">Natural Remedies</span>
+							<span class="post-category text-white bg-secondary mb-3">{{ post.tag }}</span>
 
 							<h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
 							<div class="post-meta align-items-center text-left clearfix">
