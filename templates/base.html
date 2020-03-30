@@ -28,6 +28,7 @@
 
 	{% block head_js %}
 	{% endblock head_js %}
+
 </head>
 
 <body>
@@ -60,13 +61,18 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle skincare-drop" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Blog
+							What are you looking for?
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="{% url 'products' %}">Face</a>
-							<a class="dropdown-item" href="#">Body</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="{% url 'get_posts' %}">Blog</a>
+							<a class="dropdown-item" href="{% url 'moisturiser_products' %}">Moisturisers</a>
+							<a class="dropdown-item" href="{% url 'cleanser_products' %}">Cleansers</a>
+                            <a class="dropdown-item" href="{% url 'exfoliator_products' %}">Exfoliators</a>
+							<a class="dropdown-item" href="{% url 'serum_products' %}">Serums</a>
+							<a class="dropdown-item" href="{% url 'toner_products' %}">Toners</a>
+							<a class="dropdown-item" href="{% url 'masks_products' %}">Face Masks</a>
+							<a class="dropdown-item" href="{% url 'sunscreen_products' %}">Sunscreens</a>
+							<a class="dropdown-item" href="{% url 'eye_products' %}">Eye Creams</a>
+                            <a class="dropdown-item" href="{% url 'chemical_products' %}">Chemical</a>
 						</div>
 					</li>
 				</ul>

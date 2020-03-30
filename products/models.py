@@ -5,10 +5,10 @@ from django.utils import timezone
 
 CATEGORY_CHOICES = (
     ('F', 'Face'),
-    ('B', 'Body'),
-    ('BL', 'Blog')
+    ('B', 'Body')
 )
 
+# Skin Issues - Searchable on the product page
 LABEL_CHOICES = (
     ('EC', 'Eczema'),
     ('PS', 'Psoriasis'),
@@ -26,9 +26,17 @@ LABEL_CHOICES = (
     ('SU', 'Sun')
 )
 
-ADDRESS_CHOICES = (
-    ('B', 'Billing'),
-    ('S', 'Shipping'),
+# Product Types
+TYPE_CHOICES = (
+    ('C', 'Cleanser'),
+    ('EX', 'Exfoliator'),
+    ('SE', 'Serum'),
+    ('M', 'Moisturiser'),
+    ('SU', 'Sunscreen'),
+    ('T', 'Toner'),
+    ('FM', 'Face Mask'),
+    ('E', 'Eye Cream'),
+    ('CH', 'Chemical'),
 )
 
 
@@ -37,6 +45,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2, default='F')
     description = models.TextField()
+    product_type = models.CharField(choices=TYPE_CHOICES, max_length=2, default="M")
     image = models.ImageField(upload_to='images')
 
     def __str__(self):

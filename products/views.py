@@ -92,3 +92,139 @@ def product_detail(request, pk):
     else:
         form = ReviewForm()
         return render(request, "productdetail.html", {'product': product, 'form': form})
+
+
+# View for Product Types
+
+def cleanser_products(request):
+    products = Product.objects.all().filter(product_type='C')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def exfoliator_products(request):
+    products = Product.objects.all().filter(product_type='EX')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+def serum_products(request):
+    products = Product.objects.all().filter(product_type='SE')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def moisturiser_products(request):
+    products = Product.objects.all().filter(product_type='M')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def sunscreen_products(request):
+    products = Product.objects.all().filter(product_type='SU')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def toner_products(request):
+    products = Product.objects.all().filter(product_type='T')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def masks_products(request):
+    products = Product.objects.all().filter(product_type='FM')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def eye_products(request):
+    products = Product.objects.all().filter(product_type='E')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
+
+
+def chemical_products(request):
+    products = Product.objects.all().filter(product_type='CH')
+    paginator = Paginator(products, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    products = paginator.page(page)
+    return render(request, "products.html", {"products": products})
