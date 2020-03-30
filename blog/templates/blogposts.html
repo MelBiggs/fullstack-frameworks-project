@@ -6,18 +6,19 @@
 
 <!-- Search Bar -->
 <div class="blog_search">
-<form class="form-inline" action="{% url 'blogsearch' %}" method="get">
-	<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
-	<button class="btn btn-outline-secondary my-2 my-sm-0 accounts-btn" type="submit">Search</button>
-</form>
+	<form class="form-inline" action="{% url 'blogsearch' %}" method="get">
+		<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+		<button class="btn btn-outline-secondary my-2 my-sm-0 accounts-btn" type="submit">Search</button>
+	</form>
 </div>
 <hr>
 
+<!-- Blog Posts -->
 <div class="site-section">
 	<div class="container">
 		<div class="row">
 			{% for post in posts %}
-			<div class="col-lg-4 mb-4">
+			<div class="col-lg-4 col-md-6 col-sm-8 mb-4">
 				<div class="entry">
 					<a href=""><img src="http://placehold.it/900x350" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
 						<div class="excerpt">
@@ -25,8 +26,16 @@
 
 							<h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
 							<div class="post-meta align-items-center text-left clearfix">
-								<span>{{ post.published_date }}</span>
-								<p><span class="boldtext">Views:</span> {{post.views}}</p>
+								{% if post.writer == 'Melissa Biggs' %}
+								<figure class="mb-0 mr-3 float-left">
+									<img src="{% static 'img/author-circle.png' %}" alt="Image" class="img-fluid author-figure"></figure>
+									{% else %}
+									<figure class="author-figure mb-0 mr-3 float-left">
+										<img src="{% static 'img/Logo-circle.png' %}" alt="Image" class="img-fluid"></figure>
+										{% endif %}
+										<span class="d-inline-block mt-1">By {{post.writer}}</span>
+										<span> - {{ post.published_date }}</span>
+										<p><span class="boldtext">Views:</span> {{post.views}}</p>
 							</div>
 							<br>
 							<p> {{ post.content|truncatewords:30 }} </p>
@@ -41,26 +50,27 @@
 
 
 <!-- Pagination -->
-<div class = "pagination">
-{% if posts.has_previous %}
-    <a class="pagination-action" href="?page=1"><i class="fas fa-angle-left"></i></a>
-    <a class="pagination-action" href="?page={{ products.previous_page_number }}"><i class="fas fa-angle-double-left"></i></a>
-{% endif %}
+<div class="pagination">
+	{% if posts.has_previous %}
+	<a class="pagination-action" href="?page=1"><i class="fas fa-angle-left"></i></a>
+	<a class="pagination-action"
+		href="?page={{ products.previous_page_number }}"><i class="fas fa-angle-double-left"></i></a>
+	{% endif %}
 
-{% for num in posts.paginator.page_range %}
-    {% if posts.number == num %}
-    <span class="pagination-number pagination-current">{{num}}</span>
-  {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
-    <a class="pagination-number" href="?page={{num}}">{{num}}</a>
-  {% endif %}
-{% endfor %}
+	{% for num in posts.paginator.page_range %}
+	{% if posts.number == num %}
+	<span class="pagination-number pagination-current">{{num}}</span>
+	{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+	<a class="pagination-number" href="?page={{num}}">{{num}}</a>
+	{% endif %}
+	{% endfor %}
 
 
-{% if posts.has_next %}
-    <a class="pagination-action" href="?page={{ products.next_page_number }}"><i class="fas fa-angle-right"></i></a>
-    <a class="pagination-action" href="?page={{ products.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
-{% endif %}
+	{% if posts.has_next %}
+	<a class="pagination-action" href="?page={{ products.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+	<a class="pagination-action"
+		href="?page={{ products.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
+	{% endif %}
 </div>
 
 {% endblock %}
-

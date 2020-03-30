@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
 
@@ -10,8 +11,12 @@
 					<span class="post-category text-white bg-info mb-3">Natural</span>
 					<h1 class="mb-4">{{ post.title }}</h1>
 					<div class="post-meta align-items-center text-center">
-						<!-- <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="" alt="Image" class="img-fluid"></figure> -->
-						<span class="d-inline-block mt-1">By Melissa Biggs</span>
+                    {% if post.writer == 'Melissa Biggs' %}
+				    <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="{% static 'img/author-circle.png' %}" alt="Image" class="img-fluid"></figure>
+                    {% else %}
+                    <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="{% static 'img/Logo-circle.png' %}" alt="Image" class="img-fluid"></figure>
+                    {% endif %}
+						<span class="d-inline-block mt-1">{{post.writer}}</span>
 						<span>&nbsp;-&nbsp; {{ post.published_date }}</span>
 						<p>Views: {{post.views}}</p>
 					</div>
