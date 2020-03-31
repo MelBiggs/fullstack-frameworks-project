@@ -16,7 +16,8 @@ def all_products(request):
         filter_keys.remove('page')
 
     if len(filter_keys) > 0:
-        products = Product.objects.filter(reduce(operator.and_, (Q(tag__value=x)for x in filter_keys)))
+        products = Product.objects.filter(
+            reduce(operator.and_, (Q(tag__value=x)for x in filter_keys)))
 
     else:
         products = Product.objects.all()
@@ -91,7 +92,8 @@ def product_detail(request, pk):
 
     else:
         form = ReviewForm()
-        return render(request, "productdetail.html", {'product': product, 'form': form})
+        return render(request, "productdetail.html", {'product': product,
+                                                      'form': form})
 
 
 # View for Product Types
@@ -124,6 +126,7 @@ def exfoliator_products(request):
 
     products = paginator.page(page)
     return render(request, "products.html", {"products": products})
+
 
 def serum_products(request):
     products = Product.objects.all().filter(product_type='SE')

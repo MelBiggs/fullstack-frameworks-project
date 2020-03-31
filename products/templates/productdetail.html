@@ -4,9 +4,9 @@
 
 {% block content %}
 <div class="container product-detail-container">
-{% for tags in product.tags %}
+	{% for tags in product.tags %}
 	<p class="post-category text-white bg-secondary mb-3">{{tag.value}}</p>
-{% endfor %}
+	{% endfor %}
 
 
 	<div class="row">
@@ -18,7 +18,7 @@
 			<h4 class="my-3">{{product.name}}</h4>
 			<p>{{ product.description }}</p>
 			<hr>
-			<h5 class="my-3 price">Price: 
+			<h5 class="my-3 price">Price:
 				<span><i class="fas fa-euro-sign" aria-hidden="true"></i> {{ product.price }}</span></h5>
 			<hr>
 			<div class="rating my-3">

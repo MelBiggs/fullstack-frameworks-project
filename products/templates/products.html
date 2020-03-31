@@ -7,24 +7,26 @@
 	<div class="category_tabs">
 		<ul>
 			<li class="placeholder">
-				<a data-type="all" href="{% url 'products' %}">All</a> 
+				<a data-type="all" href="{% url 'products' %}">All</a>
 			</li>
 			<li class="filter"><a href="{% url 'products' %}" data-type="all" id="all_products_filter">All</a></li>
-			<li class="filter" data-filter=".color-1"><a href="{% url 'face_products' %}" data-type="color-1" id="face_products_filter">Face</a>
+			<li class="filter" data-filter=".color-1"><a href="{% url 'face_products' %}" data-type="color-1"
+					id="face_products_filter">Face</a>
 			</li>
-			<li class="filter" data-filter=".color-2"><a href="{% url 'body_products' %}" data-type="color-2" id="body_products_filter">Body</a>
+			<li class="filter" data-filter=".color-2"><a href="{% url 'body_products' %}" data-type="color-2"
+					id="body_products_filter">Body</a>
 			</li>
 		</ul>
 	</div>
 </div>
 
 <!-- Filter Dropdown  -->
-	<div class="row">
-		<div class="col-12 filter-col">
-			<div class="button-group">
-				<button type="button" class="btn btn-default btn-sm dropdown-toggle tag-dropdown" data-toggle="dropdown"><i class="fas fa-filter"></i></button>
-				<ul class="dropdown-menu filter-tag-menu">
-                <form method="GET">
+<div class="row">
+	<div class="col-12 filter-col">
+		<div class="button-group">
+			<button type="button" class="btn btn-default btn-sm dropdown-toggle tag-dropdown" data-toggle="dropdown"><i class="fas fa-filter"></i></button>
+			<ul class="dropdown-menu filter-tag-menu">
+				<form method="GET">
 					<li><a class="medium" data-value="Acne"
 							tabIndex="-1"><input type="checkbox" name="AC"/>&nbsp; Acne</a></li>
 					<li><a class="medium" data-value="Aging"
@@ -50,24 +52,24 @@
 					<li><a class="medium" data-value="Sensitive Skin"
 							tabIndex="-1"><input type="checkbox" name="S"/>&nbsp; Sensitive Skin</a></li>
 					<li><a class="medium" data-value="Sun"
-                            tabIndex="-1"><input type="checkbox" name="SU"/>&nbsp; Sun</a>
+							tabIndex="-1"><input type="checkbox" name="SU"/>&nbsp; Sun</a>
 					</li>
 					<li><a class="medium" data-value="Tired Skin"
 							tabIndex="-1"><input type="checkbox" name="TI"/>&nbsp; Tired Skin</a></li>
-                    <button class="btn btn-secondary tag-filter-btn" type="submit">Filter</button>
-                </form>
-				</ul>
-			</div>
+					<button class="btn btn-secondary tag-filter-btn" type="submit">Filter</button>
+				</form>
+			</ul>
 		</div>
 	</div>
+</div>
 
 <!-- Products  -->
-    <div class="row row-flex products-row">
+<div class="row row-flex products-row">
 	{% for product in products %}
 	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
 		<div class="card-body">
 			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-            <span class="post-category text-white bg-secondary mb-3">{{ tag.value }}</span>
+			<span class="post-category text-white bg-secondary mb-3">{{ tag.value }}</span>
 			<h4><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h4>
 			<p class="product-description">{{ product.description }}</p>
 			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ product.price }}</p>
@@ -87,25 +89,28 @@
 </div>
 
 <!-- Pagination -->
-<div class = "pagination">
-{% if products.has_previous %}
-    <a class="pagination-action" href="?page=1" id="page_previous"><i class="fas fa-angle-left"></i></a>
-    <a class="pagination-action" href="?page={{ products.previous_page_number }}" id="page_first"><i class="fas fa-angle-double-left"></i></a>
-{% endif %}
+<div class="pagination">
+	{% if products.has_previous %}
+	<a class="pagination-action" href="?page=1" id="page_previous"><i class="fas fa-angle-left"></i></a>
+	<a class="pagination-action" href="?page={{ products.previous_page_number }}"
+		id="page_first"><i class="fas fa-angle-double-left"></i></a>
+	{% endif %}
 
-{% for num in products.paginator.page_range %}
-    {% if products.number == num %}
-    <span class="pagination-number pagination-current">{{num}}</span>
-  {% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
-    <a class="pagination-number" href="?page={{num}}">{{num}}</a>
-  {% endif %}
-{% endfor %}
+	{% for num in products.paginator.page_range %}
+	{% if products.number == num %}
+	<span class="pagination-number pagination-current">{{num}}</span>
+	{% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
+	<a class="pagination-number" href="?page={{num}}">{{num}}</a>
+	{% endif %}
+	{% endfor %}
 
 
-{% if products.has_next %}
-    <a class="pagination-action" href="?page={{ products.next_page_number }}" id="page_next"><i class="fas fa-angle-right"></i></a>
-    <a class="pagination-action" href="?page={{ products.paginator.num_pages }}" id="page_last"><i class="fas fa-angle-double-right"></i></a>
-{% endif %}
+	{% if products.has_next %}
+	<a class="pagination-action" href="?page={{ products.next_page_number }}"
+		id="page_next"><i class="fas fa-angle-right"></i></a>
+	<a class="pagination-action" href="?page={{ products.paginator.num_pages }}"
+		id="page_last"><i class="fas fa-angle-double-right"></i></a>
+	{% endif %}
 </div>
 
 {% endblock %}

@@ -148,7 +148,7 @@ I would like to add the following features in time:
 
 [W3C Markup Validation Service]( https://validator.w3.org/)
 
-The HTML for *accounts*, *blog*, *cart*, *checkout*, *home*, *products* and *base.html* all came back fine, although it did not like that I didn't have a DOCTYPE for each HTML page. However, due to using the base.html, this is not necessary.
+The HTML for *accounts*, *blog*, *cart*, *checkout*, *home*, *products* and *base.html* all came back fine, although it did not like that I didn't have a DOCTYPE for each HTML page. 
 
 #### CSS
 
@@ -171,6 +171,14 @@ A few files contained lines which were too long so once these were adjusted, the
 * *Cart App* - `contexts.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
 
 * *Checkout App* - `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+
+* *Home App* - `views.py` came back with 'All right'.
+
+* *Products App* -  `admin.py`, `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+
+* *Search Apps* - `urls.py` and `views.py` came back with 'All right'. 
+
+I also checked `custom_storages.py` and that also came back with an 'All right'. 
 
 #### Jasmine
 
