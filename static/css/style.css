@@ -75,14 +75,14 @@ ul {
 
 /* INDEX */
 
-/* .masthead {
-  height: 0vh;
-  min-height: 500px;
-  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+.carousel-item img{
+    height: 300px;
+    width: 700px;
+}
+
+.index-products {
+    padding-top: 3.5em;
+}
 
 /* PAGINATION */
 
@@ -419,7 +419,10 @@ caption p {
 }
 /* CHECKOUT PAGE */
 
-
+.fa-cc-stripe{
+    font-size: 2em;
+    color: #6c757d;
+}
 
 /* CART */
 

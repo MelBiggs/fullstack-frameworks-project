@@ -4,7 +4,9 @@
 
 {% block content %}
 <div class="container product-detail-container">
-	<p class="post-category text-white bg-secondary mb-3">Natural Remedies</p>
+{% for tags in product.tags %}
+	<p class="post-category text-white bg-secondary mb-3">{{tag.value}}</p>
+{% endfor %}
 
 
 	<div class="row">

@@ -148,6 +148,8 @@ I would like to add the following features in time:
 
 [W3C Markup Validation Service]( https://validator.w3.org/)
 
+The HTML for *accounts*, *blog*, *cart*, *checkout*, *home*, *products* and *base.html* all came back fine, although it did not like that I didn't have a DOCTYPE for each HTML page. However, due to using the base.html, this is not necessary.
+
 #### CSS
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
@@ -159,6 +161,16 @@ I would like to add the following features in time:
 #### Python
 
 [PEP8]( http://pep8online.com/)
+
+A few files contained lines which were too long so once these were adjusted, they passed the validator without issue. 
+
+* *Accounts App* - `backends.py`, `forms.py`, `url_reset.py`, `urls.py` and `views.py` came back with 'All right'. 
+
+* *Blog App* - `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+
+* *Cart App* - `contexts.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+
+* *Checkout App* - `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
 
 #### Jasmine
 
@@ -188,6 +200,7 @@ This project can be viewed on [Heroku]( link )
 ## Credits 
 
 ### Media
+The favicon is used is from [Favicon.io](https://favicon.io/)
 
 ### Code
 

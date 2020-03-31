@@ -11,14 +11,16 @@
 					<span class="post-category text-white bg-info mb-3">Natural</span>
 					<h1 class="mb-4">{{ post.title }}</h1>
 					<div class="post-meta align-items-center text-center">
-                    {% if post.writer == 'Melissa Biggs' %}
-				    <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="{% static 'img/author-circle.png' %}" alt="Image" class="img-fluid"></figure>
-                    {% else %}
-                    <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="{% static 'img/Logo-circle.png' %}" alt="Image" class="img-fluid"></figure>
-                    {% endif %}
-						<span class="d-inline-block mt-1">{{post.writer}}</span>
-						<span>&nbsp;-&nbsp; {{ post.published_date }}</span>
-						<p>Views: {{post.views}}</p>
+						{% if post.writer == 'Melissa Biggs' %}
+						<figure class="author-figure mb-0 mr-3 d-inline-block">
+							<img src="{% static 'img/author-circle.png' %}" alt="Image" class="img-fluid"></figure>
+							{% else %}
+							<figure class="author-figure mb-0 mr-3 d-inline-block">
+								<img src="{% static 'img/Logo-circle.png' %}" alt="Image" class="img-fluid"></figure>
+								{% endif %}
+								<span class="d-inline-block mt-1">{{post.writer}}</span>
+								<span>&nbsp;-&nbsp; {{ post.published_date }}</span>
+								<p>Views: {{post.views}}</p>
 					</div>
 				</div>
 			</div>
@@ -37,10 +39,12 @@
 				<p>Tags: <a href="#">{{ post.tag }}</a></p>
 			</div>
 			<a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
-        {% if user.is_superuser %}
+			{% if user.is_superuser %}
 			<a href="{% url 'edit_post' post.id %}" class="btn btn-secondary">Edit Post</a>
-        {% endif %}
-
+			{% endif %}
+		</div>
+	</div>
+</section>
 
 <!-- Comments  -->
 
@@ -72,30 +76,3 @@
 <hr>
 {% endfor %}
 {% endblock %}
-
-			<!-- 
-    <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="story-img" href="#">
-                <img src="/media/img/profile.jpg" class="img-circle">
-            </a>
-            <p><span class="boldtext">Author:</span> Mel</p>
-        </div>
-        <div class="col-sm-10 col-md-9">
-            {% if post.image %}
-                <img class="img-blogpost" src="/media/{{ post.image }}">
-            {% endif %}
-            <h3>{{ post.title }}</h3>
-            <div class="row">
-                <div class="col-xs-9">
-                    <p>{{ post.content }}</p>
-                    <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                    <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-                    <a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
-                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div> -->

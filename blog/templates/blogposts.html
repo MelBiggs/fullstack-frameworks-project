@@ -19,7 +19,7 @@
 		<div class="row">
 			{% for post in posts %}
 			<div class="col-lg-4 col-md-6 col-sm-8 mb-4">
-				<div class="entry">    
+				<div class="entry">
 					<a href="{% url 'post_detail' post.id %}"><img src="/media/{{ post.image }}" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
 						<div class="excerpt">
 							<span class="post-category text-white bg-secondary mb-3">{{ post.tag }}</span>

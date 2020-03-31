@@ -2,11 +2,11 @@
 {% load bootstrap_tags %}
 {% block page_heading %}Edit this Post{% endblock %}
 {% block content %}
-    <hr>
-    <form method="POST" enctype="multipart/form-data" class="blogpostform">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-secondary">Save</button>
-    </form>
+<hr>
+<form method="POST" enctype="multipart/form-data" class="blogpostform">
+	{% csrf_token %}
+	{{ form | as_bootstrap }}
+	<button type="submit" class="btn btn-secondary">Save</button>
+</form>
 
 {% endblock %}
