@@ -258,6 +258,11 @@ caption p {
     margin: 0 auto;
 }
 
+.favourite-icon {
+    font-size: 2em;
+    padding-top: .5em;
+}
+
 /* BLOG  */
 
 .blogpostform {

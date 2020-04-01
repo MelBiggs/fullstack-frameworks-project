@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from products.forms import ReviewForm
+from .models import Favourite
+from products.models import Product
 
 
 @login_required
@@ -71,3 +74,17 @@ def user_profile(request):
     """The user's profile page"""
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
+
+
+def favourite_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.user.is_authenticated:
+        user = request.user
+        favourite = Favourite()
+        favourite.user = user
+        favourite.product = product
+        favourite.save()
+
+    form = ReviewForm()
+    return render(request, "productdetail.html", {'product': product,
+                                                    'form': form})

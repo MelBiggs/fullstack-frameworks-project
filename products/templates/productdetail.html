@@ -30,7 +30,7 @@
 					<span class="fa fa-star"></span>
 				</div>
 				{% if product.reviews.count == 0 %}
-                <div class="my-3">No reviews</div>
+				<div class="my-3">No reviews</div>
 				{% else %}
 				<div class="my-3">Reviews: {{ product.reviews.count }}</div>
 				{% endif %}
@@ -44,8 +44,8 @@
                         </span>
 				</div>
 			</form>
+			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="far fa-bookmark"></i></a></div>
 		</div>
-
 	</div>
 </div>
 
