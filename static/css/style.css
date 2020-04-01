@@ -488,6 +488,11 @@ small {
     margin: 1em;
 }
 
+.favourite-heading {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 2em;
+}
 /* PRODUCT PAGE */
 
 .tab-wrapper {

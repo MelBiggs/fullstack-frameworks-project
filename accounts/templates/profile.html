@@ -10,7 +10,6 @@
 				<div class="row profile-row">
 					<div class="col-sm-6 col-md-8">
 						<h4>{{user|capfirst}}</h4>
-						<small> Address <i class="fas fa-map-pin"></i></small>
 						<p>
 							<i class="far fa-envelope"></i> {{ profile.email }}
 							<br>
@@ -20,6 +19,35 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Favourites -->
+
+<div class = "favourite-heading"><i class="fas fa-heart"></i> Your Saved Items <i class="fas fa-heart"></i></div>
+<div class="row row-flex products-row">
+	{% for product in products.favourite.all %}
+	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
+		<div class="card-body">
+			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+            {% for tag in product.tags.all %}
+			<span class="post-category text-white bg-danger mb-3">{{ tag.get_value_display }}</span>
+            {% endfor %}
+			<h4><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h4>
+			<p class="product-description">{{ product.description }}</p>
+			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ product.price }}</p>
+
+			<form method="post" action="{% url 'add_to_cart' product.id %}">
+				{% csrf_token %}
+				<div class="input-group">
+					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+					<span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Add</button>
+                        </span>
+				</div>
+			</form>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 

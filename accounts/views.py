@@ -87,4 +87,4 @@ def favourite_product(request, pk):
 
     form = ReviewForm()
     return render(request, "productdetail.html", {'product': product,
-                                                    'form': form})
+                                                  'form': form})
