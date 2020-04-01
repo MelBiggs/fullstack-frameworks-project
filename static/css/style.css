@@ -240,6 +240,11 @@ caption p {
     color: black;
 }
 
+.bg-danger {
+    background-color: #fff7ff!important;
+    color: #6c757d!important;
+}
+
 /* PRODUCT DETAIL PAGE */
 
 .product-detail-container{

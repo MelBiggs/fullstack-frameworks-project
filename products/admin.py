@@ -1,15 +1,9 @@
 from django.contrib import admin
-from .models import Product, Tag, Review
-
-
-class TagAdminInline(admin.TabularInline):
-    model = Tag
-
-
-class ProductAdmin(admin.ModelAdmin):
-    inlines = (TagAdminInline, )
+from .models import Product, Review, Tag
 
 
 # Register your models here.
-admin.site.register(Product, ProductAdmin)
+admin.site.register(Product)
 admin.site.register(Review)
+admin.site.register(Tag)
+

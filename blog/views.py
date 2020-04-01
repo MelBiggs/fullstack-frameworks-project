@@ -14,8 +14,7 @@ def get_posts(request):
     and render them to the 'blogposts.html' template
     Pagination included
     """
-    posts = Post.objects.filter(published_date__lte=timezone.now()
-                                ).order_by('-published_date')
+    posts = Post.objects.all().order_by('-published_date')
 
     paginator = Paginator(posts, ITEMS_PER_PAGE)
 
