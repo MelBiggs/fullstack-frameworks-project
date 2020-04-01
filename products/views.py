@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
-from .models import Product, Tag
+from .models import Product
 from .forms import ReviewForm
 import operator
 from django.db.models import Q
@@ -32,10 +32,8 @@ def all_products(request):
         page = 1
 
     products = paginator.page(page)
-    tags = Tag.objects.all()
 
-    return render(request, "products.html", {"products": products,
-                                             'tags': tags})
+    return render(request, "products.html", {"products": products})
 
 
 def face_products(request):

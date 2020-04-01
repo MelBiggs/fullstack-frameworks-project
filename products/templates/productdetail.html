@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="container product-detail-container">
-	{% for tags in product.tags %}
-	<p class="post-category text-white bg-secondary mb-3">{{tag.value}}</p>
+	{% for tag in product.tags.all %}
+	<p class="post-category text-white bg-secondary mb-3">{{tag.get_value_display}}</p>
 	{% endfor %}
 
 
@@ -29,10 +29,10 @@
 					<span class="fa fa-star"></span>
 					<span class="fa fa-star"></span>
 				</div>
-				{% if reviews %}
-				<div class="my-3">Reviews: {{ reviews|length }}</div>
+				{% if product.reviews.count == 0 %}
+                <div class="my-3">No reviews</div>
 				{% else %}
-				<div class="my-3">No reviews</div>
+				<div class="my-3">Reviews: {{ product.reviews.count }}</div>
 				{% endif %}
 			</div>
 			<form method="post" action="{% url 'add_to_cart' product.id %}">

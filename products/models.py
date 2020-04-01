@@ -55,12 +55,9 @@ class Product(models.Model):
 
 
 class Tag(models.Model):
-    product = models.ManyToManyField(Product, related_name="tags",
-                                     related_query_name="tag")
+    product = models.ForeignKey(Product, related_name="tags",
+                                related_query_name="tag", null=True)
     value = models.CharField(choices=LABEL_CHOICES, max_length=2)
-
-    def __str__(self):
-        return self.value
 
 
 class Review(models.Model):
