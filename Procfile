@@ -1,0 +1,1 @@
+web: gunicorn facevalue.wsgi:application
