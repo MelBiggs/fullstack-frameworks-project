@@ -618,9 +618,11 @@ small {
 /* MEDIA QUERIES */
 
 /* Media Query for Mobile Devices */ 
-
 @media (max-width: 480px) { 
-
+    .col-md-8 .product-detail-img {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+}
 }
 
 /* Media Query for Mobile to Tablet Sizes */

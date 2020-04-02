@@ -17,7 +17,7 @@ def all_products(request):
 
     if len(filter_keys) > 0:
         products = Product.objects.filter(
-            reduce(operator.and_, (Q(tag__value=x)for x in filter_keys)))
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
 
     else:
         products = Product.objects.all()

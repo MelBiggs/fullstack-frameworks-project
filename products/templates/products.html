@@ -94,8 +94,8 @@
 <!-- Pagination -->
 <div class="pagination">
 	{% if products.has_previous %}
-	<a class="pagination-action" href="?page=1" id="page_previous"><i class="fas fa-angle-left"></i></a>
-	<a class="pagination-action" href="?page={{ products.previous_page_number }}"
+	<a class="pagination-action pagination-class" href="?page=1" id="page_previous"><i class="fas fa-angle-left"></i></a>
+	<a class="pagination-action pagination-class" href="?page={{ products.previous_page_number }}"
 		id="page_first"><i class="fas fa-angle-double-left"></i></a>
 	{% endif %}
 
@@ -107,11 +107,10 @@
 	{% endif %}
 	{% endfor %}
 
-
 	{% if products.has_next %}
-	<a class="pagination-action" href="?page={{ products.next_page_number }}"
+	<a class="pagination-action pagination-class" href="?page={{ products.next_page_number }}"
 		id="page_next"><i class="fas fa-angle-right"></i></a>
-	<a class="pagination-action" href="?page={{ products.paginator.num_pages }}"
+	<a class="pagination-action pagination-class" href="?page={{ products.paginator.num_pages }}"
 		id="page_last"><i class="fas fa-angle-double-right"></i></a>
 	{% endif %}
 </div>
