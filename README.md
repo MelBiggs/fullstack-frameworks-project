@@ -1,6 +1,6 @@
 ## Here is what I still need to work on, as of 2nd of April: 
 
-Add content
+- Add content
 - When content is added, make pagination 12 items per page. 
 - Do Testing
 - Favouriting Products - it applies to user as many times as they click the button. Need to make it so it only allows one click and one click to un-favourite. 
