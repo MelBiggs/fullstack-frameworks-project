@@ -104,7 +104,7 @@
 	{% if products.number == num %}
 	<span class="pagination-number pagination-current">{{num}}</span>
 	{% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
-	<a class="pagination-number" href="?page={{num}}">{{num}}</a>
+	<a class="pagination-number pagination-class" href="?page={{num}}">{{num}}</a>
 	{% endif %}
 	{% endfor %}
 
