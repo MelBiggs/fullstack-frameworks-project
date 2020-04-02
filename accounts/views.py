@@ -86,5 +86,4 @@ def favourite_product(request, pk):
         favourite.save()
 
     form = ReviewForm()
-    return render(request, "productdetail.html", {'product': product,
-                                                  'form': form})
+    return render(request, 'profile.html', {"profile": user})
