@@ -217,9 +217,11 @@ https://stackoverflow.com/questions/4915920/how-to-delete-an-item-in-a-list-if-i
 https://stackoverflow.com/questions/24763045/capture-all-url-parameters-in-django-views-py - This helped me in getting all the GET parameters
 https://stackoverflow.com/questions/16819222/how-to-return-dictionary-keys-as-a-list-in-python - This taught me how to get keys using `[*]`
 
-* These code snippets helped me find the URL query parameters with JavaScript and make the checkbox stay selected:
+* These code snippets helped me find the URL query parameters with JavaScript so that the pagination worked with filters and to make the checkbox stay selected :
 https://medium.com/@junaidahmed/get-url-query-params-with-jquery-js-c12f5fed0f71
 https://stackoverflow.com/questions/10930048/get-checkbox-with-specific-value
+https://stackoverflow.com/questions/4735342/jquery-to-loop-through-elements-with-the-same-class
+
 
 * These websites helped me flesh out my password reset view and to add a subject line:
 https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt 

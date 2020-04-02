@@ -15,7 +15,7 @@
 			</div>
 		</div>
 
-		<div class="col-lg-8">
+		<div class="col-lg-8 col-md-12">
 			<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -31,29 +31,31 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- POPULAR PRODUCTS -->
-
-				<div class="row index-products">
-					{% for product in products %}
-					<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
-						<div class="card h-100">
-							<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')">
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">{{ product.name }}</a>
-								</h4>
-								<h5>{{ product.price }}</h5>
-								<p class="card-text">{{ product.description }}!</p>
-							</div>
-							<div class="card-footer">
-								<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
 			</div>
 		</div>
-		{% endblock %}
+
+
+		<!-- POPULAR PRODUCTS -->
+		<div class="row index-products">
+			{% for product in products %}
+			<div class="col-md-4 product-card card">
+				<div class="card h-100">
+					<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')">
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">
+							<a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+						</h4>
+						<h5>{{ product.price }}</h5>
+						<p class="card-text">{{ product.description }}!</p>
+					</div>
+					<div class="card-footer">
+						<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
