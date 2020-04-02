@@ -212,25 +212,28 @@ The favicon is used is from [Favicon.io](https://favicon.io/)
 
 ### Code
 
-When I was working out how to get tag filtering working (i.e. filtering by skin issue), these sources really helped me:
+* When I was working out how to get tag filtering working (i.e. filtering by skin issue), these sources really helped me:
 https://stackoverflow.com/questions/4915920/how-to-delete-an-item-in-a-list-if-it-exists - This helped me remove 'page' from filter_keys
 https://stackoverflow.com/questions/24763045/capture-all-url-parameters-in-django-views-py - This helped me in getting all the GET parameters
 https://stackoverflow.com/questions/16819222/how-to-return-dictionary-keys-as-a-list-in-python - This taught me how to get keys using `[*]`
 
-This code helped me find the URL query parameters with JavaScript:
+* These code snippets helped me find the URL query parameters with JavaScript and make the checkbox stay selected:
 https://medium.com/@junaidahmed/get-url-query-params-with-jquery-js-c12f5fed0f71
+https://stackoverflow.com/questions/10930048/get-checkbox-with-specific-value
 
-Websites I've received tips on so far: 
+* These websites helped me flesh out my password reset view and to add a subject line:
 https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt 
 https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html 
 
+* This question on Stack Overflow helped me to target a URL for my All, Face and Body Products tab:
+https://stackoverflow.com/questions/34649131/javascript-how-to-check-if-url-contains-a-word/34649157
+
+I also received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
 
 ### Acknowledgements
 
 I received inspiration for the theme of this project from
 
-I received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
-
-I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute Slack users for their helpful comments and suggestions on my project. 
+I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute tutors and Slack users for their helpful comments and suggestions on my project. 
 
 [Link to Deployed Website]

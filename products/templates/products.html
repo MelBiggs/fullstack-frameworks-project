@@ -5,12 +5,12 @@
 
 <!-- Tab for Face, Body and all  -->
 <div class="tab-wrapper">
-	<div class="category_tabs">
+	<div class="category_tabs" id="cat-tab">
 		<ul>
 			<li class="placeholder">
 				<a data-type="all" href="{% url 'products' %}">All</a>
 			</li>
-			<li class="filter"><a href="{% url 'products' %}" data-type="all" id="all_products_filter">All</a></li>
+			<li class="filter"><a href="{% url 'products' %}" class="selected" data-type="all" id="all_products_filter">All</a></li>
 			<li class="filter" data-filter=".color-1"><a href="{% url 'face_products' %}" data-type="color-1"
 					id="face_products_filter">Face</a>
 			</li>
@@ -67,7 +67,7 @@
 <!-- Products  -->
 <div class="row row-flex products-row">
 	{% for product in products %}
-	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card"><a href="{% url 'product_detail' product.id %}">
 		<div class="card-body">
 			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
             {% for tag in product.tags.all %}
@@ -87,6 +87,7 @@
 				</div>
 			</form>
 		</div>
+        </a>
 	</div>
 	{% endfor %}
 </div>

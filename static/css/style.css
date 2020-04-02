@@ -510,14 +510,6 @@ small {
   z-index: 1;
 }
 
-/* .category_tabs ul {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  box-shadow: inset 0 -2px 0 #6c757d;
-} */
-
 .category_tabs a {
   display: block;
   height: 50px;
@@ -525,11 +517,6 @@ small {
   line-height: 50px;
   padding-left: 14px;
 }
-.category_tabs a.selected {
-  background: #6c757d;
-  color: #6c757d;
-}
-
 
   .category_tabs {
     /* tabbed navigation style on medium devices */
