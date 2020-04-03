@@ -5,7 +5,6 @@
 - Do Testing
 - Favouriting Products - it applies to user as many times as they click the button. Need to make it so it only allows one click and one click to un-favourite. 
 - Filtering by Skin Issue (products.html) - I need to apply the filters to work when in the Face and Body tab
-- Blog - need to add more formatting
 - Reviews and Comments - more formatting and CSS
 - Add a 'Clear Filter' button to filters in Products page
 - Add Star Ratings for reviews (currently just an integer)

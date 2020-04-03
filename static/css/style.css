@@ -278,6 +278,10 @@ caption p {
 .blog_search{
     padding-left: 1em;
 }
+
+.site-section {
+    padding-top: 2em;
+}
 /* The blog layout was inspired by this template: https://colorlib.com/preview/theme/miniblog/ */
 
 .container {

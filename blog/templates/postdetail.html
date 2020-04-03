@@ -32,11 +32,11 @@
 	<div class="container">
 		<div class="row blog-entries">
 			<div class="col-md-12 col-lg-8">
-				<div>{{ post.content }}</div>
+				<div>{{ post.content|linebreaks }}</div>
 			</div>
 			<div class="pt-5">
 				<!-- <p>Categories: <a href="#">Food</a>, <a href="#">Travel</a></p>   -->
-				<p>Tags: <a href="#">{{ post.tag }}</a></p>
+				<p>Tag: {{ post.tag }}</p>
 			</div>
 			<a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>
 			{% if user.is_superuser %}
