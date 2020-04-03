@@ -12,11 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+import env
 
-try:
-    import env
-except ModuleNotFoundError:
-    pass
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
