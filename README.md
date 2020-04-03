@@ -1,4 +1,4 @@
-## Here is what I still need to work on, as of 2nd of April: 
+## Here is what I still need to work on, as of 3rd of April: 
 
 - Add content
 - When content is added, make pagination 12 items per page. 
