@@ -6,6 +6,7 @@ from .forms import ReviewForm
 import operator
 from django.db.models import Q
 from functools import reduce
+from django.db.models import Avg
 
 
 ITEMS_PER_PAGE = 3
@@ -93,6 +94,14 @@ def product_detail(request, pk):
 
     else:
         form = ReviewForm()
+        review_count = product.reviews.count()
+        sum = 0 
+        avg = 0 
+        if review_count > 0:
+            for score in product.reviews.values("score"):
+                sum += score["score"]
+            avg = sum / review_count 
+
         is_favourite = False
         if request.user.is_authenticated:
             user = request.user 
@@ -100,7 +109,8 @@ def product_detail(request, pk):
                 is_favourite = True
         return render(request, "productdetail.html", {'product': product,
                                                       'form': form,
-                                                      'is_favourite': is_favourite})
+                                                      'is_favourite': is_favourite,
+                                                      'score': avg})
 
 
 # View for Product Types

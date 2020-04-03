@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static from staticfiles %}
 {% load bootstrap_tags %}
 
 {% block content %}
@@ -20,14 +20,8 @@
 			<h5 class="my-3 price">Price:
 				<span><i class="fas fa-euro-sign" aria-hidden="true"></i> {{ product.price }}</span></h5>
 			<hr>
-			<div class="rating my-3">
-				<div class="stars">
-					<span class="fa fa-star checked"></span>
-					<span class="fa fa-star checked"></span>
-					<span class="fa fa-star checked"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-				</div>
+            <div class="rating my-3">
+            <div class="product-rating"></div>
 				{% if product.reviews.count == 0 %}
 				<div class="my-3">No reviews</div>
 				{% else %}
@@ -83,4 +77,18 @@
 <hr>
 {% endfor %}
 
+{% endblock %}
+
+{% block footer_js %}
+<script>
+$(document).ready(function(){
+    $(".product-rating").starRating({
+        starSize: 20,
+        initialRating: {{score}},
+        readOnly: true,
+        useGradient: false,
+        activeColor: "#b103fc"
+    });
+});
+</script>
 {% endblock %}

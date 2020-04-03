@@ -9,6 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 	</script>
+    <script src="{% static 'js/jquery.star-rating-svg.min.js' %}"></script>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -21,6 +22,7 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<!-- CSS  -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/star-rating-svg.css' %}" type="text/css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="static/img/favicon-32x32.png"/>
 	<!-- Bootstrap JS -->
@@ -179,4 +181,9 @@
 
 <script src="{% static 'js/index.js' %}"></script>
 
-{% block js %} {% endblock %}
+{% block js %}
+ 
+{% endblock %}
+
+{% block footer_js %}
+{% endblock %}
