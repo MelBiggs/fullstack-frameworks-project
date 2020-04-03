@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Product
+from accounts.models import Favourite
 from .forms import ReviewForm
 import operator
 from django.db.models import Q
@@ -92,8 +93,14 @@ def product_detail(request, pk):
 
     else:
         form = ReviewForm()
+        is_favourite = False
+        if request.user.is_authenticated:
+            user = request.user 
+            if Favourite.objects.filter(user=user, product=product).count() > 0:
+                is_favourite = True
         return render(request, "productdetail.html", {'product': product,
-                                                      'form': form})
+                                                      'form': form,
+                                                      'is_favourite': is_favourite})
 
 
 # View for Product Types

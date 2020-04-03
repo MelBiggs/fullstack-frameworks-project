@@ -44,7 +44,11 @@
 				</div>
 			</form>
             {% if user.is_authenticated %}
+                {% if is_favourite %}
+			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="fas fa-heart"></i></a></div>
+                {% else %}
 			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="far fa-heart"></i></a></div>
+            {% endif %}
             {% endif %}
 		</div>
 	</div>
