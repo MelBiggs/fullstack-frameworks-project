@@ -41,6 +41,14 @@ def all_products(request):
 def face_products(request):
     products = Product.objects.all().filter(category='F')
 
+    filter_keys = [*request.GET]
+    if 'page' in filter_keys:
+        filter_keys.remove('page')
+
+    if len(filter_keys) > 0:
+        products = products.filter(
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
+
     paginator = Paginator(products, ITEMS_PER_PAGE)
 
     page = request.GET.get('page')
@@ -56,6 +64,15 @@ def face_products(request):
 
 def body_products(request):
     products = Product.objects.all().filter(category='B')
+
+    filter_keys = [*request.GET]
+    if 'page' in filter_keys:
+        filter_keys.remove('page')
+
+    if len(filter_keys) > 0:
+        products = products.filter(
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
+
     paginator = Paginator(products, ITEMS_PER_PAGE)
 
     page = request.GET.get('page')
