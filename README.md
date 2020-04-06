@@ -122,7 +122,8 @@ For my wireframes I used paper and pencil initially.
 
 I would like to add the following features in time: 
 * Calculating the shipping and handling fees into the total value
-* Expand the currency used to include GBP and USD 
+* Expand the currency used to include GBP and USD
+* Add a Previously Purchased section to the user profile page 
 
 ## Technologies Used
 

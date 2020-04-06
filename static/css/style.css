@@ -15,7 +15,7 @@ body {
 }
 
 .page-headings {
-    font-size: 1.8em;
+    font-size: 1.6em;
     text-align: center;
 }
 
@@ -140,22 +140,13 @@ ul {
 .accounts-btn {
     background-color: #fff7ff!important;
     border: 2px solid #6c757d;
-    
 }
 
 .log-in-here {
     text-align: center;
 }
 
-/* footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
-} */
-
-.reset-password{
+.reset-password {
     text-align: center;
     padding: 2em;
 }
@@ -182,7 +173,7 @@ ul {
     background-color: #c67605;
 }
 
-/* BLOG COMMENTS,  */
+/* BLOG COMMENTS */
 
 .heading_comments_reviews{
     text-align: center;
@@ -468,7 +459,6 @@ caption p {
     margin: auto;
 }
 
-
 /* PROFILE PAGE */
 
 .fa-map-pin,
@@ -495,7 +485,7 @@ small {
 .favourite-heading {
     font-size: 1.5em;
     text-align: center;
-    padding: 2em;
+    padding-top: 2em;
 }
 /* PRODUCT PAGE */
 
@@ -627,6 +617,9 @@ small {
     }
     .nav-search {
         padding-top:2em;
+    }
+    #account-form {
+        width: 80%;
     }
 
 }

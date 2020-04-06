@@ -5,15 +5,12 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-sm-6 col-md-6">
+		<div class="col-xs-12 col-sm-8 col-md-8">
 			<div class="card profile-card">
 				<div class="row profile-row">
-					<div class="col-sm-6 col-md-8">
+					<div class="col-sm-12 col-md-12">
 						<h4>{{user|capfirst}}</h4>
-						<p>
-							<i class="far fa-envelope"></i> {{ profile.email }}
-							<br>
-							<i class="fas fa-gift"></i> DD/MM/YYYY</p>
+						<i class="far fa-envelope"></i> {{ profile.email }}
 					</div>
 				</div>
 			</div>
@@ -23,15 +20,15 @@
 
 <!-- Favourites -->
 
-<div class = "favourite-heading"><i class="fas fa-heart"></i> Your Saved Items <i class="fas fa-heart"></i></div>
+<div class="favourite-heading"><i class="fas fa-heart"></i> Your Saved Items <i class="fas fa-heart"></i></div>
 <div class="row row-flex products-row">
 	{% for favourite in user.favourites.all %}
-	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 product-card card">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 col-lg-4 product-card card">
 		<div class="card-body">
 			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-            {% for tag in favourite.product.tags.all %}
+			{% for tag in favourite.product.tags.all %}
 			<span class="post-category text-white bg-danger mb-3">{{ tag.get_value_display }}</span>
-            {% endfor %}
+			{% endfor %}
 			<h4><a href="{% url 'product_detail' favourite.product.id %}">{{ favourite.product.name }}</a></h4>
 			<p class="product-description">{{ favourite.product.description }}</p>
 			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ favourite.product.price }}</p>
