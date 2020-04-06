@@ -107,15 +107,15 @@ def product_detail(request, pk):
                 review.product = product
                 review.save()
 
-                return redirect(product_detail, product.pk)
+            return redirect(product_detail, product.pk)
 
     else:
         form = ReviewForm()
-        review_count = product.reviews.count()
+        review_count = product.reviews.filter(approved=True).count()
         sum = 0 
         avg = 0 
         if review_count > 0:
-            for score in product.reviews.values("score"):
+            for score in product.reviews.filter(approved=True).values("score"):
                 sum += score["score"]
             avg = sum / review_count 
 
@@ -127,7 +127,8 @@ def product_detail(request, pk):
         return render(request, "productdetail.html", {'product': product,
                                                       'form': form,
                                                       'is_favourite': is_favourite,
-                                                      'score': avg})
+                                                      'score': avg,
+                                                      'review_count': review_count})
 
 
 # View for Product Types

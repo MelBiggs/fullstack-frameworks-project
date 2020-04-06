@@ -6,3 +6,4 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('title', 'body', 'score')
+        widgets = {'score': forms.HiddenInput()}

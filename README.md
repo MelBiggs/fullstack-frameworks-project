@@ -247,9 +247,10 @@ https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password
 * This question on Stack Overflow helped me to target a URL for my All, Face and Body Products tab:
 https://stackoverflow.com/questions/34649131/javascript-how-to-check-if-url-contains-a-word/34649157
 
-* This code showed me how to add stars to reviews: 
+* This code showed me how to add stars ratings as part of reviews and to the review form: 
 https://github.com/nashio/star-rating-svg/
 https://stackoverflow.com/questions/28607727/how-to-calculate-average-with-django
+https://stackoverflow.com/questions/6862250/change-a-django-form-field-to-a-hidden-field
 
 I also received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
 

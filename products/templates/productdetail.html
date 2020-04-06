@@ -22,10 +22,10 @@
 			<hr>
             <div class="rating my-3">
             <div class="product-rating"></div>
-				{% if product.reviews.count == 0 %}
+				{% if review_count == 0 %}
 				<div class="my-3">No reviews</div>
 				{% else %}
-				<div class="my-3">Reviews: {{ product.reviews.count }}</div>
+				<div class="my-3">Reviews: {{ review_count }}</div>
 				{% endif %}
 			</div>
 			<form method="post" action="{% url 'add_to_cart' product.id %}">
@@ -56,6 +56,7 @@
 <form method="POST" id="account-form">
 	{% csrf_token %}
 	{{ form | as_bootstrap }}
+    <div id="score_input"></div>
 	<button type="submit" class="btn accounts-btn">Submit Review</button>
 </form>
 {% else %}
@@ -65,6 +66,7 @@
 {% endif %}
 
 {% for review in product.reviews.all %}
+{% if review.approved %}
 <div class="review" style="padding: 10px;">
 	<div class="font-weight-bold">
 		{{review.title}}
@@ -75,6 +77,7 @@
 	{{ review.body | linebreaks }}
 </div>
 <hr>
+{% endif %}
 {% endfor %}
 
 {% endblock %}
@@ -88,6 +91,20 @@ $(document).ready(function(){
         readOnly: true,
         useGradient: false,
         activeColor: '#fff7ff'
+    });
+        $("#score_input").starRating({
+        starSize: 20,
+        initialRating: 0,
+        readOnly: false,
+        useGradient: false,
+        activeColor: '#fff7ff',
+        callback: function(rating, $EL){
+            $("#id_score").val(rating);
+        },
+        useFullStars: true,
+        disableAfterRate: false,
+        ratedColor: '#00000',
+        hoverColor:'#00000' 
     });
 });
 </script>

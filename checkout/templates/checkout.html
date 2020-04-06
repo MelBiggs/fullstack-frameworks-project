@@ -42,12 +42,11 @@
 											<h5 class="mb-0"> <a href="#"
 													class="text-dark d-inline-block align-middle">{{ item.product.name }}</a>
 											</h5>
-											<span class="text-muted font-weight-normal font-italic d-block">Category: </span>
 										</div>
 									</div>
 								</th>
 								<td class="border-0 align-middle">
-									<strong><i class="fas fa-euro-sign" aria-hidden="true"></i> {{ item.product.price }}</strong>
+								    <strong><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ item.product.price }}</strong>
 								</td>
 								<td class="border-0 align-middle"><strong>{{item.quantity}}</strong></td>
 							</tr>
@@ -91,7 +90,7 @@
 								<div id="alert-message block-message error" id="stripe-error-message"></div>
 							</div>
 
-							<div class="form-group col-6">
+							<div class="form-group col-md-6">
 								{{ order_form | as_bootstrap }}
 							</div>
 
