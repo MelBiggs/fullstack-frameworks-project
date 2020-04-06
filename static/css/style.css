@@ -125,7 +125,7 @@ ul {
     border-radius: 2px;
 }
 
-.pagination-number:hover, .pagination-current{
+.pagination-current{
     border: solid;
 }
 

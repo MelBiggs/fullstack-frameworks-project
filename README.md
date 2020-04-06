@@ -137,7 +137,6 @@ I would like to add the following features in time:
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
 * [JQuery](https://jquery.com/) - jQuery is the primary JavaScript functionality.
 * [Bootstrap](https://getbootstrap.com/) - This is the front-end framework for layout and design.
-* [Stripe](https://stripe.com/ie) - Stripe allows the user to make secure payments.
 * [Amazon AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0#) - I stored my staticfiles and media in AWS 
 
 ### Backend Technologies
@@ -148,7 +147,12 @@ I would like to add the following features in time:
 * [Django](https://www.postgresql.org/) - Through Heroku, this is a relational SQL database plugin.
 
 
-### Backend Technologies
+### General Technologies
+
+* [Stripe](https://stripe.com/ie) - Stripe allows the user to make secure payments.
+
+### Also
+
 [Gifox](https://gifox.io/) - I used Gifox to record the website demo for my README file. I recorded it off the website [Am I Responsive](http://ami.responsivedesign.is/?url=https%3A%2F%2Fmelbiggs.github.io%2Fifd-milestoneproject%2F#)
 
 
