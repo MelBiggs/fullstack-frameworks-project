@@ -252,6 +252,9 @@ https://github.com/nashio/star-rating-svg/
 https://stackoverflow.com/questions/28607727/how-to-calculate-average-with-django
 https://stackoverflow.com/questions/6862250/change-a-django-form-field-to-a-hidden-field
 
+* This code helped me to disable the Add button on my product page: 
+https://blog.revillweb.com/jquery-disable-button-disabling-and-enabling-buttons-with-jquery-5e3ffe669ece
+
 I also received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
 
 ### Acknowledgements

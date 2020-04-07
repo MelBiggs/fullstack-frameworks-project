@@ -58,7 +58,7 @@
 	{% csrf_token %}
 	{{ form | as_bootstrap }}
     <div id="score_input"></div>
-	<button type="submit" class="btn review-btn">Submit Review</button>
+	<button type="submit" id="review_submit" class="btn review-btn" disabled>Submit Review</button>
 </form>
 {% else %}
 <br>
@@ -101,6 +101,7 @@ $(document).ready(function(){
         activeColor: '#fff7ff',
         callback: function(rating, $EL){
             $("#id_score").val(rating);
+            $("#review_submit").prop('disabled', false)
         },
         useFullStars: true,
         disableAfterRate: false,
