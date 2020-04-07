@@ -82,10 +82,10 @@
 
 			<form method="post" action="{% url 'add_to_cart' product.id %}">
 				{% csrf_token %}
-				<div class="input-group">
+				<div class="input-group quantity_group">
 					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
 					<span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit">Add</button>
+                            <button class="btn btn-secondary" type="submit" disabled >Add</button>
                         </span>
 				</div>
 			</form>
@@ -119,4 +119,26 @@
 	{% endif %}
 </div>
 
+{% endblock %}
+
+{% block footer_js %}
+<script>
+$(document).ready(function(){
+    let quantity_group = $('.quantity_group');
+    quantity_group.each(function(){
+        let input = $(this).find('input');
+        let button = $(this).find('button');
+        input.change(function(){
+            if ($(this).val() != "" && $(this).val() > 0){
+                $(button).prop('disabled', false);
+            }
+            else {
+                $(button).prop('disabled', true);
+            }
+        });
+
+        console.log(button)    
+    });
+});
+</script>
 {% endblock %}
