@@ -55,7 +55,6 @@ def post_detail(request, pk):
                 comment.save()
                 messages.success(request, "Thanks for your comment, it has been sent for approval!")
 
-
                 return redirect(post_detail, post.pk)
 
     else:
