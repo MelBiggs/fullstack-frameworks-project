@@ -73,3 +73,6 @@ class Review(models.Model):
     user = models.ForeignKey(User, related_name="reviews",
                              on_delete=models.CASCADE,
                              related_query_name="review", null=True)
+    
+    class Meta:
+        ordering = ['-published_date']

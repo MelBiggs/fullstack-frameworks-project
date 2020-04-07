@@ -254,6 +254,12 @@ caption p {
     padding-top: .5em;
 }
 
+.review-btn {
+    background-color: #fff7ff!important;
+    border: 2px solid #6c757d;
+    margin-top: 1.5em;
+}
+
 /* BLOG  */
 
 .blogpostform {

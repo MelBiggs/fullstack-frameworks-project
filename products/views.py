@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
+from django.contrib import messages
 from .models import Product
 from accounts.models import Favourite
 from .forms import ReviewForm
@@ -92,7 +93,7 @@ def product_detail(request, pk):
     Product object based on the product ID (pk) and
     render it to the 'productdetail.html' template.
     Or return a 404 error if the post is
-    not found
+    not found. User can add a review too
     """
     product = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
@@ -103,9 +104,10 @@ def product_detail(request, pk):
             form = ReviewForm(request.POST)
             if form.is_valid():
                 review = form.save(commit=False)
-                review.owner = request.user
+                review.user = request.user
                 review.product = product
                 review.save()
+                messages.success(request, "Thanks for your review, it has been sent for approval!")
 
             return redirect(product_detail, product.pk)
 
