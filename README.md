@@ -3,9 +3,7 @@
 - Add content
 - When content is added, make pagination 12 items per page. 
 - Do Testing
-- Reviews and Comments - more formatting and CSS
-- Add a 'Clear Filter' button to filters in Products page
-- Finish Star Ratings for reviews 
+- Finish README 
 
 
 

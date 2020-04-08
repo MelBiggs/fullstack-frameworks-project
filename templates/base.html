@@ -94,7 +94,7 @@
                             <i class="far fa-user-circle"></i>
                         </button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							{% if user.is_authenticated %}
+					     {% if user.is_authenticated %}
 							<li class="nav-item active">
 								<a class="nav-link" href="{% url 'profile' %}">Profile</a>
 							</li>

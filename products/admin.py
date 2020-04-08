@@ -8,6 +8,7 @@ class TagAdminInline(admin.TabularInline):
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = (TagAdminInline, )
+    list_display = ('name', 'description')
 
 
 # Register your models here.
