@@ -33,9 +33,12 @@
 				</div>
 			</div>
 		</div>
-
-
+<br>
+<hr>
+<br>
+<br>
 		<!-- POPULAR PRODUCTS -->
+        <div class="page-headings d-flex justify-content-center col-12"> Just In </div>
 		<div class="row index-products">
 			{% for product in products %}
 			<div class="col-md-4 product-card card">
@@ -49,13 +52,25 @@
 						<h5>{{ product.price }}</h5>
 						<p class="card-text">{{ product.description }}!</p>
 					</div>
-					<div class="card-footer">
-						<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-					</div>
+					<div class="card-footer"><p class="product-rating"></p></div>
 				</div>
 			</div>
 			{% endfor %}
 		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block footer_js %}
+<script>
+$(document).ready(function(){
+    $(".product-rating").starRating({
+        starSize: 20,
+        initialRating: {{score}},
+        readOnly: true,
+        useGradient: false,
+        activeColor: '#6c757d'
+    });
+});
+</script>
 {% endblock %}

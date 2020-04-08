@@ -34,7 +34,7 @@
 										<img src="{% static 'img/Logo-circle.png' %}" alt="Image" class="img-fluid"></figure>
 										{% endif %}
 										<span class="d-inline-block mt-1">By {{post.writer}}</span>
-										<span> - {{ post.published_date }}</span>
+										<span> - {{ post.published_date|date:"D, d M Y" }}</span>
 										<p><span class="boldtext">Views:</span> {{post.views}}</p>
 							</div>
 							<br>
