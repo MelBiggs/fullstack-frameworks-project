@@ -626,14 +626,13 @@ small {
 /* MEDIA QUERIES */
 
 /* Media Query for Mobile Devices */ 
-@media (max-width: 480px) { 
-    .col-md-8 .product-detail-img {
-        flex: 0 0 66.666667%;
-        max-width: 66.666667%;
-}
+@media (max-width: 500px) { 
     .product-detail-container{
     height: 100vh;
-}
+    }
+    .social-links li{
+        font-size: 1em;
+    }
 }
 
 /* Media Query for Mobile to Tablet Sizes */
@@ -652,8 +651,9 @@ small {
         width: 80%;
     }
     .product-detail-container{
-        height: 90vh;
-}
+        height: 0vh;
+        padding-bottom: 35em;
+    }
 }
           
 /* Media Query for Tablets  */ 
@@ -662,9 +662,11 @@ small {
         padding-left:2.5em;
     } 
     .product-detail-container{
-        height: 70vh;
+        height: 50vh;
 }
 }
+
+
 
 /* Blogpost Media Queries */
 @media (min-width: 768px) {
