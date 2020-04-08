@@ -22,7 +22,6 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    title = models.CharField(max_length=254, default='')
     body = models.TextField()
     approved = models.BooleanField(default=False)
     published_date = models.DateTimeField(blank=True, null=True,
