@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import DateFieldListFilter
 from .models import Product, Tag, Review
 
 
@@ -11,6 +12,13 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('body', 'approved')
+    list_filter = (
+        ('published_date', DateFieldListFilter),
+    )
+
+
 # Register your models here.
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Review)
+admin.site.register(Review, ReviewAdmin)

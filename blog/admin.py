@@ -14,6 +14,12 @@ class PostAdmin(admin.ModelAdmin):
         ('published_date', DateFieldListFilter),
     )
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('body', 'approved')
+    list_filter = (
+        ('published_date', DateFieldListFilter),
+    )
+
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(Comment)
+admin.site.register(Comment, CommentAdmin)
