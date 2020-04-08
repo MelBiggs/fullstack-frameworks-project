@@ -60,7 +60,6 @@
 					<button class="btn btn-secondary tag-filter-btn" type="submit">Filter</button>
                     <br>
                     <p><button class="btn btn-secondary tag-filter-btn" type="submit"><a href="{% url 'products' %}">Clear</a></button></p>
-
 				</form>
 			</ul>
 		</div>
@@ -77,13 +76,13 @@
 			<span class="post-category text-white bg-danger mb-3">{{ tag.get_value_display }}</span>
             {% endfor %}
 			<h4><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h4>
-			<p class="product-description">{{ product.description }}</p>
+			<p class="product-description">{{ product.description|truncatewords:10  }}</p>
 			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ product.price }}</p>
 
 			<form method="post" action="{% url 'add_to_cart' product.id %}">
 				{% csrf_token %}
-				<div class="input-group quantity_group">
-					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+				<div class="input-group quantity_group col-lg-6 col-10 float-right">
+					<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" value="1">
 					<span class="input-group-btn">
                             <button class="btn btn-secondary" type="submit" disabled >Add</button>
                         </span>

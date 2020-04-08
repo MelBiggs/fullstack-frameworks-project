@@ -220,7 +220,7 @@ caption p {
     min-height: 40px;
 }
 
-.tag-filter-btn{
+.tag-filter-btn {
     background-color: #fff7ff!important;
     border: 2px solid #6c757d;
     color: #6c757d;
@@ -228,7 +228,14 @@ caption p {
     margin-bottom: 1em;
 }
 
-.tag-filter-btn:hover{
+.tag-filter-btn a {
+    text-decoration: none;
+}
+.tag-filter-btn a:hover {
+    color: black;
+}
+
+.tag-filter-btn:hover {
     color: black;
 }
 
@@ -657,9 +664,7 @@ small {
     .product-detail-container{
         height: 70vh;
 }
-
 }
-
 
 /* Blogpost Media Queries */
 @media (min-width: 768px) {
