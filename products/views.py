@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
-from .models import Product
+from .models import Product, Review
 from accounts.models import Favourite
 from .forms import ReviewForm
 import operator
@@ -132,6 +132,16 @@ def product_detail(request, pk):
                                                       'score': avg,
                                                       'review_count': review_count})
 
+
+def delete_review(request, pk, rk):
+    if request.user.is_authenticated:
+        user = request.user 
+        review = get_object_or_404(Review, pk=rk)
+        review.delete()
+        messages.success(request, "Your review is deleted.")
+    
+    return redirect(product_detail, pk)
+   
 
 # View for Product Types
 

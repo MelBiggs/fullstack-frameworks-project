@@ -75,7 +75,11 @@
 		</p>
 	</div>
 	{{ review.body | linebreaks }}
+    {% if user == review.user %}
+    <button class="btn btn-secondary review-btn" type="submit"><a href ="{% url 'delete_review' product.id review.id %}">Delete Review</a></button>
+    {% endif %} 
 </div>
+
 <hr>
 {% endif %}
 {% endfor %}

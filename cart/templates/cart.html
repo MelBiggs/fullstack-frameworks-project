@@ -42,7 +42,7 @@
 										<img src="{{ MEDIA_URL }}{{ item.product.image }}" alt="" width="70" class="img-fluid rounded shadow-sm d-none d-sm-block d-sm-none d-md-block">
                                         <br>
 										<div class="ml-3 d-inline-block align-middle">
-											<h5 class="mb-0"> <a href="{% url 'product_detail' product.id %}"
+											<h5 class="mb-0"> <a href="{% url 'product_detail' item.product.id %}"
 													class="text-dark d-inline-block align-middle">{{ item.product.name }}</a>
 											</h5>
 										</div>

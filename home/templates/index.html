@@ -50,27 +50,10 @@
 							<a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
 						</h4>
 						<h5>{{ product.price }}</h5>
-						<p class="card-text">{{ product.description }}!</p>
+						<p class="card-text">{{ product.description }}</p>
 					</div>
-					<div class="card-footer"><p class="product-rating"></p></div>
 				</div>
 			</div>
 			{% endfor %}
 		</div>
-	</div>
-</div>
-{% endblock %}
-
-{% block footer_js %}
-<script>
-$(document).ready(function(){
-    $(".product-rating").starRating({
-        starSize: 20,
-        initialRating: {{score}},
-        readOnly: true,
-        useGradient: false,
-        activeColor: '#6c757d'
-    });
-});
-</script>
 {% endblock %}
