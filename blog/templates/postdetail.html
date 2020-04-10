@@ -73,6 +73,9 @@
 		</p>
 	</div>
 	{{ comment.body | linebreaks }}
+    {% if user == review.user %}
+    <button class="btn btn-secondary review-btn" type="submit"><a href ="{% url 'delete_comment' post.id comment.id %}">Delete Review</a></button>
+    {% endif %} 
 </div>
 <hr>
 {% endif %}

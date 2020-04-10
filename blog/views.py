@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.utils import timezone
-from .models import Post
+from .models import Post, Comment
 from .forms import BlogPostForm, CommentForm
 from django.core.paginator import Paginator
 
@@ -16,6 +16,28 @@ def get_posts(request):
     Pagination included
     """
     posts = Post.objects.all().order_by('-published_date')
+
+    paginator = Paginator(posts, ITEMS_PER_PAGE)
+
+    page = request.GET.get('page')
+
+    # If there is no page parameter in URL, set page to 1
+
+    if(page is None):
+        page = 1
+
+    posts = paginator.page(page)
+    return render(request, "blogposts.html", {'posts': posts})
+
+
+def get_posts_by_tag(request, tag):
+    """
+    Create a view that will return a list
+    of Posts that were published prior to 'now'
+    and render them to the 'blogposts.html' template
+    Pagination included
+    """
+    posts = Post.objects.filter(tag=tag).order_by('-published_date')
 
     paginator = Paginator(posts, ITEMS_PER_PAGE)
 
@@ -77,3 +99,14 @@ def create_or_edit_post(request, pk=None):
     else:
         form = BlogPostForm(instance=post)
     return render(request, 'blogpostform.html', {'form': form})
+
+
+def delete_comment(request, pk, rk):
+    if request.user.is_authenticated:
+        user = request.user 
+        comment = get_object_or_404(Comment, pk=rk)
+        comment.delete()
+        messages.success(request, "Your comment is deleted.")
+    
+    return redirect(post_detail, pk)
+   
