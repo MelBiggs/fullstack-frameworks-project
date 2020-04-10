@@ -109,18 +109,36 @@ Django is a free and open-source web framework that I've used to render the back
 I used [Font Awesome](https://fontawesome.com/icons?d=gallery) for the icons in my project
 
 ### Wireframes
-
-For my wireframes I used paper and pencil initially. 
+ 
 [Here is a link to my wireframe]( )
 
 ## Features
+
+_"A user can.."_**
+
+- register and set up an account with FaceValue.
+- reset their password from the login page. 
+- view all products from the _SkinCare_ dropdown. They can also view by whether it's a Face or Body product.
+- view all blog posts from the _SkinCare_ dropdown. 
+- view individual products and blog posts. 
+- select the specific product type they want (e.g. moisturiser, cleanser) from the _What are you looking for?_ dropdown.
+- comment on a specific blog post.
+- review a specific product and leave a star rating. 
+- see the average star rating for a specific product in the detail page. 
+- approve comments and reviews and edit blog posts if they are the admin superuser.
+- pay for products through Stripe (as this is a fictional site, it only processes test card payments.)
+- use pagination to move through the products and blog posts. 
+- search for a product or blog by name 
+- save products for later, which get displayed on their profile page. 
 
 ### Features left to implement
 
 I would like to add the following features in time: 
 * Calculating the shipping and handling fees into the total value
 * Expand the currency used to include GBP and USD
-* Add a Previously Purchased section to the user profile page 
+* Add a Previously Purchased section to the user profile page  
+* Sending an email with the order confirmation to the user when payment is processed. 
+* Build staff-friendly pages which display all the needed information for smooth shipping. 
 
 ## Technologies Used
 
