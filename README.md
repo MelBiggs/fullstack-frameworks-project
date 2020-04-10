@@ -55,7 +55,7 @@ I looked at the other project ideas given by the Code Institute and worked them 
 
 This site is intended for use by anyone who has an interest in skincare or has a particular issue they want to find products to relieve. They can find these products which can be filtered and purchase them online. The target audience is broad as skin issues don't chose an age or gender. Anyone who has an interest in purchasing a product or reading a blog to aid them in their skin care journey will find interest in this website. 
 
-_"As a user I would like to"_**
+**_"As a user I would like to"_**
 
 * view all products and blog posts without logging in 
 * view the site from any device (mobile, tablet, desktop)
@@ -114,7 +114,7 @@ I used [Font Awesome](https://fontawesome.com/icons?d=gallery) for the icons in 
 
 ## Features
 
-_"A user can.."_**
+**_"A user can.."_**
 
 - register and set up an account with FaceValue.
 - reset their password from the login page. 
@@ -162,6 +162,7 @@ I would like to add the following features in time:
 * [Django](https://www.djangoproject.com/) - Django is a Python web framework I used.
 * [Django](https://www.postgresql.org/) - Through Heroku, this is a relational SQL database plugin.
 
+Further details on all Python packages used on this project can be found in the [requirements.txt](requirements.txt) file. 
 
 ### General Technologies
 
@@ -228,7 +229,7 @@ Django's built-in unittest library module and TestCase subclass
 
 ## Deployment
 
-This project can be viewed on [Heroku]( link )
+This project can be viewed on [Heroku](https://fullstackframeworks-project.herokuapp.com)
 
 ### Local Deployment
 
