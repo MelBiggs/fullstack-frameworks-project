@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -9,7 +8,6 @@ from django.utils import timezone
 from products.models import Product
 import stripe
 
-# Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
 
@@ -47,7 +45,8 @@ def checkout(request):
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.error(request,
+                "You have successfully paid. We will email you shortly with your order confirmation")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:

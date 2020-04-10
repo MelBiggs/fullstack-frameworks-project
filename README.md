@@ -1,11 +1,8 @@
 ## Here is what I still need to work on, as of 3rd of April: 
 
 - Add content
-- When content is added, make pagination 12 items per page. 
 - Do Testing
 - Finish README 
-
-
 
 
 [Link to Deployed Website](https://fullstackframeworks-project.herokuapp.com)
@@ -89,6 +86,8 @@ I wanted to style the website with a clean, semi-clinical look.
 | #6c757d       | deep blueish grey|
 | #fff7ff       | pale pink     | 
 
+
+![Colour Palette](static/img/colour-palette.png)
 
 #### Typography
 
