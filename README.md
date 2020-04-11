@@ -213,18 +213,23 @@ A few files contained lines which were too long so once these were adjusted, the
 
 I also checked `custom_storages.py` and that also came back with an 'All right'. 
 
-#### Jasmine
-
-
-### Compatibility
-
 
 ### Issues/Bugs
 
 
 ### Automated Testing
 
+All automated testing was done using [Travis-CI](https://travis-ci.com/). Travis was used throughout the unit testing of this project to provide continuous integration with the deployed site. The Travis Documentation provides all the info needed to set it up.
+
 Django's built-in unittest library module and TestCase subclass 
+
+#### User Story Testing
+
+Having gone through all the user stories above and looked at my website with those in mind, I believe the site meets those needs. My friends and family were kind enough to also test the site for me on their own devices and were able to move through it with ease.
+
+#### Compatibility
+
+To ensure a broad range of users can successfully use the site, I tested it across major browsers in both desktop and mobile configuration.
 
 
 ## Deployment
@@ -233,9 +238,60 @@ This project can be viewed on [Heroku](https://fullstackframeworks-project.herok
 
 ### Local Deployment
 
+To run this programme locally on your own machine, you'll need the following: 
+- An IDE (like [Gitpod](https://www.gitpod.io/))
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [GIT](https://www.atlassian.com/git/tutorials/install-git)
+- [Python3](https://www.python.org/downloads/)
+
+Then: 
+
+1. Clone this GitHub repository by either clicking the green "Clone or download" button above in order to download the project as a zip-file (unzip it first), or by entering the following command into the Git CLI terminal:
+    - `git clone https://github.com/MelBiggs/fullstack-frameworks-project.git`
+2. Open your preferred IDE then open a terminal session in the unzip folder or cd to the correct location.
+3. Create a `.env` file with your own credentials.
+4. If needed, Upgrade pip locally with:
+    - `pip3 install --upgrade pip`
+5. Install all requirements from the requirements.txt file using this command:
+    - `pip3 -r requirements.txt`
+6. In the IDE terminal, use the following command to launch the Django project:
+    - `python3 manage.py runserver`
+7. Make migrations to create the database schema:
+    - `python3 manage.py makemigrations`
+    - `python3 manage.py migrate`
+8. Generate a superuser to access the Django Admin Panel and then assign an admin username, email, and secure password:
+    - `python3 manage.py createsuperuser`
+9. Once the program is running, go to the local link provided and add /admin to the end of the url. Here log in with your superuser account and create instances within the new database.
+
 
 ### Remote Deployment
 
+Once you do the steps above, you can then deploy the site remotely on Heroku with the following steps:
+
+1. Create a `requirements.txt` file using the terminal command `pip3 freeze > requirements.txt`.
+2. Create a Procfile to tell Heroku what type of application is being deployed using gunicorn, and how to run it:
+    - `echo web: gunicorn facevalue.wsgi:application > Procfile`
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+4. Create a new app on the Heroku website by clicking the "New" button. Give it a name and set the region to whichever is applicable for your location.
+5. In the Heroku Resources tab, navigate to the *Add-Ons* section and search for *Heroku Postgres*. Make sure to select the free *Hobby* level. This will allow you to have a remote database instead of using the local sqlite3 database, and can be found in the *Settings* tab. You'll need to update your `.env` file with your new database-url details.
+6. From the heroku dashboard of your application, click on *Deploy* and then *Deployment method* and select GitHub.
+7. Link Heroku to the correct GitHub repository.
+8. Click on *Settings* and *Reveal Config Vars*.
+9. Set your config vars, as below: 
+
+| Key       | Value        | 
+| ------------- |:-------------:| 
+| AWS_ACCESS_KEY_ID    | `<your key>`|
+| AWS_SECRET_ACCESS_KEY    | `<your key>`|  
+| DATABASE_URL| `<your key>` |
+| DISABLE_COLLECTSTATIC| 1|
+| SECRET_KEY| `<your key>`|
+| STRIPE_PUBLISHABLE| `<your key>`|
+| STRIPE_SECRET| `<your key>` |
+
+10. Back in your IDE, you'll have to connect to your new database, migrate your models and create a new superuser. 
+11. On your Heroku dashboard, click *Deploy*. Scroll down to *Manual Deploy*, select the master branch then click *Deploy Branch*.
+12. Once built, you can view app. 
 
 
 ## Credits 
