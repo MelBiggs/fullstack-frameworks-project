@@ -297,42 +297,55 @@ Once you do the steps above, you can then deploy the site remotely on Heroku wit
 ## Credits 
 
 ### Media
+
 The favicon is used is from [Favicon.io](https://favicon.io/)
+
+The index page carousel images were found at [Goop](https://goop.com/wp-content/uploads/2011/04/Update-Natural-and-Organic-Skin-CareSEO-AP1104952.jpg) and [Pinterest](https://www.pinterest.co.uk/pin/717972365568820262/) and edited by myself. 
+
+All images for the products were found on their brand's websites. 
 
 ### Code
 
 * When I was working out how to get tag filtering working (i.e. filtering by skin issue), these sources really helped me:
-https://stackoverflow.com/questions/4915920/how-to-delete-an-item-in-a-list-if-it-exists - This helped me remove 'page' from filter_keys
-https://stackoverflow.com/questions/24763045/capture-all-url-parameters-in-django-views-py - This helped me in getting all the GET parameters
-https://stackoverflow.com/questions/16819222/how-to-return-dictionary-keys-as-a-list-in-python - This taught me how to get keys using `[*]`
+    - https://stackoverflow.com/questions/4915920/how-to-delete-an-item-in-a-list-if-it-exists - This helped me remove 'page' from filter_keys
+    - https://stackoverflow.com/questions/24763045/capture-all-url-parameters-in-django-views-py - This helped me in getting all the GET parameters
+    - https://stackoverflow.com/questions/16819222/how-to-return-dictionary-keys-as-a-list-in-python - This taught me how to get keys using `[*]`
 
 * These code snippets helped me find the URL query parameters with JavaScript so that the pagination worked with filters and to make the checkbox stay selected :
-https://medium.com/@junaidahmed/get-url-query-params-with-jquery-js-c12f5fed0f71
-https://stackoverflow.com/questions/10930048/get-checkbox-with-specific-value
-https://stackoverflow.com/questions/4735342/jquery-to-loop-through-elements-with-the-same-class
-
+    - https://medium.com/@junaidahmed/get-url-query-params-with-jquery-js-c12f5fed0f71
+    - https://stackoverflow.com/questions/10930048/get-checkbox-with-specific-value
+    - https://stackoverflow.com/questions/4735342/jquery-to-loop-through-elements-with-the-same-class
 
 * These websites helped me flesh out my password reset view and to add a subject line:
-https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt 
-https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html 
+    - https://github.com/django/django/blob/master/django/contrib/auth/templates/registration/password_reset_subject.txt 
+    - https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html 
 
 * This question on Stack Overflow helped me to target a URL for my All, Face and Body Products tab:
-https://stackoverflow.com/questions/34649131/javascript-how-to-check-if-url-contains-a-word/34649157
+    - https://stackoverflow.com/questions/34649131/javascript-how-to-check-if-url-contains-a-word/34649157
 
 * This code showed me how to add stars ratings as part of reviews and to the review form: 
-https://github.com/nashio/star-rating-svg/
-https://stackoverflow.com/questions/28607727/how-to-calculate-average-with-django
-https://stackoverflow.com/questions/6862250/change-a-django-form-field-to-a-hidden-field
+    - https://github.com/nashio/star-rating-svg/
+    - https://stackoverflow.com/questions/28607727/how-to-calculate-average-with-django
+    - https://stackoverflow.com/questions/6862250/change-a-django-form-field-to-a-hidden-field
 
 * This code helped me to disable the Add button on my product page: 
-https://blog.revillweb.com/jquery-disable-button-disabling-and-enabling-buttons-with-jquery-5e3ffe669ece
+    - https://blog.revillweb.com/jquery-disable-button-disabling-and-enabling-buttons-with-jquery-5e3ffe669ece
+
+* For my cart, I found this template really useful: 
+    - https://jsfiddle.net/bootstrapious/wc6g251x
+
+* For the blog layout, parts of this template were helpful: 
+    - https://colorlib.com/preview/theme/miniblog/
+
+* When I was starting on the pagination, this video had some really comprehensive help: 
+    - https://www.youtube.com/watch?v=Z8MDdDyB_6A 
 
 I also received tips on snippets of my code through [Stack Overflow](https://stackoverflow.com/), [CodePen]( https://codepen.io/) and [W3Schools](https://www.w3schools.com/).
 
 ### Acknowledgements
 
-I received inspiration for the theme of this project from
+I received inspiration for the theme of this project from websites like [Cult Beauty](https://www.cultbeauty.co.uk/) and [Glossier](https://www.glossier.com/).
 
-I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute tutors and Slack users for their helpful comments and suggestions on my project. 
+I am very grateful to my mentor **Guido Cecilio** for his help and guidance throughout the project. I would also like to thank my mam and my friends for helping me test the responsiveness of the website. I would also like to thank the Code Institute tutors for their helpful comments and advise on my project. 
 
 [Link to Deployed Website](https://fullstackframeworks-project.herokuapp.com/)
