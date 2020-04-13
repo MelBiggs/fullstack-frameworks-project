@@ -110,7 +110,7 @@ I used [Font Awesome](https://fontawesome.com/icons?d=gallery) for the icons in 
 
 ### Wireframes
  
-[Here is a link to my wireframe]( )
+[Here is a link to my wireframes](UXD)
 
 ## Features
 
@@ -230,6 +230,8 @@ Having gone through all the user stories above and looked at my website with tho
 #### Compatibility
 
 To ensure a broad range of users can successfully use the site, I tested it across major browsers in both desktop and mobile configuration.
+
+I tested the responsiveness of the site, page by page. All pages were made to look at attractive as possible on all screen sizes. For example, the checkout and cart have a scrolling table for smaller screens.
 
 
 ## Deployment
