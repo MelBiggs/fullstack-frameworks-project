@@ -1,8 +1,8 @@
-## Here is what I still need to work on, as of 3rd of April: 
+## Here is what I still need to work on, as of 13th of April: 
 
 - Add content
 - Do Testing
-- Finish README 
+- Finish README tests
 
 
 [Link to Deployed Website](https://fullstackframeworks-project.herokuapp.com)
