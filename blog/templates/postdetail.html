@@ -3,12 +3,12 @@
 {% load bootstrap_tags %}
 {% block content %}
 
-<div class="site-cover overlay" style="background-image: url(/media/{{ post.image }})">
+<div class="site-cover overlay" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-10">
 				<div class="post-entry text-center">
-					<span class="post-category text-white bg-danger mb-3">{{ post.tag }}</span>
+					<span class="post-category text-white bg-danger mb-3"><a href="{% url 'get_posts_by_tag' post.tag %}">{{ post.tag }}</a></span>
 					<h1 class="mb-4">{{ post.title }}</h1>
 					<div class="post-meta align-items-center text-center">
 						{% if post.writer == 'Melissa Biggs' %}
@@ -73,8 +73,8 @@
 		</p>
 	</div>
 	{{ comment.body | linebreaks }}
-    {% if user == review.user %}
-    <button class="btn btn-secondary review-btn" type="submit"><a href ="{% url 'delete_comment' post.id comment.id %}">Delete Review</a></button>
+    {% if user == comment.user %}
+    <button class="btn btn-secondary review-btn" type="submit"><a href ="{% url 'delete_comment' post.id comment.id %}">Delete Comment</a></button>
     {% endif %} 
 </div>
 <hr>

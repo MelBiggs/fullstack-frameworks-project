@@ -31,12 +31,6 @@ def get_posts(request):
 
 
 def get_posts_by_tag(request, tag):
-    """
-    Create a view that will return a list
-    of Posts that were published prior to 'now'
-    and render them to the 'blogposts.html' template
-    Pagination included
-    """
     posts = Post.objects.filter(tag=tag).order_by('-published_date')
 
     paginator = Paginator(posts, ITEMS_PER_PAGE)

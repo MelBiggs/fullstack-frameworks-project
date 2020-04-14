@@ -76,11 +76,11 @@
 		</p>
 	</div>
 	{{ review.body | linebreaks }}
+    <div class="user_review_score" data-score="{{review.score}}"></div>
     {% if user == review.user %}
     <button class="btn btn-secondary review-btn" type="submit"><a href ="{% url 'delete_review' product.id review.id %}">Delete Review</a></button>
     {% endif %} 
 </div>
-
 <hr>
 {% endif %}
 {% endfor %}
@@ -97,7 +97,7 @@ $(document).ready(function(){
         useGradient: false,
         activeColor: '#6c757d'
     });
-        $("#score_input").starRating({
+    $("#score_input").starRating({
         starSize: 25,
         initialRating: 0,
         readOnly: false,
@@ -112,6 +112,23 @@ $(document).ready(function(){
         ratedColor: '#00000',
         hoverColor:'#6c757d' 
     });
+    $(".product-rating").starRating({
+        starSize: 20,
+        initialRating: {{score}},
+        readOnly: true,
+        useGradient: false,
+        activeColor: '#6c757d'
+    });
+    $(".user_review_score").each(function(){
+        let score = $(this).data("score");
+        $(this).starRating({
+            starSize: 20,
+            initialRating: score,
+            readOnly: true,
+            useGradient: false,
+            activeColor: '#6c757d'
+        });
+    })
 });
 </script>
 {% endblock %}

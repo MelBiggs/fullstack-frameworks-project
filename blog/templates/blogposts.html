@@ -20,10 +20,9 @@
 			{% for post in posts %}
 			<div class="col-lg-4 col-md-6 col-sm-8 mb-4">
 				<div class="entry">
-					<a href="{% url 'post_detail' post.id %}"><img src="/media/{{ post.image }}" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
+					<a href="{% url 'post_detail' post.id %}"><img src="{{ MEDIA_URL }}{{ post.image }}" id= "blog-img" alt="Image" class="img-fluid rounded"></a>
 						<div class="excerpt">
 							<span class="post-category text-white bg-danger mb-3"><a href="{% url 'get_posts_by_tag' post.tag %}">{{ post.tag }}</a></span>
-
 							<h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
 							<div class="post-meta align-items-center text-left clearfix">
 								{% if post.writer == 'Melissa Biggs' %}
