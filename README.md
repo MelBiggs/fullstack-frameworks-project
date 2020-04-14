@@ -304,7 +304,7 @@ The favicon is used is from [Favicon.io](https://favicon.io/)
 
 The index page carousel images were found at [Goop](https://goop.com/wp-content/uploads/2011/04/Update-Natural-and-Organic-Skin-CareSEO-AP1104952.jpg) and [Pinterest](https://www.pinterest.co.uk/pin/717972365568820262/) and edited by myself. 
 
-All images for the products were found on their brand's websites. 
+I found the product images on [Cult Beauty](https://www.cultbeauty.co.uk/) or on the products individual brand website, along with the product descriptions. 
 
 ### Code
 
