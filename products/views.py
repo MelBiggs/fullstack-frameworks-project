@@ -10,7 +10,7 @@ from functools import reduce
 from django.db.models import Avg
 
 
-ITEMS_PER_PAGE = 3
+ITEMS_PER_PAGE = 12
 
 
 def all_products(request):

@@ -19,8 +19,6 @@ LABEL_CHOICES = (
     ('S', 'Sensitive'),
     ('TI', 'Tired Skin'),
     ('AG', 'Aging Skin'),
-    ('AL', 'Alopecia'),
-    ('PR', 'Pregnancy'),
     ('CE', 'Cellulite'),
     ('SC', 'Scarring'),
     ('SU', 'Sun')
@@ -36,7 +34,6 @@ TYPE_CHOICES = (
     ('T', 'Toner'),
     ('FM', 'Face Mask'),
     ('E', 'Eye Cream'),
-    ('CH', 'Chemical'),
 )
 
 

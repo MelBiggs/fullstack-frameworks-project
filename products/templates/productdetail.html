@@ -38,20 +38,21 @@
 			</form>
             {% if user.is_authenticated %}
                 {% if is_favourite %}
-			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="fas fa-heart"></i></a>Save for Later</div>
+			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="fas fa-heart"></i></a></div>
                 {% else %}
-			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="far fa-heart"></i></a><h6>Save for Later</h6></div>
+			<div class="favourite-icon"><a href="{% url 'favourite_product' product.id %}"><i class="far fa-heart"></i></a></div>
             {% endif %}
             {% endif %}
 		</div>
 	</div>
 </div>
 <br>
+<br>
 <div class = "col-12 d-flex justify-content-center product-description">{{ product.description }}</div>
 <br> 
 <hr>
 <div class="heading_comments_reviews">Reviews on {{product.name}}</div>
-
+<br>
 {% if user.is_authenticated %}
 <form method="POST" id="account-form">
 	{% csrf_token %}
