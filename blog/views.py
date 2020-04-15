@@ -5,7 +5,7 @@ from .models import Post, Comment
 from .forms import BlogPostForm, CommentForm
 from django.core.paginator import Paginator
 
-ITEMS_PER_PAGE = 3
+ITEMS_PER_PAGE = 6
 
 
 def get_posts(request):
