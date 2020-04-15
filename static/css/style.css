@@ -69,6 +69,10 @@ a {
     color: #6c757d;
 }
 
+.fa-shopping-cart {
+    margin-top: .4em;
+}
+
 .fa-shopping-cart:hover {
     color: #6c757d;
 }

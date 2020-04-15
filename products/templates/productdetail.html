@@ -66,6 +66,12 @@
 <br>
 {% endif %}
 
+{% if review_count == 0 %}
+<hr>
+<div class="my-3 d-flex justify-content-center">This product hasn't been reviewed yet!</div>
+<hr>
+{% endif %}
+
 {% for review in product.reviews.all %}
 {% if review.approved %}
 <div class="review" style="padding: 10px;">

@@ -60,6 +60,7 @@ def registration(request):
                 messages.success(
                         request,
                         "You have successfully registered")
+                return redirect(reverse('index'))
             else:
                 messages.error(
                         request,
