@@ -88,7 +88,7 @@ I wanted to style the website with a clean, semi-clinical look.
 | #fff7ff       | pale pink     | 
 
 
-![Colour Palette](static/img/colour-palette.png)
+![Colour Palette](UXD/colour-palette.png)
 
 #### Typography
 
