@@ -307,7 +307,7 @@ The index page carousel images were found at [Goop](https://goop.com/wp-content/
 
 I found the product images on [Cult Beauty](https://www.cultbeauty.co.uk/) or on the products individual brand website, along with the product descriptions. 
 
-Kiehl's and WebMD was particularly useful in fleshy out my fictional blog with content and images. One piece of artwork was found on this website: http://www.missled.co.uk/blog/miss-led-skincare-beauty-illustrations/
+Kiehl's and WebMD was particularly useful in fleshing out my fictional blog with content and images. One piece of artwork was found on this website: http://www.missled.co.uk/blog/miss-led-skincare-beauty-illustrations/
 
 ### Code
 
