@@ -22,7 +22,7 @@ Users can log in and find products according to type (e.g. moisturiser, eye crea
 
 ## Demo
 
-![Project Demo](UXD/Demo.png)
+![Project Demo](/UXD/Demo.png)
 
 ## UX
 
