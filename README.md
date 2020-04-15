@@ -1,6 +1,6 @@
-## Here is what I still need to work on, as of 13th of April: 
+## Here is what I still need to work on, as of 15th of April: 
 
-- Add content
+- Add some reviews and comments 
 - Do Testing
 - Finish README tests
 
