@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from django.utils.six.moves.urllib.parse import urlencode
 from django.contrib import auth
 from django.http import HttpResponsePermanentRedirect
 from django.forms import modelform_factory
@@ -82,10 +81,8 @@ class Product_View_Test(TestCase):
         Tag.objects.create(product = self.product3, value="AC")
         Tag.objects.create(product = self.product3, value="RO")
         Tag.objects.create(product = self.product3, value="SU")
-        self.user = User.objects.create(username="TestUser",
-        email="testemail@gmail.com")
-        self.user.set_password("Password")
-        self.user.save()
+        self.user = User.objects.create_user(username="TestUser",
+            email="testemail@gmail.com", password="Password")
 
    
     def test_products_view_all(self):
@@ -168,3 +165,5 @@ class Product_View_Test(TestCase):
         reviews = Review.objects.all().count()
         self.assertEqual(reviews, 0)
         self.assertEquals(page.status_code, 301)
+
+

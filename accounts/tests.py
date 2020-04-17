@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.shortcuts import reverse
+from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 # ----- FORMS ----- #
@@ -29,12 +29,16 @@ class Test_User_Registration_Form(TestCase):
             {"username": "TestUser", "email": "testemail@gmail.com",
                 "password1": "TestPassword", "password2": "TestPassword123"})
         self.assertFalse(form.is_valid())
-            #     self.assertEqual(
-            # form.errors["password2"], [u"Passwords must match!"])
+        self.assertEqual(
+            form.errors["password2"], [u"Passwords must match!"])
 
 # ----- VIEWS----- #
 
 class Accounts_View_Test(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username="TestUser",
+            email="testemail@gmail.com", password="Password")
+    
     def test_login_view(self):
         page = self.client.get("/accounts/login/")
         self.assertEqual(page.status_code, 200)
@@ -43,14 +47,14 @@ class Accounts_View_Test(TestCase):
     def test_logout_view(self):
         page = self.client.get("/accounts/logout/")
         self.assertEqual(page.status_code, 302)
-        self.client.post(reverse("index")) 
+        
     
     def test_register_view(self):
         page = self.client.get("/accounts/register/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "registration.html")
 
-    # def test_profile_view(self):
-    #     page = self.client.get("/accounts/profile/")
-    #     self.assertEqual(page.status_code, 302)
-    #     self.client.post(reverse("profile"))
+    def test_profile_view(self):
+        self.client.login(username="TestUser", password="Password")
+        page = self.client.get("/accounts/profile/")
+        self.assertEqual(page.status_code, 200)
