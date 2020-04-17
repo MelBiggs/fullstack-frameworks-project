@@ -20,7 +20,7 @@ def all_products(request):
 
     if len(filter_keys) > 0:
         products = Product.objects.filter(
-            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys))).distinct()
 
     else:
         products = Product.objects.all()
@@ -48,7 +48,7 @@ def face_products(request):
 
     if len(filter_keys) > 0:
         products = products.filter(
-            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys))).distinct()
 
     paginator = Paginator(products, ITEMS_PER_PAGE)
 
@@ -72,7 +72,7 @@ def body_products(request):
 
     if len(filter_keys) > 0:
         products = products.filter(
-            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys)))
+            reduce(operator.or_, (Q(tag__value=x)for x in filter_keys))).distinct()
 
     paginator = Paginator(products, ITEMS_PER_PAGE)
 
