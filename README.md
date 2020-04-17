@@ -222,11 +222,26 @@ I also checked `custom_storages.py` and that also came back with an 'All right'.
 
 All automated testing was done using [Travis-CI](https://travis-ci.com/). Travis was used throughout the unit testing of this project to provide continuous integration with the deployed site. The Travis Documentation provides all the info needed to set it up.
 
-Django's built-in unittest library module and TestCase subclass 
+With Django's built-in unittest library module and TestCase subclass, I have built tests to encompass most of my Python views, forms, and models. All tests pass as **'OK'** and have provided an overall result of **XX%** test coverage, which is within the approved minimum requirement for testing.
+
+To view these tests, select an app and chose the `test.py` file. 
+
+#### Running the Python Tests
+
+1. Activate your virtual environment.
+2. Enter the following command into your terminal:
+`python manage.py test`
+3. To specifically target the tests within one app only you can specify with:
+`python manage.py test <app name>`
+4. The test results will be shown within the terminal.
+
+The Postgres database didn't allow me to run tests once I connected. To get around this, I commented out my `DATABASE_URL` from my env.py file, which reconnected me to Sqlite. 
+
 
 #### User Story Testing
 
 Having gone through all the user stories above and looked at my website with those in mind, I believe the site meets those needs. My friends and family were kind enough to also test the site for me on their own devices and were able to move through it with ease.
+
 
 #### Compatibility
 
@@ -265,7 +280,6 @@ Then:
 8. Generate a superuser to access the Django Admin Panel and then assign an admin username, email, and secure password:
     - `python3 manage.py createsuperuser`
 9. Once the program is running, go to the local link provided and add /admin to the end of the url. Here log in with your superuser account and create instances within the new database.
-
 
 ### Remote Deployment
 
