@@ -7,8 +7,7 @@ class ReviewForm(TestCase):
     def test_users_can_create_a_new_review(self):
         form = ReviewForm(
             {"title": "My New Test Review",
-                "body": "My test description of a fake Bug!"
-                "score": "2"})
+                "body": "My test description of a fake Bug!"})
         self.assertTrue(form.is_valid())
     
     def test_correct_error_message(self):

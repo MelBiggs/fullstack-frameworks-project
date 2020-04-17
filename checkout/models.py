@@ -4,6 +4,9 @@ from products.models import Product
 
 # Create your models here.
 class Order(models.Model):
+    """
+    User information for Order
+    """
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=40, blank=False)
@@ -19,6 +22,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Information needed for Ordering
+    """
     order = models.ForeignKey(Order, null=False)
     product = models.ForeignKey(Product, null=False)
     quantity = models.IntegerField(blank=False)

@@ -3,6 +3,8 @@
 {% block title %}|Checkout{% endblock %}
 {% load bootstrap_tags %}
 
+
+<!-- Stripe JavaScript -->
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
@@ -13,6 +15,7 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+<!-- Table with Checkout details -->
 {% block content %}
 <div class="pb-5">
 	<div class="container">
@@ -58,6 +61,7 @@
 			</div>
 		</div>
 
+<!-- Order Summary  -->
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -81,6 +85,7 @@
 					</div>
 				</div>
 
+<!-- Payment Details with Order Form and Payment Form  -->
 				<div class="col-lg-6">
 					<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
 						<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Details

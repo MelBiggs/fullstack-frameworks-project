@@ -3,6 +3,7 @@
 {% load bootstrap_tags %}
 {% block content %}
 
+<!-- Blog Title Overlay -->
 <div class="site-cover overlay" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -28,6 +29,7 @@
 	</div>
 </div>
 
+<!-- Blog Content -->
 <section class="site-section">
 	<div class="container">
 		<div class="row blog-entries">
@@ -35,7 +37,6 @@
 				<div>{{ post.content|linebreaks }}</div>
 			</div>
 			<div class="pt-5">
-				<!-- <p>Categories: <a href="#">Food</a>, <a href="#">Travel</a></p>   -->
 				<p>Tag: {{ post.tag }}</p>
 			</div>
 			<a href="{% url 'get_posts' %}" class="btn btn-secondary">Back to Blog</a>

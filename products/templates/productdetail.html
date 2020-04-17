@@ -3,14 +3,14 @@
 {% load bootstrap_tags %}
 
 {% block content %}
+
+<!-- Product Tag -->
 <div class="container product-detail-container">
 	{% for tag in product.tags.all %}
 	<p class="post-category text-white bg-secondary mb-3">{{tag.get_value_display}}</p>
 	{% endfor %}
-
-
+<!-- Product Details with Image -->
 	<div class="row">
-
 		<div class="col-12 col-md-8 product-detail-img img-fluid" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
         <div class="product-detail-sm-img d-none d-sm-block d-md-none d-block d-sm-none" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 		<div class="col-12 col-md-4">
@@ -48,9 +48,11 @@
 </div>
 <br>
 <br>
+<!-- Product Description -->
 <div class = "col-12 d-flex justify-content-center product-description">{{ product.description }}</div>
 <br> 
 <hr>
+<!-- Review Form -->
 <div class="heading_comments_reviews">Reviews on {{product.name}}</div>
 <br>
 {% if user.is_authenticated %}
@@ -60,18 +62,21 @@
     <div id="score_input"></div>
 	<button type="submit" id="review_submit" class="btn review-btn" disabled>Submit Review</button>
 </form>
+<!-- If not logged in, tell User to sign in to post a review -->
 {% else %}
 <br>
 <div class="log-in-here"><b><a href="{% url 'login' %}">Sign in here</a></b> to post your own review</div>
 <br>
 {% endif %}
 
+<!-- If no reviews, say no reviews yet -->
 {% if review_count == 0 %}
 <hr>
 <div class="my-3 d-flex justify-content-center">This product hasn't been reviewed yet!</div>
 <hr>
 {% endif %}
 
+<!-- If the review has been approved by the Admin, display -->
 {% for review in product.reviews.all %}
 {% if review.approved %}
 <div class="review" style="padding: 10px;">
@@ -93,6 +98,7 @@
 
 {% endblock %}
 
+<!-- JS for Star Ratings, look in README for code credit -->
 {% block footer_js %}
 <script>
 $(document).ready(function(){

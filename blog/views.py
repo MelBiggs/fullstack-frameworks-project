@@ -31,6 +31,11 @@ def get_posts(request):
 
 
 def get_posts_by_tag(request, tag):
+    """
+    Allow user to click on blog tag and 
+    be brought to other articles under 
+    that tag 
+    """
     posts = Post.objects.filter(tag=tag).order_by('-published_date')
 
     paginator = Paginator(posts, ITEMS_PER_PAGE)
@@ -52,7 +57,7 @@ def post_detail(request, pk):
     Post object based on the post ID (pk) and
     render it to the 'postdetail.html' template.
     Or return a 404 error if the post is
-    not found
+    not found. Includes comments
     """
     post = get_object_or_404(Post, pk=pk)
     post.views += 1
@@ -96,6 +101,10 @@ def create_or_edit_post(request, pk=None):
 
 
 def delete_comment(request, pk, rk):
+    """
+    A view that allows users to 
+    delete their comment
+    """
     if request.user.is_authenticated:
         user = request.user 
         comment = get_object_or_404(Comment, pk=rk)

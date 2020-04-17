@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-
 class Favourite(models.Model):
     user = models.ForeignKey(User, related_name="favourites",
                              on_delete=models.CASCADE,

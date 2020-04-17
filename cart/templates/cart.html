@@ -5,9 +5,12 @@
 
 {% block content %}
 
+<!-- Button to Return to Products -->
 <div class="cart-return-btn">
 	<button class="accounts-btn"><a href="{% url 'products' %}"><i class="fas fa-caret-left"></i>Continue Shopping</a></button>
 </div>
+
+<!-- Cart Table with Product Details & Quantity -->
 {% if cart_items %}
 {% for item in cart_items %}
 <div class="pb-5">
@@ -76,6 +79,7 @@
 			</div>
 		</div>
 
+<!-- Order Summary  -->
 		<div class="col-lg-6">
 			<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
 			<div class="p-4">
@@ -100,6 +104,7 @@
 	</div>
 </div>
 {% endfor %}
+<!-- If there is nothing in the cart, tell the user -->
 {% else %}
 <div class="bg-light rounded-pill py-3 text-uppercase font-weight-bold text-center cart-empty">Your cart is empty</div>
 {% endif %}

@@ -79,6 +79,8 @@ def user_profile(request):
 
 
 def favourite_product(request, pk):
+    """Allow the user to 'Favourite' a product and
+    display on profile page """
     product = get_object_or_404(Product, pk=pk)
     if request.user.is_authenticated:
         user = request.user

@@ -42,7 +42,9 @@ def adjust_cart(request, id):
 
 
 def remove_from_cart(request, id):
-    """Removes only one item from the cart if quanity is more than 1"""
+    """Remove only one item from the cart 
+    if quanity is more than 1
+    """
     get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
     if id in cart:

@@ -22,6 +22,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    A comment 
+    """
     body = models.TextField()
     approved = models.BooleanField(default=False)
     published_date = models.DateTimeField(blank=True, null=True,
