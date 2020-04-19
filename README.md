@@ -1,6 +1,4 @@
-## Here is what I still need to work on, as of 15th of April: 
 
-- Add some reviews and comments 
 - Do Testing
 - Finish README tests
 

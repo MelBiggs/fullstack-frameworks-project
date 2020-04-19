@@ -3,6 +3,9 @@ from products.models import Product
 from blog.models import Post
 
 
+ # ----- VIEWS ----- #
+
+# ----- PRODUCT SEARCH ----- #
 class Search_Product_Test(TestCase):   
     def setUp(self):
         self.product = Product.objects.create(name="Test Product", price="20",
@@ -31,6 +34,8 @@ class Search_Product_Test(TestCase):
         self.assertTemplateUsed(page, "products.html")  
     
 
+# ----- BLOG SEARCH ----- #
+
 # class Search_Blog_Test(TestCase):   
 #     def setUp(self):
 #         self.post = Post.objects.create(title="Test Blog", writer="User",
@@ -41,7 +46,7 @@ class Search_Product_Test(TestCase):
 #         views="2", tag="test", image="test_img.jpeg")
 
 #     def test_search_posts(self):
-#         page = self.client.get("/search/blog/?q=test%20blog")
+#         page = self.client.get("/search/blog/?q=blog%20test")
 #         posts = page.context["posts"]
 #         self.assertEqual(len(posts), 1)
 #         self.assertTemplateUsed(page, "blogposts.html")
