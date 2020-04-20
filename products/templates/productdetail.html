@@ -17,7 +17,7 @@
 			<h4 class="my-3">{{product.name}}</h4>
 			<hr>
 			<h5 class="my-3 price">Price:
-				<span><i class="fas fa-euro-sign" aria-hidden="true"></i> {{ product.price }}</span></h5>
+				<span>€{{ product.price }}</span></h5>
 			<hr>
             <div class="rating my-3">
             <div class="product-rating"></div>
@@ -81,9 +81,9 @@
 {% if review.approved %}
 <div class="review" style="padding: 10px;">
 	<div class="font-weight-bold">
-		{{review.title}}
+		{{review.title|capfirst}}
 		<p class=" text-muted font-weight-normal">
-			{{review.user.username|capfirst}} - {{ review.published_date }}
+			{{review.user.username}} - {{ review.published_date }}
 		</p>
 	</div>
 	{{ review.body | linebreaks }}

@@ -42,29 +42,33 @@ class Search_Product_Test(TestCase):
 
 # ----- BLOG SEARCH ----- #
 
-# class Search_Blog_Test(TestCase):   
-#     def setUp(self):
-#         self.post = Post.objects.create(title="Test Blog", writer="User",
-#         content="Blog content", created_date="2020-04-15 00:00:00", published_date="2020-04-15",
-#         views="2", tag="test", image="test_img.jpeg")
-#         self.post2 = Post.objects.create(title="Other Blog", writer="User",
-#         content="Blog content", created_date="2020-04-15 00:00:00", published_date="2020-04-15",
-#         views="2", tag="test", image="test_img.jpeg")
+class Search_Blog_Test(TestCase):   
+    def setUp(self):
+        self.post = Post.objects.create(title="Test Blog",
+                                        writer="User",
+                                        content="Blog content",
+                                        created_date="2020-04-15 00:00:00",
+                                        published_date="2020-04-15",
+                                        views="2", tag="test",
+                                        image="test_img.jpeg")
+        self.post2 = Post.objects.create(title="Other Blog", writer="User",
+        content="Blog content", created_date="2020-04-15 00:00:00", published_date="2020-04-15",
+        views="2", tag="test", image="test_img.jpeg")
 
-#     def test_search_posts(self):
-#         page = self.client.get("/search/blog/?q=blog%20test")
-#         posts = page.context["posts"]
-#         self.assertEqual(len(posts), 1)
-#         self.assertTemplateUsed(page, "blogposts.html")
+    def test_search_posts(self):
+        page = self.client.get("/search/blogs/?q=test%20blog")
+        posts = page.context["posts"]
+        self.assertEqual(len(posts), 1)
+        self.assertTemplateUsed(page, "blogposts.html")
 
-#     def test_search_posts_multiple(self):
-#         page = self.client.get("/search/blog/?q=other")
-#         posts = page.context["posts"]
-#         self.assertEqual(len(posts), 2)
-#         self.assertTemplateUsed(page, "blogposts.html")    
+    def test_search_posts_multiple(self):
+        page = self.client.get("/search/blogs/?q=blog")
+        posts = page.context["posts"]
+        self.assertEqual(len(posts), 2)
+        self.assertTemplateUsed(page, "blogposts.html")    
 
-#     def test_search_posts_none(self):
-#         page = self.client.get("/search/blog/?q=random")
-#         posts = page.context["posts"]
-#         self.assertEqual(len(posts), 0)
-#         self.assertTemplateUsed(page, "blogposts.html")  
+    def test_search_posts_none(self):
+        page = self.client.get("/search/blogs/?q=random")
+        posts = page.context["posts"]
+        self.assertEqual(len(posts), 0)
+        self.assertTemplateUsed(page, "blogposts.html")  

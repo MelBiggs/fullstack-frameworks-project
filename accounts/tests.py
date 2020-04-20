@@ -1,9 +1,10 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from accounts.models import Favourite
+from products.models import Product
 
 # ----- FORMS ----- #
-
 
 class Test_User_Login_Form(TestCase):
     def test_log_in_valid(self):
@@ -35,12 +36,17 @@ class Test_User_Registration_Form(TestCase):
 
 # ----- VIEWS----- #
 
-
 class Accounts_View_Test(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username="TestUser",
                                              email="testemail@gmail.com",
                                              password="Password")
+        self.product = Product.objects.create(name="Test Product",
+                                              price="20",
+                                              category="F",
+                                              description="Test Description",
+                                              product_type="M",
+                                              image="test_img.jpeg")
 
     def test_login_view(self):
         page = self.client.get("/accounts/login/")
@@ -60,3 +66,13 @@ class Accounts_View_Test(TestCase):
         self.client.login(username="TestUser", password="Password")
         page = self.client.get("/accounts/profile/")
         self.assertEqual(page.status_code, 200)
+
+    # def test_favourite(self):
+    #     self.client.login(username="TestUser", password="Password")
+    #     page = self.client.get("/accounts/favourite/"+ str(self.product.pk))
+    #     favourites = Favourite.objects.all()
+    #     self.assertEqual(favourites.count(), 1)
+    #     # Unfavouriting
+    #     page = self.client.get("/accounts/favourite/"+ str(self.product.pk))
+    #     favourites = Favourite.objects.all()
+    #     self.assertEqual(favourites.count(), 0)

@@ -177,11 +177,20 @@ ul {
     background-color: #c67605;
 }
 
+.error-msg {
+    color: red;
+}
+
 /* BLOG COMMENTS */
 
 .heading_comments_reviews{
     text-align: center;
     padding: 1em;
+}
+
+.blog-btn{
+    margin-bottom: 1em;
+    margin-left: 1em;
 }
 
 /* PRODUCT PAGE */
@@ -250,10 +259,6 @@ caption p {
 }
 
 /* PRODUCT DETAIL PAGE */
-
-/* .product-detail-container{
-    height: 50vh;
-} */
 
 .product-detail-img {
     background-size: contain;
@@ -407,8 +412,6 @@ caption p {
   position: relative;
   font-size: 1.3em;
   color: #6c757d; 
-  
-  
 }
 
 .author-figure {
@@ -670,8 +673,6 @@ small {
         height: 60vh;
 } */
 }
-
-
 
 /* Blogpost Media Queries */
 @media (min-width: 768px) {

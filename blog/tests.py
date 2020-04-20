@@ -71,6 +71,14 @@ class Blog_Model_Test(TestCase):
         count = Post.objects.all().count()
         self.assertEqual(count, 3)
 
+    def test_to_string(self):
+        post = Post.objects.filter(title="Test Blog").first()
+        self.assertEqual(post.__str__(), "Test Blog")
+    
+    def test_to_unicode(self):
+        post = Post.objects.filter(title="Test Blog").first()
+        self.assertEqual(post.__unicode__(), "Test Blog")
+
 
  # ----- VIEWS ----- #
 

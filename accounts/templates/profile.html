@@ -10,7 +10,7 @@
 			<div class="card profile-card">
 				<div class="row profile-row">
 					<div class="col-sm-12 col-md-12">
-						<h4>{{user|capfirst}}</h4>
+						<h4>{{user}}</h4>
 						<i class="far fa-envelope"></i> {{ profile.email }}
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 			{% endfor %}
 			<h4><a href="{% url 'product_detail' favourite.product.id %}">{{ favourite.product.name }}</a></h4>
 			<p class="product-description">{{ favourite.product.description }}</p>
-			<p><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ favourite.product.price }}</p>
+			<p>€{{ favourite.product.price }}</p>
 
 			<form method="post" action="{% url 'add_to_cart' favourite.product.id %}">
 				{% csrf_token %}

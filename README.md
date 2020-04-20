@@ -28,7 +28,7 @@ This project is part of my studies in Full Stack Software Development with the C
 
 The objective given for this project was *"Bring your own idea(s) to life, based on providing value to users to address a specific real or imagined need."* I wanted to incorporate elements of the other project ideas that were given by Code Institute. For example, one of the ideas was to build an auction place to sell historical artifacts, where users can find, learn about and acquire artifacts they are interested in. The site owner will earn money selling items.
 
-I wanted to build a website that I myself would be interested in visiting. My idea was to create a website selling skin care products and to create a community to help people with their skin issues by finding out what worked for others. I wanted to create a place where users can go and see their particular skin issue discussed and they can find products relating to that issue. I wanted to include a blog where they can find more information on a variety of skin issues. 
+I wanted to build a website that I myself would be interested in visiting. My idea was to create a website selling skin care products and to create a community to help people with their skin issues. I wanted to create a place where users can go and see their particular skin issue discussed and they can find products relating to that issue. I wanted to include a blog where they can find more information on a variety of skin issues. 
 
 I looked at the other project ideas given by the Code Institute and worked them into my idea: 
 
@@ -80,13 +80,13 @@ I wanted to style the website with a clean, semi-clinical look.
 
 #### Colour Scheme
 
+![Colour Palette](UXD/colour-palette.png)
+
 | Colour Code   | Description   | 
 | ------------- |:-------------:| 
 | #6c757d       | deep blueish grey|
 | #fff7ff       | pale pink     | 
 
-
-![Colour Palette](UXD/colour-palette.png)
 
 #### Typography
 
@@ -214,6 +214,8 @@ I also checked `custom_storages.py` and that also came back with an 'All right'.
 
 
 ### Issues/Bugs
+
+An issue I encountered was being unable to test my Favourite function. The attempted code is commented out in the `test.py` file of the Accounts app. 
 
 
 ### Automated Testing

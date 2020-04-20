@@ -25,7 +25,8 @@ class OrderLineItem(models.Model):
     """
     Information needed for Ordering
     """
-    order = models.ForeignKey(Order, null=False)
+    order = models.ForeignKey(Order,related_name="line_items",
+                              related_query_name="line_item", null=False)
     product = models.ForeignKey(Product, null=False)
     quantity = models.IntegerField(blank=False)
 

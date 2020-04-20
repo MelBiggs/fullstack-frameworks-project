@@ -3,6 +3,8 @@
 {% load bootstrap_tags %}
 {% block content %}
 
+<a href="{% url 'get_posts' %}" class="btn btn-secondary blog-btn">Back to Blog</a>
+<br>
 <!-- Blog Title Overlay -->
 <div class="site-cover overlay" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')">
 	<div class="container">
@@ -70,7 +72,7 @@
 <div class="review" style="padding: 10px;">
 	<div class="font-weight-bold">
 		<p class=" text-muted font-weight-normal">
-			{{comment.user.username|capfirst}} - {{ comment.published_date }}
+			{{comment.user.username}} - {{ comment.published_date }}
 		</p>
 	</div>
 	{{ comment.body | linebreaks }}

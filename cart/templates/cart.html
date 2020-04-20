@@ -53,7 +53,7 @@
 									</div>
 								</th>
 								<td class="border-0 align-middle">
-									<strong><i class="fas fa-euro-sign" aria-hidden="true"></i> {{ item.product.price }}</strong>
+									<strong>€{{ item.product.price }}</strong>
 								</td>
 								<td class="border-0 align-middle"><strong>{{item.quantity}}</strong></td>
 								<td class="border-0 align-middle">
@@ -87,15 +87,15 @@
 					entered.</p>
 				<ul class="list-unstyled mb-4">
 					<li class="d-flex justify-content-between py-3 border-bottom">
-						<strong class="text-muted">Order Subtotal </strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total }}</strong>
+						<strong class="text-muted">Order Subtotal </strong><strong>€{{ total }}</strong>
 					</li>
 					<li class="d-flex justify-content-between py-3 border-bottom">
-						<strong class="text-muted">Shipping and handling</strong><strong><i class="fas fa-euro-sign" aria-hidden="true"></i>5.00</strong>
+						<strong class="text-muted">Shipping and handling</strong><strong>€5.00</strong>
 					</li>
 					<li class="d-flex justify-content-between py-3 border-bottom">
 						<strong class="text-muted">Total</strong>
 						<h5 class="font-weight-bold">
-							<i class="fas fa-euro-sign" aria-hidden="true"></i>{{ total|add:5 }}</h5>
+							€{{ total|add:5 }}</h5>
 					</li>
 				</ul><a href="{% url 'checkout' %}" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to
 					checkout</a>
