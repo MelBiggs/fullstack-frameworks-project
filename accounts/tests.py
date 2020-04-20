@@ -4,6 +4,7 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 # ----- FORMS ----- #
 
+
 class Test_User_Login_Form(TestCase):
     def test_log_in_valid(self):
         form = UserLoginForm(
@@ -34,11 +35,13 @@ class Test_User_Registration_Form(TestCase):
 
 # ----- VIEWS----- #
 
+
 class Accounts_View_Test(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username="TestUser",
-            email="testemail@gmail.com", password="Password")
-    
+                                             email="testemail@gmail.com",
+                                             password="Password")
+
     def test_login_view(self):
         page = self.client.get("/accounts/login/")
         self.assertEqual(page.status_code, 200)
@@ -47,8 +50,7 @@ class Accounts_View_Test(TestCase):
     def test_logout_view(self):
         page = self.client.get("/accounts/logout/")
         self.assertEqual(page.status_code, 302)
-        
-    
+
     def test_register_view(self):
         page = self.client.get("/accounts/register/")
         self.assertEqual(page.status_code, 200)

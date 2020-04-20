@@ -196,19 +196,19 @@ The HTML for *accounts*, *blog*, *cart*, *checkout*, *home*, *products* and *bas
 
 A few files contained lines which were too long so once these were adjusted, they passed the validator without issue. 
 
-* *Accounts App* - `backends.py`, `forms.py`, `url_reset.py`, `urls.py` and `views.py` came back with 'All right'. 
+* *Accounts App* - `backends.py`, `forms.py`, `url_reset.py`, `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
-* *Blog App* - `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+* *Blog App* - `forms.py`, `models.py`, `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
-* *Cart App* - `contexts.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+* *Cart App* - `contexts.py`, `models.py`, `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
-* *Checkout App* - `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+* *Checkout App* - `forms.py`, `models.py`, `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
-* *Home App* - `views.py` came back with 'All right'.
+* *Home App* - `views.py` and `tests.py` came back with 'All right'.
 
-* *Products App* -  `admin.py`, `forms.py`, `models.py`, `urls.py` and `views.py` came back with 'All right'. 
+* *Products App* -  `admin.py`, `forms.py`, `models.py`, `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
-* *Search Apps* - `urls.py` and `views.py` came back with 'All right'. 
+* *Search Apps* - `urls.py`, `tests.py` and `views.py` came back with 'All right'. 
 
 I also checked `custom_storages.py` and that also came back with an 'All right'. 
 

@@ -7,14 +7,16 @@ from blog.models import Post, Comment
 # ----- FORMS ----- #
 class Blogpost_Form(TestCase):
     def test_valid(self):
-        form_data={"title":"My blog", "content":"Blog content", "image": "test_img.jpeg",
-        "tag":"Meta", "published_date":"2020-06-15 00:00:00", "writer":"User"}
+        form_data={"title": "My blog", "content": "Blog content", 
+                   "image": "test_img.jpeg",
+                   "tag": "Meta", "published_date": "2020-06-15 00:00:00",
+                   "writer": "User"}
         form= BlogPostForm(data=form_data)
         self.assertTrue(form.is_valid())
-    
+
     def test_invalid(self):
-        form_data={"title":"", "content":"", "image": "",
-        "tag":"", "published_date":"", "writer":""}
+        form_data={"title": "", "content": "", "image": "",
+                   "tag": "", "published_date": "", "writer": ""}
         form= BlogPostForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertEqual(
@@ -27,12 +29,12 @@ class Blogpost_Form(TestCase):
 
 class Comment_Form(TestCase):
     def test_valid(self):
-        form_data={"body":"Comment content"}
-        form= CommentForm(data=form_data)
+        form_data={"body": "Comment content"}
+        form= CommentForm(data = form_data)
         self.assertTrue(form.is_valid())
-    
+
     def test_invalid(self):
-        form_data={"body":""}
+        form_data={"body": ""}
         form= CommentForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertEqual(
@@ -41,22 +43,30 @@ class Comment_Form(TestCase):
 
 # # ----- MODELS ----- #
 
-class Blog_Model_Test(TestCase):   
+class Blog_Model_Test(TestCase):
     def setUp(self):
         self.post = Post.objects.create(title="Test Blog", writer="User",
-        content="Blog content", created_date="2020-04-15 00:00:00", published_date="2020-04-15",
-        views="2", tag="test", image="test_img.jpeg")
+                                        content="Blog content",
+                                        created_date="2020-04-15 00:00:00",
+                                        published_date="2020-04-15", views="2",
+                                        tag="test", image="test_img.jpeg")
         self.post2 = Post.objects.create(title="Test Blog2", writer="User2",
-        content="Blog content2", created_date="2020-05-15 00:00:00", published_date="2020-05-15",
-        views="3", tag="test", image="test_img2.jpeg")
+                                         content="Blog content2",
+                                         created_date="2020-05-15 00:00:00",
+                                         published_date="2020-05-15",
+                                         views="3", tag="test",
+                                         image="test_img2.jpeg")
         self.post3 = Post.objects.create(title="Test Blog3", writer="User",
-        content="Blog content3", created_date="2020-06-15 00:00:00", published_date="2020-06-15",
-        views="4", tag="test2", image="test_img3.jpeg")
+                                         content="Blog content3",
+                                         created_date="2020-06-15 00:00:00",
+                                         published_date="2020-06-15",
+                                         views="4", tag="test2",
+                                         image="test_img3.jpeg")
 
     def test_get_post(self):
         post = Post.objects.filter(title="Test Blog").first()
         self.assertEqual(post, self.post)
-    
+
     def test_get_post_count(self):
         count = Post.objects.all().count()
         self.assertEqual(count, 3)
@@ -67,16 +77,25 @@ class Blog_Model_Test(TestCase):
 class Post_View_Test(TestCase):
     def setUp(self):
         self.post = Post.objects.create(title="Test Blog", writer="User",
-        content="Blog content", created_date="2020-04-15 00:00:00", published_date="2020-04-15",
-        views="2", tag="test", image="test_img.jpeg")
+                                        content="Blog content",
+                                        created_date="2020-04-15 00:00:00",
+                                        published_date="2020-04-15",
+                                        views="2", tag="test",
+                                        image="test_img.jpeg")
         self.post2 = Post.objects.create(title="Test Blog2", writer="User2",
-        content="Blog content2", created_date="2020-05-15 00:00:00", published_date="2020-05-15",
-        views="3", tag="test", image="test_img2.jpeg")
+                                         content="Blog content2",
+                                         created_date="2020-05-15 00:00:00",
+                                         published_date="2020-05-15",
+                                         views="3", tag="test",
+                                         image="test_img2.jpeg")
         self.post3 = Post.objects.create(title="Test Blog3", writer="User",
-        content="Blog content3", created_date="2020-06-15 00:00:00", published_date="2020-06-15",
-        views="4", tag="test2", image="test_img3.jpeg")
+                                         content="Blog content3",
+                                         created_date="2020-06-15 00:00:00",
+                                         published_date="2020-06-15",
+                                         views="4", tag="test2",
+                                         image="test_img3.jpeg")
         self.user = User.objects.create(username="TestUser",
-        email="testemail@gmail.com")
+                                        email="testemail@gmail.com")
         self.user.set_password("Password")
         self.user.save()
 

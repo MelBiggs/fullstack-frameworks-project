@@ -8,12 +8,18 @@ from blog.models import Post
 # ----- PRODUCT SEARCH ----- #
 class Search_Product_Test(TestCase):   
     def setUp(self):
-        self.product = Product.objects.create(name="Test Product", price="20",
-        category="F", description="Test Description", product_type="M",
-        image="test_img.jpeg")
-        self.product2 = Product.objects.create(name="Other Product", price="30",
-        category="B", description="Test Description2", product_type="C",
-        image="test_img2.jpeg")
+        self.product = Product.objects.create(name="Test Product",
+                                              price="20",
+                                              category="F",
+                                              description="Test Description",
+                                              product_type="M",
+                                              image="test_img.jpeg")
+        self.product2 = Product.objects.create(name="Other Product",
+                                               price="30",
+                                               category="B",
+                                               description="Test Description2",
+                                               product_type="C",
+                                               image="test_img2.jpeg")
 
     def test_search_products(self):
         page = self.client.get("/search/?q=test%20product")
@@ -25,14 +31,14 @@ class Search_Product_Test(TestCase):
         page = self.client.get("/search/?q=product")
         products = page.context["products"]
         self.assertEqual(len(products), 2)
-        self.assertTemplateUsed(page, "products.html")    
+        self.assertTemplateUsed(page, "products.html")
 
     def test_search_products_none(self):
         page = self.client.get("/search/?q=random")
         products = page.context["products"]
         self.assertEqual(len(products), 0)
-        self.assertTemplateUsed(page, "products.html")  
-    
+        self.assertTemplateUsed(page, "products.html")
+
 
 # ----- BLOG SEARCH ----- #
 
