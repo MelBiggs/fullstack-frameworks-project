@@ -3,6 +3,13 @@
 {% block title %}|Products{% endblock %}
 {% block content %}
 
+<!-- Search Bar on smaller devices -->
+<div class="product_search 	d-block d-sm-none">
+	<form class="form-inline" action="{% url 'search' %}" method="get">
+		<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search Products" aria-label="Search">
+		<button class="btn btn-outline-secondary my-2 my-sm-0 accounts-btn" type="submit">Search</button>
+	</form>
+</div>
 
 <!-- Tab for Face, Body and All  -->
 <div class="tab-wrapper">

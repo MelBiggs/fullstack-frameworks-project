@@ -85,6 +85,11 @@ ul {
     margin: .5em;
 }
 
+.cart-btn-small {
+    padding: 0;
+    color: black!important;
+}
+
 /* INDEX */
 
 .carousel-item img{
@@ -181,6 +186,9 @@ ul {
     color: red;
 }
 
+.email-reset-page {
+    padding: 1em;
+}
 /* BLOG COMMENTS */
 
 .heading_comments_reviews{
@@ -226,7 +234,6 @@ caption p {
 }
 
 .card-body {
-    height: 100%;
     border: 1px solid #ddd;
 }
 
@@ -627,8 +634,8 @@ small {
     transform: none!important;
 }
 
-.clicked{
-    color: yellow
+.product_search{
+    padding: 1em;
 }
 
 /* MEDIA QUERIES */

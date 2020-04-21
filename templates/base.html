@@ -82,8 +82,16 @@
 						</div>
 					</li>
 				</ul>
+                <!-- Cart on small screens -->
+                <li class="nav-item active d-block d-sm-none">
+                    <a class="nav-link cart-btn-small" href="{% url 'view_cart' %}">Cart<span class="sr-only">(current)</span>
+                  {% if product_count > 0 %}
+				  <span class="badge badge-dark item-number">{{ product_count }}</span>
+				  {% endif %}
+					</a>
+                </li>
 				<!-- Search Bar -->
-				<form class="form-inline nav-search" action="{% url 'search' %}" method="get">
+				<form class="form-inline nav-search d-none d-sm-block" action="{% url 'search' %}" method="get">
 					<input class="form-control mr-sm-2" type="text" name="q" placeholder="Search SkinCare" aria-label="Search">
 					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 				</form>
@@ -114,7 +122,7 @@
 					</div>
 				</ul>
 				<!-- Cart -->
-				<ul class="nav-dropdown">
+				<ul class="nav-dropdown d-none d-sm-block">
 					<a href="{% url 'view_cart' %}">
 						<button type="button" class="btn cart-btn"><i class="fas fa-shopping-cart"></i>
 				  {% if product_count > 0 %}

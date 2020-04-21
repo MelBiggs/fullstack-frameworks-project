@@ -31,7 +31,7 @@
 			<span class="post-category text-white bg-danger mb-3">{{ tag.get_value_display }}</span>
 			{% endfor %}
 			<h4><a href="{% url 'product_detail' favourite.product.id %}">{{ favourite.product.name }}</a></h4>
-			<p class="product-description">{{ favourite.product.description }}</p>
+			<p class="product-description">{{ favourite.product.description|truncatewords:15 }}</p>
 			<p>€{{ favourite.product.price }}</p>
 
 			<form method="post" action="{% url 'add_to_cart' favourite.product.id %}">
