@@ -24,7 +24,7 @@
 				{% if review_count == 0 %}
 				<div class="my-3">No reviews</div>
 				{% else %}
-				<div class="my-3">Reviews: {{ review_count }}</div>
+				<div class="my-3"><a href="#review_id">Reviews: {{ review_count }}</a></div>
 				{% endif %}
 			</div>
 			<form method="post" action="{% url 'add_to_cart' product.id %}">
@@ -52,6 +52,7 @@
 <div class = "col-12 d-flex justify-content-center product-description">{{ product.description }}</div>
 <br> 
 <hr>
+<section id="review_id">
 <!-- Review Form -->
 <div class="heading_comments_reviews">Reviews on {{product.name}}</div>
 <br>
@@ -95,7 +96,7 @@
 <hr>
 {% endif %}
 {% endfor %}
-
+</section>
 {% endblock %}
 
 <!-- JS for Star Ratings, look in README for code credit -->
