@@ -79,9 +79,9 @@ I wanted to style the website with a clean, semi-clinical look.
 
 | Colour Code   | Description   | 
 | ------------- |:-------------:| 
-| #ffffff      | white|
-| #6c757d       | deep blueish grey|
-| #fff7ff       | pale pink     | 
+| #FFFFFF      | white|
+| #6C757D       | deep blueish grey|
+| #FFF7FF       | pale pink     | 
 | #OOOOOO     | black |
 
 
