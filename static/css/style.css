@@ -642,16 +642,12 @@ small {
 
 /* Media Query for Mobile Devices */ 
 @media (max-width: 500px) { 
-    /* .product-detail-container{
-    height: 100vh;
-    } */
     .social-links li{
         font-size: 1em;
     }
 }
 
 /* Media Query for Mobile to Tablet Sizes */
-
 @media (max-width: 767px) { 
     .fa-shopping-cart {
         margin-right: 1em;
@@ -665,10 +661,6 @@ small {
     #account-form {
         width: 80%;
     }
-    /* .product-detail-container{
-        height: 0vh;
-        padding-bottom: 35em;
-    } */
 }
           
 /* Media Query for Tablets  */ 
@@ -676,9 +668,6 @@ small {
     .carousel-item img{
         padding-left:2.5em;
     } 
-    /* .product-detail-container{
-        height: 60vh;
-} */
 }
 
 /* Blogpost Media Queries */
@@ -690,7 +679,3 @@ small {
         padding: 4em 0; 
         }
 }
-
-
-
-  
