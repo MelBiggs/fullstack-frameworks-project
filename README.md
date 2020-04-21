@@ -222,7 +222,7 @@ An issue I encountered was being unable to test my Favourite function. The attem
 
 All automated testing was done using [Travis-CI](https://travis-ci.com/). Travis was used throughout the unit testing of this project to provide continuous integration with the deployed site. The Travis Documentation provides all the info needed to set it up.
 
-With Django's built-in unittest library module and TestCase subclass, I have built tests to encompass most of my Python views, forms, and models. All tests pass as **'OK'** and have provided an overall result of **XX%** test coverage, which is within the approved minimum requirement for testing.
+With Django's built-in unittest library module and TestCase subclass, I have built 60 tests to encompass most of my Python views, forms, and models. All tests pass as **'OK'**. 
 
 To view these tests, select an app and chose the `test.py` file. 
 

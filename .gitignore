@@ -7,3 +7,4 @@ env.py
 *.png
 static/
 media/
+.coverage
