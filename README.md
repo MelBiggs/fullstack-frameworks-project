@@ -212,7 +212,9 @@ I also checked `custom_storages.py` and that also came back with an 'All right'.
 
 ### Issues/Bugs
 
-An issue I encountered was being unable to test my Favourite function. The attempted code is commented out in the `test.py` file of the Accounts app. 
+An issue I encountered was being unable to test my Favourite function. The attempted code is commented out in the `test.py` file of the Accounts app.
+
+Also a difference I noticed on the deployed version was that on the mobile, the navbar can be 100% view-height which doesn't look very attractive. I worked on improving this but it proved a challenge which time did not allow me to keep working on.
 
 
 ### Automated Testing
