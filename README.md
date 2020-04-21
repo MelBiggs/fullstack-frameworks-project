@@ -1,8 +1,3 @@
-
-- Do Testing
-- Finish README tests
-
-
 [Link to Deployed Website](https://fullstackframeworks-project.herokuapp.com)
 
 # Code Institute Milestone Project 
@@ -84,8 +79,10 @@ I wanted to style the website with a clean, semi-clinical look.
 
 | Colour Code   | Description   | 
 | ------------- |:-------------:| 
+| #ffffff      | white|
 | #6c757d       | deep blueish grey|
 | #fff7ff       | pale pink     | 
+| #OOOOOO     | black |
 
 
 #### Typography
@@ -224,7 +221,7 @@ All automated testing was done using [Travis-CI](https://travis-ci.com/). Travis
 
 With Django's built-in unittest library module and TestCase subclass, I have built 60 tests to encompass most of my Python views, forms, and models. All tests pass as **'OK'**. 
 
-To view these tests, select an app and chose the `test.py` file. 
+To view these tests, select an app and chose the `test.py` file.  
 
 #### Running the Python Tests
 
