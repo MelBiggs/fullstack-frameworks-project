@@ -4,6 +4,5 @@ __pycache__
 .gitpod.yml
 *.sqlite3
 env.py
-*.png
 media/
 .coverage
