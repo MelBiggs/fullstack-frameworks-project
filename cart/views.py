@@ -20,7 +20,6 @@ def add_to_cart(request, id):
     else:
         cart[id] = cart.get(id, quantity)
 
-    request.session['cart'] = cart
     return redirect(reverse('products'))
 
 

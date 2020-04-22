@@ -213,11 +213,11 @@ I also checked `custom_storages.py` and that also came back with an 'All right'.
 
 ### Issues/Bugs
 
-
+Unfortunately I had a bug with my password reset emails. I set up an email address to send the emails from but after submitting the user's email address for password resetting, nothing would happen. I spent a lot of time working through it and followed the course videos and sought information online but unfortunately I had to mark it as a bug in the end. 
 
 An issue I encountered was being unable to test my Favourite function. The attempted code is commented out in the `test.py` file of the Accounts app.
 
-Also a difference I noticed on the deployed version was that on the mobile, the navbar can be 100% view-height which doesn't look very attractive. I worked on improving this but it proved a challenge which time did not allow me to keep working on.
+Also a difference I noticed on the deployed version was that on the iPhone mobile, the navbar can be 100% view-height which doesn't look very attractive. I worked on improving this but it proved a challenge which time did not allow me to keep working on. It doesn't seem to be an issue with other mobile brands. 
 
 ### Automated Testing
 
