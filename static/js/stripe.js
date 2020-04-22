@@ -8,26 +8,26 @@ $(function() {
             cvc: $("#id_cvv").val()
         };
     
-    Stripe.createToken(card, function(status, response) {
+        Stripe.createToken(card, function(status, response) {
         // If your credit card is successful (200 status), errors are hidden. Else show Stripe error as text
-        if (status === 200) {
-            $("#credit-card-errors").hide();
-            $("#id_stripe_id").val(response.id);
+            if (status === 200) {
+                $("#credit-card-errors").hide();
+                $("#id_stripe_id").val(response.id);
 
-            // Prevent the credit card details from being submitted
-            // to our server
-            $("#id_credit_card_number").removeAttr('name');
-            $("#id_cvv").removeAttr('name');
-            $("#id_expiry_month").removeAttr('name');
-            $("#id_expiry_year").removeAttr('name');
+                // Prevent the credit card details from being submitted
+                // to our server
+                $("#id_credit_card_number").removeAttr('name');
+                $("#id_cvv").removeAttr('name');
+                $("#id_expiry_month").removeAttr('name');
+                $("#id_expiry_year").removeAttr('name');
 
-            form.submit();
-        } else {
-            $("#stripe-error-message").text(response.error.message);
-            $("#credit-card-errors").show();
-            $("#validate_card_btn").attr("disabled", false);
-        }
-    });
-    return false;
+                form.submit();
+            } else {
+                $("#stripe-error-message").text(response.error.message);
+                $("#credit-card-errors").show();
+                $("#validate_card_btn").attr("disabled", false);
+            }
+        });
+        return false;
     });
 });

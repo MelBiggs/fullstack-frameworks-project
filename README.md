@@ -147,16 +147,17 @@ I would like to add the following features in time:
 
 * [HTML](https://en.wikipedia.org/wiki/HTML) - HTML was used to control the layout and the structure of the project.
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Cascading Style Sheets are used to describe the appearance of a website and I used it to make my website look appealing to the user.
+* [JavaScript](https://www.javascript.com/) - Javascript was used to introduce the interactive elements to the project.
 * [JQuery](https://jquery.com/) - jQuery is the primary JavaScript functionality.
 * [Bootstrap](https://getbootstrap.com/) - This is the front-end framework for layout and design.
-* [Amazon AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0#) - I stored my staticfiles and media in AWS 
 
 ### Backend Technologies
 
 * [Python]( https://www.python.org/) - This is the back-end programming language.
 * [Heroku]( https://heroku.com/) - The app is hosted on Heroku.
 * [Django](https://www.djangoproject.com/) - Django is a Python web framework I used.
-* [Django](https://www.postgresql.org/) - Through Heroku, this is a relational SQL database plugin.
+* [Postgres](https://www.postgresql.org/) - Heroku Postgres is the data store used to store the data (based on PostgreSQL).
+* [Amazon AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0#) - I stored my staticfiles and media in AWS 
 
 Further details on all Python packages used on this project can be found in the [requirements.txt](requirements.txt) file. 
 
@@ -215,6 +216,7 @@ I also checked `custom_storages.py` and that also came back with an 'All right'.
 An issue I encountered was being unable to test my Favourite function. The attempted code is commented out in the `test.py` file of the Accounts app.
 
 Also a difference I noticed on the deployed version was that on the mobile, the navbar can be 100% view-height which doesn't look very attractive. I worked on improving this but it proved a challenge which time did not allow me to keep working on.
+
 
 
 ### Automated Testing
