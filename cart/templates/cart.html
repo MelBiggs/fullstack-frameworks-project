@@ -12,7 +12,6 @@
 
 <!-- Cart Table with Product Details & Quantity -->
 {% if cart_items %}
-{% for item in cart_items %}
 <div class="pb-5">
 	<div class="container">
 		<div class="row">
@@ -60,7 +59,7 @@
 									<form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
 										{% csrf_token %}
 										<label for="exampleInputAmount" class="sr-only">New Qty</label>
-										<input name="quantity" type="number" min="0" max="999" class="form-control">
+										<input name="quantity" type="number" min="0" max="999" class="form-control" value="1">
 										<button type="submit" class="btn btn-secondary"><i class="far fa-edit" aria-hidden="true"></i>Amend</button>
 									</form>
 								</td>
@@ -103,7 +102,7 @@
 		</div>
 	</div>
 </div>
-{% endfor %}
+
 <!-- If there is nothing in the cart, tell the user -->
 {% else %}
 <div class="bg-light rounded-pill py-3 text-uppercase font-weight-bold text-center cart-empty">Your cart is empty</div>
