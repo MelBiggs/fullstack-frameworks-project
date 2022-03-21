@@ -20,7 +20,7 @@ s3transfer==0.3.3
 soupsieve==2.0
 stripe==2.43.0
 urllib3==1.25.8
-waitress==1.4.3
+waitress==2.1.1
 WebOb==1.8.6
 WebTest==2.0.34
 whitenoise==5.0.1
